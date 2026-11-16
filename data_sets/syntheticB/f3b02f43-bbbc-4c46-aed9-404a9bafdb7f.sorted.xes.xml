@@ -1,0 +1,975 @@
+  <log xmlns="http://www.xes-standard.org/" xes.version="2.0" xes.features="nested-attributes">
+    <string key="creator" value="cpee.org"/>
+    <extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
+    <extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext"/>
+    <extension name="ID" prefix="id" uri="http://www.xes-standard.org/identity.xesext"/>
+    <extension name="Lifecycle" prefix="lifecycle" uri="http://www.xes-standard.org/lifecycle.xesext"/>
+    <extension name="CPEE" prefix="cpee" uri="http://cpee.org/cpee.xesext"/>
+    <extension name="stream" prefix="stream" uri="https://cpee.org/datastream/datastream.xesext"/>
+    <global scope="trace">
+      <string key="concept:name" value="__NOTSPECIFIED__"/>
+      <string key="cpee:name" value="__NOTSPECIFIED__"/>
+    </global>
+    <global scope="event">
+      <string key="concept:name" value="__NOTSPECIFIED__"/>
+      <string key="concept:instance" value="-1"/>
+      <string key="concept:endpoint" value="__NOTSPECIFIED__"/>
+      <string key="id:id" value="__NOTSPECIFIED__"/>
+      <string key="lifecycle:transition" value="complete" />
+      <string key="cpee:lifecycle:transition" value="activity/calling"/>
+      <date key="time:timestamp" value="__NOTSPECIFIED__"/>
+    </global>
+    <trace xmlns="http://www.xes-standard.org/">
+      <string key="concept:name" value="116660"/>
+      <string key="cpee:name" value="single_optionA"/>
+      <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+      <string key="cpee:parent_instance" value="116519"/>
+      <string key="cpee:parent_instance_uuid" value="bfa6a3be-a3aa-42ae-b8cb-3dcbd7375a2d"/>
+      <string key="cpee:parent_instance_model" value="execute_multiple_optionA"/>
+      <string key="cpee:parent_instance_task_id" value="a1"/>
+      <string key="cpee:parent_instance_task_label" value="start new single process"/>
+    </trace>
+    <trace>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="id:id" value="ex-ante"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="state/change"/>
+        <string key="cpee:state" value="ready"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:40.790220+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="id:id" value="ex-ante"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="attributes/change"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:40.802392+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="id:id" value="ex-ante"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="description/change"/>
+        <string key="cpee:description" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#10;&lt;description xmlns=&quot;http://cpee.org/ns/description/1.0&quot;&gt;&#10;  &lt;manipulate id=&quot;a20&quot; label=&quot;init simulation&quot;&gt;&#10;    &lt;code&gt;# all random numbers of the instance come from its seed, so that the instance can be regenerated&#10;data.seed = Random.new_seed % 2147483647&#10;r = Random.new(data.seed)&#10;# repeated measurement at the beginning (extra iteration of &quot;record&quot;) in 30% of the instances&#10;data.extra = r.rand() &amp;lt; 0.3&#10;warmup = { 'name' =&amp;gt; 'warmup', 'behavior' =&amp;gt; 'steady', 'level' =&amp;gt; 5, 'noise' =&amp;gt; 0.3, 'points' =&amp;gt; 10 }&#10;ramp = { 'name' =&amp;gt; 'ramp', 'behavior' =&amp;gt; 'ramp', 'to' =&amp;gt; 12, 'noise' =&amp;gt; 0.3, 'points' =&amp;gt; 10 }&#10;outcome = { 'name' =&amp;gt; 'outcome', 'behavior' =&amp;gt; 'steady', 'noise' =&amp;gt; 0.3, 'points' =&amp;gt; 10 }&#10;data.phases = ((data.extra ? [warmup, warmup] : [warmup]) + [ramp, outcome]).to_json&#10;# the decision replaces the outcome phase: a stays at the level of the ramp, b (desired) decreases, c increases&#10;data.outcomes = {&#10;  'a' =&amp;gt; [outcome],&#10;  'b' =&amp;gt; [outcome.merge('behavior' =&amp;gt; 'ramp', 'to' =&amp;gt; 3)],&#10;  'c' =&amp;gt; [outcome.merge('behavior' =&amp;gt; 'ramp', 'to' =&amp;gt; 18)]&#10;}.to_json&#10;data.at = data.extra ? 3 : 2&lt;/code&gt;&#10;  &lt;/manipulate&gt;&#10;  &lt;parallel wait=&quot;-1&quot; cancel=&quot;last&quot;&gt;&#10;    &lt;parallel_branch&gt;&#10;      &lt;call id=&quot;a1&quot; endpoint=&quot;timeout&quot;&gt;&#10;        &lt;parameters&gt;&#10;          &lt;label&gt;A&lt;/label&gt;&#10;          &lt;arguments&gt;&#10;            &lt;timeout&gt;4&lt;/timeout&gt;&#10;          &lt;/arguments&gt;&#10;        &lt;/parameters&gt;&#10;      &lt;/call&gt;&#10;      &lt;call id=&quot;a13&quot; endpoint=&quot;timeout&quot;&gt;&#10;        &lt;parameters&gt;&#10;          &lt;label&gt;B&lt;/label&gt;&#10;          &lt;arguments&gt;&#10;            &lt;timeout&gt;6&lt;/timeout&gt;&#10;          &lt;/arguments&gt;&#10;        &lt;/parameters&gt;&#10;      &lt;/call&gt;&#10;      &lt;call id=&quot;a8&quot; endpoint=&quot;decide&quot;&gt;&#10;        &lt;parameters&gt;&#10;          &lt;label&gt;random decision&lt;/label&gt;&#10;          &lt;arguments&gt;&#10;            &lt;options&gt;{&quot;a&quot;:2,&quot;b&quot;:3,&quot;c&quot;:1}&lt;/options&gt;&#10;            &lt;outcomes&gt;!data.outcomes&lt;/outcomes&gt;&#10;            &lt;at&gt;!data.at&lt;/at&gt;&#10;            &lt;seed&gt;!data.seed + 1&lt;/seed&gt;&#10;          &lt;/arguments&gt;&#10;        &lt;/parameters&gt;&#10;        &lt;code&gt;&#10;          &lt;finalize output=&quot;result&quot;&gt;data.decision = result['decision']&lt;/finalize&gt;&#10;        &lt;/code&gt;&#10;      &lt;/call&gt;&#10;      &lt;call id=&quot;a2&quot; endpoint=&quot;timeout&quot;&gt;&#10;        &lt;parameters&gt;&#10;          &lt;label&gt;C&lt;/label&gt;&#10;          &lt;arguments&gt;&#10;            &lt;timeout&gt;30&lt;/timeout&gt;&#10;          &lt;/arguments&gt;&#10;        &lt;/parameters&gt;&#10;      &lt;/call&gt;&#10;      &lt;call id=&quot;a3&quot; endpoint=&quot;timeout&quot;&gt;&#10;        &lt;parameters&gt;&#10;          &lt;label&gt;D&lt;/label&gt;&#10;          &lt;arguments&gt;&#10;            &lt;timeout&gt;2&lt;/timeout&gt;&#10;          &lt;/arguments&gt;&#10;        &lt;/parameters&gt;&#10;      &lt;/call&gt;&#10;      &lt;call id=&quot;a4&quot; endpoint=&quot;timeout&quot;&gt;&#10;        &lt;parameters&gt;&#10;          &lt;label&gt;E&lt;/label&gt;&#10;          &lt;arguments&gt;&#10;            &lt;timeout&gt;2&lt;/timeout&gt;&#10;          &lt;/arguments&gt;&#10;        &lt;/parameters&gt;&#10;      &lt;/call&gt;&#10;      &lt;call id=&quot;a5&quot; endpoint=&quot;timeout&quot;&gt;&#10;        &lt;parameters&gt;&#10;          &lt;label&gt;F&lt;/label&gt;&#10;          &lt;arguments&gt;&#10;            &lt;timeout&gt;2&lt;/timeout&gt;&#10;          &lt;/arguments&gt;&#10;        &lt;/parameters&gt;&#10;      &lt;/call&gt;&#10;      &lt;choose mode=&quot;exclusive&quot;&gt;&#10;        &lt;alternative condition=&quot;data.decision == 'a'&quot;&gt;&#10;          &lt;call id=&quot;a14&quot; endpoint=&quot;timeout&quot;&gt;&#10;            &lt;parameters&gt;&#10;              &lt;label&gt;G&lt;/label&gt;&#10;              &lt;arguments&gt;&#10;                &lt;timeout&gt;1&lt;/timeout&gt;&#10;              &lt;/arguments&gt;&#10;            &lt;/parameters&gt;&#10;          &lt;/call&gt;&#10;        &lt;/alternative&gt;&#10;        &lt;alternative condition=&quot;data.decision == 'b'&quot;&gt;&#10;          &lt;call id=&quot;a7&quot; endpoint=&quot;timeout&quot;&gt;&#10;            &lt;parameters&gt;&#10;              &lt;label&gt;H&lt;/label&gt;&#10;              &lt;arguments&gt;&#10;                &lt;timeout&gt;1&lt;/timeout&gt;&#10;              &lt;/arguments&gt;&#10;            &lt;/parameters&gt;&#10;          &lt;/call&gt;&#10;        &lt;/alternative&gt;&#10;        &lt;otherwise&gt;&#10;          &lt;call id=&quot;a11&quot; endpoint=&quot;timeout&quot;&gt;&#10;            &lt;parameters&gt;&#10;              &lt;label&gt;I&lt;/label&gt;&#10;              &lt;arguments&gt;&#10;                &lt;timeout&gt;1&lt;/timeout&gt;&#10;              &lt;/arguments&gt;&#10;            &lt;/parameters&gt;&#10;          &lt;/call&gt;&#10;        &lt;/otherwise&gt;&#10;      &lt;/choose&gt;&#10;    &lt;/parallel_branch&gt;&#10;    &lt;parallel_branch&gt;&#10;      &lt;call id=&quot;a6&quot; endpoint=&quot;record&quot;&gt;&#10;        &lt;parameters&gt;&#10;          &lt;label&gt;record&lt;/label&gt;&#10;          &lt;arguments&gt;&#10;            &lt;stream&gt;sensor&lt;/stream&gt;&#10;            &lt;interval&gt;1&lt;/interval&gt;&#10;            &lt;start&gt;5&lt;/start&gt;&#10;            &lt;seed&gt;!data.seed&lt;/seed&gt;&#10;            &lt;phases&gt;!data.phases&lt;/phases&gt;&#10;          &lt;/arguments&gt;&#10;        &lt;/parameters&gt;&#10;        &lt;annotations&gt;&#10;          &lt;_context_data_analysis&gt;&#10;            &lt;probes&gt;&#10;              &lt;probe&gt;&#10;                &lt;id&gt;sensor&lt;/id&gt;&#10;                &lt;source&gt;simulation&lt;/source&gt;&#10;                &lt;extractor_type&gt;extrinsic&lt;/extractor_type&gt;&#10;                &lt;extractor_code&gt;if(result.is_a?(Hash) &amp;amp;&amp;amp; result['points'].is_a?(Array)) then&#10;  s = Stream.new('sensor')&#10;  result['points'].each do |p|&#10;    sp = StreamPoint.new('sensor')&#10;    sp.value = p['value']&#10;    sp.timestamp = p['timestamp']&#10;    s &amp;lt;&amp;lt; sp&#10;  end&#10;  s&#10;end&lt;/extractor_code&gt;&#10;                &lt;extractor_url/&gt;&#10;                &lt;extractor_params/&gt;&#10;                &lt;visualizer_url/&gt;&#10;                &lt;visualizer_params/&gt;&#10;              &lt;/probe&gt;&#10;            &lt;/probes&gt;&#10;            &lt;ips/&gt;&#10;          &lt;/_context_data_analysis&gt;&#10;        &lt;/annotations&gt;&#10;      &lt;/call&gt;&#10;    &lt;/parallel_branch&gt;&#10;  &lt;/parallel&gt;&#10;&lt;/description&gt;&#10;"/>
+        <string key="cpee:change_uuid" value="f1f7904d410f2d7c2d3105f54a28b5e99ba0af99"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:40.814568+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="id:id" value="ex-ante"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="state/change"/>
+        <string key="cpee:state" value="running"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:42.833194+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="init simulation"/>
+        <string key="id:id" value="a20"/>
+        <string key="cpee:activity" value="a20"/>
+        <string key="cpee:activity_uuid" value="0bb3bdb841a43642991f8d969142e3ff"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="dataelements/change"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="seed"/>
+            <int key="value" value="277256671"/>
+          </list>
+          <list key="element">
+            <string key="name" value="extra"/>
+          </list>
+          <list key="element">
+            <string key="name" value="phases"/>
+            <string key="value" value="[{&quot;name&quot;:&quot;warmup&quot;,&quot;behavior&quot;:&quot;steady&quot;,&quot;level&quot;:5,&quot;noise&quot;:0.3,&quot;points&quot;:10},{&quot;name&quot;:&quot;ramp&quot;,&quot;behavior&quot;:&quot;ramp&quot;,&quot;to&quot;:12,&quot;noise&quot;:0.3,&quot;points&quot;:10},{&quot;name&quot;:&quot;outcome&quot;,&quot;behavior&quot;:&quot;steady&quot;,&quot;noise&quot;:0.3,&quot;points&quot;:10}]"/>
+          </list>
+          <list key="element">
+            <string key="name" value="outcomes"/>
+            <string key="value" value="{&quot;a&quot;:[{&quot;name&quot;:&quot;outcome&quot;,&quot;behavior&quot;:&quot;steady&quot;,&quot;noise&quot;:0.3,&quot;points&quot;:10}],&quot;b&quot;:[{&quot;name&quot;:&quot;outcome&quot;,&quot;behavior&quot;:&quot;ramp&quot;,&quot;noise&quot;:0.3,&quot;points&quot;:10,&quot;to&quot;:3}],&quot;c&quot;:[{&quot;name&quot;:&quot;outcome&quot;,&quot;behavior&quot;:&quot;ramp&quot;,&quot;noise&quot;:0.3,&quot;points&quot;:10,&quot;to&quot;:18}]}"/>
+          </list>
+          <list key="element">
+            <string key="name" value="at"/>
+            <int key="value" value="2"/>
+          </list>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:26:43.269496+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="init simulation"/>
+        <string key="id:id" value="a20"/>
+        <string key="cpee:activity" value="a20"/>
+        <string key="cpee:activity_uuid" value="0bb3bdb841a43642991f8d969142e3ff"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="complete"/>
+        <string key="cpee:lifecycle:transition" value="activity/done"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:43.285146+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="A"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a1"/>
+        <string key="cpee:activity" value="a1"/>
+        <string key="cpee:activity_uuid" value="2b1d4e13fde94a76fc8bc3dfe87d9036"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="start"/>
+        <string key="cpee:lifecycle:transition" value="activity/calling"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="timeout"/>
+            <string key="value" value="4"/>
+          </list>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:26:43.322672+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="record"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/record"/>
+        <string key="id:id" value="a6"/>
+        <string key="cpee:activity" value="a6"/>
+        <string key="cpee:activity_uuid" value="79d5f27258f0aead10c21410f2dafdc6"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="start"/>
+        <string key="cpee:lifecycle:transition" value="activity/calling"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="stream"/>
+            <string key="value" value="sensor"/>
+          </list>
+          <list key="element">
+            <string key="name" value="interval"/>
+            <string key="value" value="1"/>
+          </list>
+          <list key="element">
+            <string key="name" value="start"/>
+            <string key="value" value="5"/>
+          </list>
+          <list key="element">
+            <string key="name" value="seed"/>
+            <int key="value" value="277256671"/>
+          </list>
+          <list key="element">
+            <string key="name" value="phases"/>
+            <string key="value" value="[{&quot;name&quot;:&quot;warmup&quot;,&quot;behavior&quot;:&quot;steady&quot;,&quot;level&quot;:5,&quot;noise&quot;:0.3,&quot;points&quot;:10},{&quot;name&quot;:&quot;ramp&quot;,&quot;behavior&quot;:&quot;ramp&quot;,&quot;to&quot;:12,&quot;noise&quot;:0.3,&quot;points&quot;:10},{&quot;name&quot;:&quot;outcome&quot;,&quot;behavior&quot;:&quot;steady&quot;,&quot;noise&quot;:0.3,&quot;points&quot;:10}]"/>
+          </list>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:26:43.351761+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="A"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a1"/>
+        <string key="cpee:activity" value="a1"/>
+        <string key="cpee:activity_uuid" value="2b1d4e13fde94a76fc8bc3dfe87d9036"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="activity/receiving"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:47.409851+01:00"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="result"/>
+            <string key="mimetype" value="application/json"/>
+            <string key="data" value="{}"/>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="A"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a1"/>
+        <string key="cpee:activity" value="a1"/>
+        <string key="cpee:activity_uuid" value="2b1d4e13fde94a76fc8bc3dfe87d9036"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="complete"/>
+        <string key="cpee:lifecycle:transition" value="activity/done"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:47.411829+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="B"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a13"/>
+        <string key="cpee:activity" value="a13"/>
+        <string key="cpee:activity_uuid" value="b279c6207484dd94fa30ca0600f3ad01"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="start"/>
+        <string key="cpee:lifecycle:transition" value="activity/calling"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="timeout"/>
+            <string key="value" value="6"/>
+          </list>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:26:47.426040+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="B"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a13"/>
+        <string key="cpee:activity" value="a13"/>
+        <string key="cpee:activity_uuid" value="b279c6207484dd94fa30ca0600f3ad01"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="activity/receiving"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:53.438135+01:00"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="result"/>
+            <string key="mimetype" value="application/json"/>
+            <string key="data" value="{}"/>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="B"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a13"/>
+        <string key="cpee:activity" value="a13"/>
+        <string key="cpee:activity_uuid" value="b279c6207484dd94fa30ca0600f3ad01"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="complete"/>
+        <string key="cpee:lifecycle:transition" value="activity/done"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:53.440193+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="random decision"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/decide"/>
+        <string key="id:id" value="a8"/>
+        <string key="cpee:activity" value="a8"/>
+        <string key="cpee:activity_uuid" value="54135aecb9705d55e74e8dca221baa2e"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="start"/>
+        <string key="cpee:lifecycle:transition" value="activity/calling"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="options"/>
+            <string key="value" value="{&quot;a&quot;:2,&quot;b&quot;:3,&quot;c&quot;:1}"/>
+          </list>
+          <list key="element">
+            <string key="name" value="outcomes"/>
+            <string key="value" value="{&quot;a&quot;:[{&quot;name&quot;:&quot;outcome&quot;,&quot;behavior&quot;:&quot;steady&quot;,&quot;noise&quot;:0.3,&quot;points&quot;:10}],&quot;b&quot;:[{&quot;name&quot;:&quot;outcome&quot;,&quot;behavior&quot;:&quot;ramp&quot;,&quot;noise&quot;:0.3,&quot;points&quot;:10,&quot;to&quot;:3}],&quot;c&quot;:[{&quot;name&quot;:&quot;outcome&quot;,&quot;behavior&quot;:&quot;ramp&quot;,&quot;noise&quot;:0.3,&quot;points&quot;:10,&quot;to&quot;:18}]}"/>
+          </list>
+          <list key="element">
+            <string key="name" value="at"/>
+            <int key="value" value="2"/>
+          </list>
+          <list key="element">
+            <string key="name" value="seed"/>
+            <int key="value" value="277256672"/>
+          </list>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:26:53.481417+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="random decision"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/decide"/>
+        <string key="id:id" value="a8"/>
+        <string key="cpee:activity" value="a8"/>
+        <string key="cpee:activity_uuid" value="54135aecb9705d55e74e8dca221baa2e"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="activity/receiving"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:53.565494+01:00"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="return"/>
+            <string key="mimetype" value="application/json"/>
+            <string key="data" value="{&quot;decision&quot;:&quot;a&quot;}"/>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="random decision"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/decide"/>
+        <string key="id:id" value="a8"/>
+        <string key="cpee:activity" value="a8"/>
+        <string key="cpee:activity_uuid" value="54135aecb9705d55e74e8dca221baa2e"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="dataelements/change"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="decision"/>
+            <string key="value" value="a"/>
+          </list>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:26:53.587029+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="random decision"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/decide"/>
+        <string key="id:id" value="a8"/>
+        <string key="cpee:activity" value="a8"/>
+        <string key="cpee:activity_uuid" value="54135aecb9705d55e74e8dca221baa2e"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="complete"/>
+        <string key="cpee:lifecycle:transition" value="activity/done"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:53.587250+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="C"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a2"/>
+        <string key="cpee:activity" value="a2"/>
+        <string key="cpee:activity_uuid" value="64702a67d4bd42ef7b5b262e481029f7"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="start"/>
+        <string key="cpee:lifecycle:transition" value="activity/calling"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="timeout"/>
+            <date key="value" value="30"/>
+          </list>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:26:53.589230+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="record"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/record"/>
+        <string key="id:id" value="a6"/>
+        <string key="cpee:activity" value="a6"/>
+        <string key="cpee:activity_uuid" value="79d5f27258f0aead10c21410f2dafdc6"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="activity/receiving"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:55.719174+01:00"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="result"/>
+            <string key="mimetype" value="application/json"/>
+            <string key="data" value="{&quot;stream&quot;:&quot;sensor&quot;,&quot;phase&quot;:&quot;warmup&quot;,&quot;points&quot;:[{&quot;value&quot;:4.601789899797131,&quot;timestamp&quot;:&quot;2026-11-15T02:26:44.428+01:00&quot;},{&quot;value&quot;:5.323998827796809,&quot;timestamp&quot;:&quot;2026-11-15T02:26:45.428+01:00&quot;},{&quot;value&quot;:4.9605591015871635,&quot;timestamp&quot;:&quot;2026-11-15T02:26:46.428+01:00&quot;},{&quot;value&quot;:5.20386862452282,&quot;timestamp&quot;:&quot;2026-11-15T02:26:47.428+01:00&quot;},{&quot;value&quot;:5.215362137070909,&quot;timestamp&quot;:&quot;2026-11-15T02:26:48.428+01:00&quot;},{&quot;value&quot;:4.9578991142732,&quot;timestamp&quot;:&quot;2026-11-15T02:26:49.428+01:00&quot;},{&quot;value&quot;:4.447441175246584,&quot;timestamp&quot;:&quot;2026-11-15T02:26:50.428+01:00&quot;},{&quot;value&quot;:4.844512784472803,&quot;timestamp&quot;:&quot;2026-11-15T02:26:51.428+01:00&quot;},{&quot;value&quot;:5.150031964039467,&quot;timestamp&quot;:&quot;2026-11-15T02:26:52.428+01:00&quot;},{&quot;value&quot;:4.88914628910714,&quot;timestamp&quot;:&quot;2026-11-15T02:26:53.428+01:00&quot;}]}"/>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="record"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/record"/>
+        <string key="id:id" value="a6"/>
+        <string key="cpee:activity" value="a6"/>
+        <string key="cpee:activity_uuid" value="79d5f27258f0aead10c21410f2dafdc6"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="stream/data"/>
+        <date key="time:timestamp" value="2026-11-15T02:26:55.723250+01:00"/>
+        <list key="stream:datastream">
+          <list key="element">
+            <string key="stream:name" value="sensor"/>
+          </list>
+          <list key="element">
+            <string key="stream:source" value="simulation"/>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="4.601789899797131"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:44.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="5.323998827796809"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:45.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="4.9605591015871635"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:46.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="5.20386862452282"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:47.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="5.215362137070909"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:48.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="4.9578991142732"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:49.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="4.447441175246584"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:50.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="4.844512784472803"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:51.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="5.150031964039467"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:52.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="4.88914628910714"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:53.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="record"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/record"/>
+        <string key="id:id" value="a6"/>
+        <string key="cpee:activity" value="a6"/>
+        <string key="cpee:activity_uuid" value="79d5f27258f0aead10c21410f2dafdc6"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="activity/receiving"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:03.466332+01:00"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="result"/>
+            <string key="mimetype" value="application/json"/>
+            <string key="data" value="{&quot;stream&quot;:&quot;sensor&quot;,&quot;phase&quot;:&quot;ramp&quot;,&quot;points&quot;:[{&quot;value&quot;:5.275261354855235,&quot;timestamp&quot;:&quot;2026-11-15T02:26:54.428+01:00&quot;},{&quot;value&quot;:5.879294090393871,&quot;timestamp&quot;:&quot;2026-11-15T02:26:55.428+01:00&quot;},{&quot;value&quot;:7.328778381791894,&quot;timestamp&quot;:&quot;2026-11-15T02:26:56.428+01:00&quot;},{&quot;value&quot;:8.147141121278166,&quot;timestamp&quot;:&quot;2026-11-15T02:26:57.428+01:00&quot;},{&quot;value&quot;:8.315986570237131,&quot;timestamp&quot;:&quot;2026-11-15T02:26:58.428+01:00&quot;},{&quot;value&quot;:9.498940103171138,&quot;timestamp&quot;:&quot;2026-11-15T02:26:59.428+01:00&quot;},{&quot;value&quot;:9.789219479773552,&quot;timestamp&quot;:&quot;2026-11-15T02:27:00.428+01:00&quot;},{&quot;value&quot;:10.267977674789407,&quot;timestamp&quot;:&quot;2026-11-15T02:27:01.428+01:00&quot;},{&quot;value&quot;:11.367956462178627,&quot;timestamp&quot;:&quot;2026-11-15T02:27:02.428+01:00&quot;},{&quot;value&quot;:11.523608086812805,&quot;timestamp&quot;:&quot;2026-11-15T02:27:03.428+01:00&quot;}]}"/>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="record"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/record"/>
+        <string key="id:id" value="a6"/>
+        <string key="cpee:activity" value="a6"/>
+        <string key="cpee:activity_uuid" value="79d5f27258f0aead10c21410f2dafdc6"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="stream/data"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:03.466959+01:00"/>
+        <list key="stream:datastream">
+          <list key="element">
+            <string key="stream:name" value="sensor"/>
+          </list>
+          <list key="element">
+            <string key="stream:source" value="simulation"/>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="5.275261354855235"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:54.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="5.879294090393871"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:55.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="7.328778381791894"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:56.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="8.147141121278166"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:57.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="8.315986570237131"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:58.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="9.498940103171138"/>
+              <date key="stream:timestamp" value="2026-11-15T02:26:59.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="9.789219479773552"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:00.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="10.267977674789407"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:01.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="11.367956462178627"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:02.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="11.523608086812805"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:03.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="record"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/record"/>
+        <string key="id:id" value="a6"/>
+        <string key="cpee:activity" value="a6"/>
+        <string key="cpee:activity_uuid" value="79d5f27258f0aead10c21410f2dafdc6"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="activity/receiving"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:13.457231+01:00"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="result"/>
+            <string key="mimetype" value="application/json"/>
+            <string key="data" value="{&quot;stream&quot;:&quot;sensor&quot;,&quot;phase&quot;:&quot;outcome&quot;,&quot;points&quot;:[{&quot;value&quot;:11.901575908535031,&quot;timestamp&quot;:&quot;2026-11-15T02:27:04.428+01:00&quot;},{&quot;value&quot;:11.712079532496286,&quot;timestamp&quot;:&quot;2026-11-15T02:27:05.428+01:00&quot;},{&quot;value&quot;:11.927142641867205,&quot;timestamp&quot;:&quot;2026-11-15T02:27:06.428+01:00&quot;},{&quot;value&quot;:12.225242080138297,&quot;timestamp&quot;:&quot;2026-11-15T02:27:07.428+01:00&quot;},{&quot;value&quot;:11.086475740713865,&quot;timestamp&quot;:&quot;2026-11-15T02:27:08.428+01:00&quot;},{&quot;value&quot;:11.562157412619706,&quot;timestamp&quot;:&quot;2026-11-15T02:27:09.428+01:00&quot;},{&quot;value&quot;:11.469686397754272,&quot;timestamp&quot;:&quot;2026-11-15T02:27:10.428+01:00&quot;},{&quot;value&quot;:11.654704881538317,&quot;timestamp&quot;:&quot;2026-11-15T02:27:11.428+01:00&quot;},{&quot;value&quot;:11.304918356458419,&quot;timestamp&quot;:&quot;2026-11-15T02:27:12.428+01:00&quot;},{&quot;value&quot;:11.691676445745095,&quot;timestamp&quot;:&quot;2026-11-15T02:27:13.428+01:00&quot;}]}"/>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="record"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/record"/>
+        <string key="id:id" value="a6"/>
+        <string key="cpee:activity" value="a6"/>
+        <string key="cpee:activity_uuid" value="79d5f27258f0aead10c21410f2dafdc6"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="stream/data"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:13.457468+01:00"/>
+        <list key="stream:datastream">
+          <list key="element">
+            <string key="stream:name" value="sensor"/>
+          </list>
+          <list key="element">
+            <string key="stream:source" value="simulation"/>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="11.901575908535031"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:04.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="11.712079532496286"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:05.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="11.927142641867205"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:06.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="12.225242080138297"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:07.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="11.086475740713865"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:08.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="11.562157412619706"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:09.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="11.469686397754272"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:10.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="11.654704881538317"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:11.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="11.304918356458419"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:12.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+          <list key="element">
+            <list key="stream:point">
+              <string key="stream:id" value="sensor"/>
+              <float key="stream:value" value="11.691676445745095"/>
+              <date key="stream:timestamp" value="2026-11-15T02:27:13.428+01:00"/>
+              <string key="stream:source" value="simulation"/>
+            </list>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="record"/>
+        <string key="concept:endpoint" value="https-get://lehre.bpm.in.tum.de/ports/4570/record"/>
+        <string key="id:id" value="a6"/>
+        <string key="cpee:activity" value="a6"/>
+        <string key="cpee:activity_uuid" value="79d5f27258f0aead10c21410f2dafdc6"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="complete"/>
+        <string key="cpee:lifecycle:transition" value="activity/done"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:13.462794+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="C"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a2"/>
+        <string key="cpee:activity" value="a2"/>
+        <string key="cpee:activity_uuid" value="64702a67d4bd42ef7b5b262e481029f7"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="activity/receiving"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:23.599400+01:00"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="result"/>
+            <string key="mimetype" value="application/json"/>
+            <string key="data" value="{}"/>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="C"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a2"/>
+        <string key="cpee:activity" value="a2"/>
+        <string key="cpee:activity_uuid" value="64702a67d4bd42ef7b5b262e481029f7"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="complete"/>
+        <string key="cpee:lifecycle:transition" value="activity/done"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:23.600394+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="D"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a3"/>
+        <string key="cpee:activity" value="a3"/>
+        <string key="cpee:activity_uuid" value="778704d8d94c54fa777cc112e5abc875"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="start"/>
+        <string key="cpee:lifecycle:transition" value="activity/calling"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="timeout"/>
+            <string key="value" value="2"/>
+          </list>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:27:23.613140+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="D"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a3"/>
+        <string key="cpee:activity" value="a3"/>
+        <string key="cpee:activity_uuid" value="778704d8d94c54fa777cc112e5abc875"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="activity/receiving"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:25.623604+01:00"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="result"/>
+            <string key="mimetype" value="application/json"/>
+            <string key="data" value="{}"/>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="D"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a3"/>
+        <string key="cpee:activity" value="a3"/>
+        <string key="cpee:activity_uuid" value="778704d8d94c54fa777cc112e5abc875"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="complete"/>
+        <string key="cpee:lifecycle:transition" value="activity/done"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:25.624429+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="E"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a4"/>
+        <string key="cpee:activity" value="a4"/>
+        <string key="cpee:activity_uuid" value="358f5e4e813c90d8c4027add0be3d0c0"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="start"/>
+        <string key="cpee:lifecycle:transition" value="activity/calling"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="timeout"/>
+            <string key="value" value="2"/>
+          </list>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:27:25.638634+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="E"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a4"/>
+        <string key="cpee:activity" value="a4"/>
+        <string key="cpee:activity_uuid" value="358f5e4e813c90d8c4027add0be3d0c0"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="activity/receiving"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:27.646862+01:00"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="result"/>
+            <string key="mimetype" value="application/json"/>
+            <string key="data" value="{}"/>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="E"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a4"/>
+        <string key="cpee:activity" value="a4"/>
+        <string key="cpee:activity_uuid" value="358f5e4e813c90d8c4027add0be3d0c0"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="complete"/>
+        <string key="cpee:lifecycle:transition" value="activity/done"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:27.647730+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="F"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a5"/>
+        <string key="cpee:activity" value="a5"/>
+        <string key="cpee:activity_uuid" value="ca78c11f8595e62e19f030b33e4084a2"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="start"/>
+        <string key="cpee:lifecycle:transition" value="activity/calling"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="timeout"/>
+            <string key="value" value="2"/>
+          </list>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:27:27.660791+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="F"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a5"/>
+        <string key="cpee:activity" value="a5"/>
+        <string key="cpee:activity_uuid" value="ca78c11f8595e62e19f030b33e4084a2"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="activity/receiving"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:29.669739+01:00"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="result"/>
+            <string key="mimetype" value="application/json"/>
+            <string key="data" value="{}"/>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="F"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a5"/>
+        <string key="cpee:activity" value="a5"/>
+        <string key="cpee:activity_uuid" value="ca78c11f8595e62e19f030b33e4084a2"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="complete"/>
+        <string key="cpee:lifecycle:transition" value="activity/done"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:29.672061+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="id:id" value="e_1_2_1_8_1"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="gateway/decide"/>
+        <list key="data">
+          <string key="condition" value="data.decision == 'a'"/>
+          <string key="type" value="alternative"/>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:27:29.690123+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="G"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a14"/>
+        <string key="cpee:activity" value="a14"/>
+        <string key="cpee:activity_uuid" value="22de65893d1c022d4a6c229fa99a419a"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="start"/>
+        <string key="cpee:lifecycle:transition" value="activity/calling"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="timeout"/>
+            <string key="value" value="1"/>
+          </list>
+        </list>
+        <date key="time:timestamp" value="2026-11-15T02:27:29.690816+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="G"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a14"/>
+        <string key="cpee:activity" value="a14"/>
+        <string key="cpee:activity_uuid" value="22de65893d1c022d4a6c229fa99a419a"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="activity/receiving"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:30.703125+01:00"/>
+        <list key="data">
+          <list key="element">
+            <string key="name" value="result"/>
+            <string key="mimetype" value="application/json"/>
+            <string key="data" value="{}"/>
+          </list>
+        </list>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="concept:name" value="G"/>
+        <string key="concept:endpoint" value="https-post://cpee.org/services/timeout.php"/>
+        <string key="id:id" value="a14"/>
+        <string key="cpee:activity" value="a14"/>
+        <string key="cpee:activity_uuid" value="22de65893d1c022d4a6c229fa99a419a"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="complete"/>
+        <string key="cpee:lifecycle:transition" value="activity/done"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:30.717219+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="id:id" value="e_1_2_1_8"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="gateway/join"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:30.717865+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="id:id" value="e_1_2"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="gateway/join"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:30.718753+01:00"/>
+      </event>
+      <event xmlns="http://www.xes-standard.org/">
+        <int key="concept:instance" value="116660"/>
+        <string key="id:id" value="ex-ante"/>
+        <string key="cpee:instance" value="f3b02f43-bbbc-4c46-aed9-404a9bafdb7f"/>
+        <string key="lifecycle:transition" value="unknown"/>
+        <string key="cpee:lifecycle:transition" value="state/change"/>
+        <string key="cpee:state" value="finished"/>
+        <date key="time:timestamp" value="2026-11-15T02:27:30.719245+01:00"/>
+      </event>
+    </trace>
+  </log>

@@ -1,0 +1,1119 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="generated" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <page id="g0">
+      <place id="place_start_place_3dc05c11-e072-42b3-99d9-e07322d09228">
+        <name>
+          <text>place_start_place_3dc05c11-e072-42b3-99d9-e07322d09228</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_end_place_79f96f7e-d10f-47a7-9029-622309289c6e">
+        <name>
+          <text>place_end_place_79f96f7e-d10f-47a7-9029-622309289c6e</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_8f0f6a32-cc65-425b-bc39-47715ba50ab7">
+        <name>
+          <text>place_new_8f0f6a32-cc65-425b-bc39-47715ba50ab7</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_merge_place_fd4f26cd-128c-4b14-a156-0e850e2ba886">
+        <name>
+          <text>place_merge_place_fd4f26cd-128c-4b14-a156-0e850e2ba886</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_branch_split_place_0d738b2d-6e9d-4a5f-a852-976cb6e40495">
+        <name>
+          <text>place_branch_split_place_0d738b2d-6e9d-4a5f-a852-976cb6e40495</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_branch_merge_place_de807ee5-f2aa-4f91-aa77-648900e4c1d8">
+        <name>
+          <text>place_branch_merge_place_de807ee5-f2aa-4f91-aa77-648900e4c1d8</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_d7f74239-59eb-4d51-a30c-53bc30a75f73">
+        <name>
+          <text>place_new_d7f74239-59eb-4d51-a30c-53bc30a75f73</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_1c6f84c9-1bad-4096-a497-b0ff306a3be4">
+        <name>
+          <text>place_new_1c6f84c9-1bad-4096-a497-b0ff306a3be4</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_calling_3ee20533-94bd-4e86-887a-021ae2c373b1">
+        <name>
+          <text>place_new_calling_3ee20533-94bd-4e86-887a-021ae2c373b1</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_a2a5bb96-f669-4e16-ab3f-1eae2238f8d0">
+        <name>
+          <text>place_new_receiving_a2a5bb96-f669-4e16-ab3f-1eae2238f8d0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_2578d431-8233-4f68-a4d1-efe8c822f35e">
+        <name>
+          <text>place_new_2578d431-8233-4f68-a4d1-efe8c822f35e</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_calling_966d3708-40b7-47cf-9482-012cee6d480f">
+        <name>
+          <text>place_new_calling_966d3708-40b7-47cf-9482-012cee6d480f</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_8b53f179-5c60-479b-bd3e-bfb6bc825686">
+        <name>
+          <text>place_new_receiving_8b53f179-5c60-479b-bd3e-bfb6bc825686</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_7e788e42-447c-4bc3-af0e-f344fb422140">
+        <name>
+          <text>place_new_7e788e42-447c-4bc3-af0e-f344fb422140</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_calling_982287bb-1923-41c4-85ad-181d03c9d2e8">
+        <name>
+          <text>place_new_calling_982287bb-1923-41c4-85ad-181d03c9d2e8</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_f6e4057e-87c8-47d4-b7a3-46136030c908">
+        <name>
+          <text>place_new_receiving_f6e4057e-87c8-47d4-b7a3-46136030c908</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_73aeba1a-6d43-4c83-864f-b0a5c06994ac">
+        <name>
+          <text>place_new_73aeba1a-6d43-4c83-864f-b0a5c06994ac</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_calling_9469ddbc-04d4-44be-9271-07ce62fbc56b">
+        <name>
+          <text>place_new_calling_9469ddbc-04d4-44be-9271-07ce62fbc56b</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_d4985812-1f07-416f-b8d8-99ce8b0ffe11">
+        <name>
+          <text>place_new_receiving_d4985812-1f07-416f-b8d8-99ce8b0ffe11</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_96427860-de05-4510-a473-12cc3a7d5b4d">
+        <name>
+          <text>place_new_96427860-de05-4510-a473-12cc3a7d5b4d</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_calling_8ea091f6-8c64-4add-938f-53b7efa06e57">
+        <name>
+          <text>place_new_calling_8ea091f6-8c64-4add-938f-53b7efa06e57</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_8d7f1c5e-3b18-4b3d-b98c-c43afbfe8e44">
+        <name>
+          <text>place_new_receiving_8d7f1c5e-3b18-4b3d-b98c-c43afbfe8e44</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_cbcde6a2-5342-4ddd-889f-917b6ba8a832">
+        <name>
+          <text>place_new_cbcde6a2-5342-4ddd-889f-917b6ba8a832</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_calling_4410e59c-5e10-4eeb-abb6-60bb00dc205f">
+        <name>
+          <text>place_new_calling_4410e59c-5e10-4eeb-abb6-60bb00dc205f</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_d6d3b493-7ca9-4f72-a898-689f17980ad4">
+        <name>
+          <text>place_new_receiving_d6d3b493-7ca9-4f72-a898-689f17980ad4</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_b498fe78-09e4-4da4-b56b-710f70937245">
+        <name>
+          <text>place_new_b498fe78-09e4-4da4-b56b-710f70937245</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_calling_710e2ee2-71b9-4bc4-a2ff-b3c4b44dcf27">
+        <name>
+          <text>place_new_calling_710e2ee2-71b9-4bc4-a2ff-b3c4b44dcf27</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_9ae7bbda-f403-4da1-a996-d4f34fc8ca0f">
+        <name>
+          <text>place_new_receiving_9ae7bbda-f403-4da1-a996-d4f34fc8ca0f</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_merge_place_0a5050c7-447d-4ca6-992b-72385e18dd17">
+        <name>
+          <text>place_merge_place_0a5050c7-447d-4ca6-992b-72385e18dd17</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_f8feb9dd-4cba-47b7-b9da-ab9f13ccc954">
+        <name>
+          <text>place_new_f8feb9dd-4cba-47b7-b9da-ab9f13ccc954</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_c2b953c5-0fca-4563-8f0f-4171c1cd88bb">
+        <name>
+          <text>place_new_c2b953c5-0fca-4563-8f0f-4171c1cd88bb</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_calling_8d7733d0-2c62-4bf6-b1e4-020090e6a627">
+        <name>
+          <text>place_new_calling_8d7733d0-2c62-4bf6-b1e4-020090e6a627</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_39f03749-63ac-44d3-b118-b2bfe06309af">
+        <name>
+          <text>place_new_receiving_39f03749-63ac-44d3-b118-b2bfe06309af</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_067aeafe-4eba-4383-b745-056bb444a2fe">
+        <name>
+          <text>place_new_067aeafe-4eba-4383-b745-056bb444a2fe</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_6e4c08ba-d94d-4303-8e8c-f0fa62faaaa9">
+        <name>
+          <text>place_new_6e4c08ba-d94d-4303-8e8c-f0fa62faaaa9</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_calling_4701b08f-4958-44cd-ab1a-d98609ac3baa">
+        <name>
+          <text>place_new_calling_4701b08f-4958-44cd-ab1a-d98609ac3baa</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_079b5d51-a9c0-4601-a3b1-4ae8e803a941">
+        <name>
+          <text>place_new_receiving_079b5d51-a9c0-4601-a3b1-4ae8e803a941</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_0a384cb1-95d7-4ecf-bad0-a31f1c34e6be">
+        <name>
+          <text>place_new_0a384cb1-95d7-4ecf-bad0-a31f1c34e6be</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_d3160473-b496-4373-a851-529baa3c6722">
+        <name>
+          <text>place_new_d3160473-b496-4373-a851-529baa3c6722</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_calling_15943d7d-3d3d-48a9-bf0f-6e6dc436af3f">
+        <name>
+          <text>place_new_calling_15943d7d-3d3d-48a9-bf0f-6e6dc436af3f</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_f777178f-a1a0-4585-aec5-6150f599d0aa">
+        <name>
+          <text>place_new_receiving_f777178f-a1a0-4585-aec5-6150f599d0aa</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_branch_split_place_d532daa1-8853-4894-bb6f-962cbd567acd">
+        <name>
+          <text>place_branch_split_place_d532daa1-8853-4894-bb6f-962cbd567acd</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_branch_merge_place_f161b7e4-ccaf-4993-8aae-82a263bab3a5">
+        <name>
+          <text>place_branch_merge_place_f161b7e4-ccaf-4993-8aae-82a263bab3a5</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_5e035145-c193-4c8c-81a3-69346170cf74">
+        <name>
+          <text>place_new_5e035145-c193-4c8c-81a3-69346170cf74</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_0119516d-1064-48c9-849d-faae046490b6">
+        <name>
+          <text>place_new_0119516d-1064-48c9-849d-faae046490b6</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_calling_05c84c82-dbb1-4047-b93d-edc3fa05bb1b">
+        <name>
+          <text>place_new_calling_05c84c82-dbb1-4047-b93d-edc3fa05bb1b</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_pairs_end_ad3d92b6-185f-4aea-a97d-26abf92020d4">
+        <name>
+          <text>place_pairs_end_ad3d92b6-185f-4aea-a97d-26abf92020d4</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_c3d6ad77-185f-4505-81ca-a7457905a8ac">
+        <name>
+          <text>place_new_receiving_c3d6ad77-185f-4505-81ca-a7457905a8ac</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_data_cc4972e5-c84d-42f8-8cbb-3bfeb86937da">
+        <name>
+          <text>place_new_data_cc4972e5-c84d-42f8-8cbb-3bfeb86937da</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_pair_c1a4a584-98d8-417b-a5a1-73f4263400e0">
+        <name>
+          <text>place_new_pair_c1a4a584-98d8-417b-a5a1-73f4263400e0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_961e4333-cd6b-489d-9409-f709d1e45afb">
+        <name>
+          <text>place_new_receiving_961e4333-cd6b-489d-9409-f709d1e45afb</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_data_3154fb05-203d-45b2-9c43-a84a30278569">
+        <name>
+          <text>place_new_data_3154fb05-203d-45b2-9c43-a84a30278569</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_pair_c6ff6dc2-f094-4860-8f11-a6d021026133">
+        <name>
+          <text>place_new_pair_c6ff6dc2-f094-4860-8f11-a6d021026133</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_receiving_8f372ccf-0e2e-404d-b784-4f3f73e58475">
+        <name>
+          <text>place_new_receiving_8f372ccf-0e2e-404d-b784-4f3f73e58475</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <place id="place_new_data_60afafc5-24fb-482c-87bd-3e2c2ae058b5">
+        <name>
+          <text>place_new_data_60afafc5-24fb-482c-87bd-3e2c2ae058b5</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+        <capacity>
+          <text>1</text>
+        </capacity>
+      </place>
+      <transition id="transition_artificial_start_silent_5afbe4f8-b481-4600-a39f-63fdd17ac2ed">
+        <name>
+          <text>transition_artificial_start_silent_5afbe4f8-b481-4600-a39f-63fdd17ac2ed</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_split_transition_silent_7dba1b48-7b10-49a3-9e71-d00be0ba0c66">
+        <name>
+          <text>transition_split_transition_silent_7dba1b48-7b10-49a3-9e71-d00be0ba0c66</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_merge_transition_silent_677c629b-f341-4c20-adbd-95d1ddf40a7d">
+        <name>
+          <text>transition_merge_transition_silent_677c629b-f341-4c20-adbd-95d1ddf40a7d</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_artificial_start_silent_7217e2a3-bc63-4a18-ae6a-4f578ef56732">
+        <name>
+          <text>transition_artificial_start_silent_7217e2a3-bc63-4a18-ae6a-4f578ef56732</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a1_calling">
+        <name>
+          <text>a1_calling</text>
+        </name>
+      </transition>
+      <transition id="a1_done">
+        <name>
+          <text>a1_done</text>
+        </name>
+      </transition>
+      <transition id="a1_receiving">
+        <name>
+          <text>a1_receiving</text>
+        </name>
+      </transition>
+      <transition id="transition_redo_receiving_silent_82fb940c-e336-4cae-bca2-06a8da609bf7">
+        <name>
+          <text>transition_redo_receiving_silent_82fb940c-e336-4cae-bca2-06a8da609bf7</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a13_calling">
+        <name>
+          <text>a13_calling</text>
+        </name>
+      </transition>
+      <transition id="a13_done">
+        <name>
+          <text>a13_done</text>
+        </name>
+      </transition>
+      <transition id="a13_receiving">
+        <name>
+          <text>a13_receiving</text>
+        </name>
+      </transition>
+      <transition id="transition_redo_receiving_silent_5b36cf31-ff25-4ad7-8351-a2ee5244e5e2">
+        <name>
+          <text>transition_redo_receiving_silent_5b36cf31-ff25-4ad7-8351-a2ee5244e5e2</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a8_calling">
+        <name>
+          <text>a8_calling</text>
+        </name>
+      </transition>
+      <transition id="a8_done">
+        <name>
+          <text>a8_done</text>
+        </name>
+      </transition>
+      <transition id="a8_receiving">
+        <name>
+          <text>a8_receiving</text>
+        </name>
+      </transition>
+      <transition id="transition_redo_receiving_silent_ac35d1a8-d328-43a9-8798-de7362f4de31">
+        <name>
+          <text>transition_redo_receiving_silent_ac35d1a8-d328-43a9-8798-de7362f4de31</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a2_calling">
+        <name>
+          <text>a2_calling</text>
+        </name>
+      </transition>
+      <transition id="a2_done">
+        <name>
+          <text>a2_done</text>
+        </name>
+      </transition>
+      <transition id="a2_receiving">
+        <name>
+          <text>a2_receiving</text>
+        </name>
+      </transition>
+      <transition id="transition_redo_receiving_silent_7729a581-3bae-4611-ba6b-5c270fd4826f">
+        <name>
+          <text>transition_redo_receiving_silent_7729a581-3bae-4611-ba6b-5c270fd4826f</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a3_calling">
+        <name>
+          <text>a3_calling</text>
+        </name>
+      </transition>
+      <transition id="a3_done">
+        <name>
+          <text>a3_done</text>
+        </name>
+      </transition>
+      <transition id="a3_receiving">
+        <name>
+          <text>a3_receiving</text>
+        </name>
+      </transition>
+      <transition id="transition_redo_receiving_silent_ce245b82-e7da-4208-8f6f-b3da65fda0de">
+        <name>
+          <text>transition_redo_receiving_silent_ce245b82-e7da-4208-8f6f-b3da65fda0de</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a4_calling">
+        <name>
+          <text>a4_calling</text>
+        </name>
+      </transition>
+      <transition id="a4_done">
+        <name>
+          <text>a4_done</text>
+        </name>
+      </transition>
+      <transition id="a4_receiving">
+        <name>
+          <text>a4_receiving</text>
+        </name>
+      </transition>
+      <transition id="transition_redo_receiving_silent_c94e8447-07d2-416b-8bbf-1bedd2978130">
+        <name>
+          <text>transition_redo_receiving_silent_c94e8447-07d2-416b-8bbf-1bedd2978130</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a5_calling">
+        <name>
+          <text>a5_calling</text>
+        </name>
+      </transition>
+      <transition id="a5_done">
+        <name>
+          <text>a5_done</text>
+        </name>
+      </transition>
+      <transition id="a5_receiving">
+        <name>
+          <text>a5_receiving</text>
+        </name>
+      </transition>
+      <transition id="transition_redo_receiving_silent_d2b24f92-f605-4bf6-b0ae-cdf8e037cae5">
+        <name>
+          <text>transition_redo_receiving_silent_d2b24f92-f605-4bf6-b0ae-cdf8e037cae5</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_artificial_start_silent_f9359cc4-ba74-417c-b334-42e0477add7b">
+        <name>
+          <text>transition_artificial_start_silent_f9359cc4-ba74-417c-b334-42e0477add7b</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a14_calling">
+        <name>
+          <text>a14_calling</text>
+        </name>
+      </transition>
+      <transition id="a14_done">
+        <name>
+          <text>a14_done</text>
+        </name>
+      </transition>
+      <transition id="a14_receiving">
+        <name>
+          <text>a14_receiving</text>
+        </name>
+      </transition>
+      <transition id="transition_redo_receiving_silent_e8129152-5837-4487-a73b-662506dce055">
+        <name>
+          <text>transition_redo_receiving_silent_e8129152-5837-4487-a73b-662506dce055</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_artificial_end_silent_265fd45b-0350-4c4f-901d-6207bd0945ef">
+        <name>
+          <text>transition_artificial_end_silent_265fd45b-0350-4c4f-901d-6207bd0945ef</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_artificial_start_silent_f3271338-8e79-4aa4-a3aa-976549d40d08">
+        <name>
+          <text>transition_artificial_start_silent_f3271338-8e79-4aa4-a3aa-976549d40d08</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a7_calling">
+        <name>
+          <text>a7_calling</text>
+        </name>
+      </transition>
+      <transition id="a7_done">
+        <name>
+          <text>a7_done</text>
+        </name>
+      </transition>
+      <transition id="a7_receiving">
+        <name>
+          <text>a7_receiving</text>
+        </name>
+      </transition>
+      <transition id="transition_redo_receiving_silent_23c0c792-1d63-462d-8feb-1c5ac6a617a6">
+        <name>
+          <text>transition_redo_receiving_silent_23c0c792-1d63-462d-8feb-1c5ac6a617a6</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_artificial_end_silent_5ea8021e-7916-45e4-9654-50c81ad8271e">
+        <name>
+          <text>transition_artificial_end_silent_5ea8021e-7916-45e4-9654-50c81ad8271e</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_artificial_start_silent_3fea72e9-6168-4756-95ea-4a5b5da53f76">
+        <name>
+          <text>transition_artificial_start_silent_3fea72e9-6168-4756-95ea-4a5b5da53f76</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a11_calling">
+        <name>
+          <text>a11_calling</text>
+        </name>
+      </transition>
+      <transition id="a11_done">
+        <name>
+          <text>a11_done</text>
+        </name>
+      </transition>
+      <transition id="a11_receiving">
+        <name>
+          <text>a11_receiving</text>
+        </name>
+      </transition>
+      <transition id="transition_redo_receiving_silent_6242725d-0557-45bd-a096-b6b0a31e571a">
+        <name>
+          <text>transition_redo_receiving_silent_6242725d-0557-45bd-a096-b6b0a31e571a</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_artificial_end_silent_581e90b7-379d-45c0-8192-333453b519f2">
+        <name>
+          <text>transition_artificial_end_silent_581e90b7-379d-45c0-8192-333453b519f2</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_artificial_end_silent_2fb2e9b8-24bf-4d9b-bbd9-9b29ba286dee">
+        <name>
+          <text>transition_artificial_end_silent_2fb2e9b8-24bf-4d9b-bbd9-9b29ba286dee</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_artificial_start_silent_11935e89-cde9-480f-8e8a-5f900b78e5ac">
+        <name>
+          <text>transition_artificial_start_silent_11935e89-cde9-480f-8e8a-5f900b78e5ac</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a6_calling">
+        <name>
+          <text>a6_calling</text>
+        </name>
+      </transition>
+      <transition id="a6_done">
+        <name>
+          <text>a6_done</text>
+        </name>
+      </transition>
+      <transition id="a6_receiving^1">
+        <name>
+          <text>a6_receiving</text>
+        </name>
+      </transition>
+      <transition id="a6_sensor_stable^1">
+        <name>
+          <text>a6_sensor_stable</text>
+        </name>
+      </transition>
+      <transition id="transition_leave_pairs_silent_4d6f621c-70f3-40cf-8ace-8a2398d4752d">
+        <name>
+          <text>transition_leave_pairs_silent_4d6f621c-70f3-40cf-8ace-8a2398d4752d</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_next_pair_silent_9e0acdca-3197-4e65-be7c-52e066e2d22b">
+        <name>
+          <text>transition_next_pair_silent_9e0acdca-3197-4e65-be7c-52e066e2d22b</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a6_receiving^2">
+        <name>
+          <text>a6_receiving</text>
+        </name>
+      </transition>
+      <transition id="a6_sensor_increase^2">
+        <name>
+          <text>a6_sensor_increase</text>
+        </name>
+      </transition>
+      <transition id="transition_leave_pairs_silent_2e829467-5710-42e7-a9bf-0a0298ca6e7c">
+        <name>
+          <text>transition_leave_pairs_silent_2e829467-5710-42e7-a9bf-0a0298ca6e7c</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_next_pair_silent_7cd5b910-d48f-420d-92d6-fddf9fc4d37c">
+        <name>
+          <text>transition_next_pair_silent_7cd5b910-d48f-420d-92d6-fddf9fc4d37c</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="a6_receiving^3">
+        <name>
+          <text>a6_receiving</text>
+        </name>
+      </transition>
+      <transition id="a6_sensor_decrease^3">
+        <name>
+          <text>a6_sensor_decrease</text>
+        </name>
+      </transition>
+      <transition id="transition_leave_pairs_silent_fa5d0354-401c-48c2-890a-b940e99e8332">
+        <name>
+          <text>transition_leave_pairs_silent_fa5d0354-401c-48c2-890a-b940e99e8332</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_artificial_end_silent_9061df56-4ed2-42bf-872e-240a25e54907">
+        <name>
+          <text>transition_artificial_end_silent_9061df56-4ed2-42bf-872e-240a25e54907</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <transition id="transition_artificial_end_silent_fc10c642-0ec6-4af2-8d89-20d5d495235e">
+        <name>
+          <text>transition_artificial_end_silent_fc10c642-0ec6-4af2-8d89-20d5d495235e</text>
+        </name>
+        <toolspecific tool="ProM" activity="$invisible$"/>
+      </transition>
+      <arc id="arc_place_start_place_3dc05c11-e072-42b3-99d9-e07322d09228_transition_artificial_start_silent_5afbe4f8-b481-4600-a39f-63fdd17ac2ed_f485817c-29e0-4d8d-b9e9-5a878a13b339" source="place_start_place_3dc05c11-e072-42b3-99d9-e07322d09228" target="transition_artificial_start_silent_5afbe4f8-b481-4600-a39f-63fdd17ac2ed"/>
+      <arc id="arc_transition_artificial_start_silent_5afbe4f8-b481-4600-a39f-63fdd17ac2ed_place_new_8f0f6a32-cc65-425b-bc39-47715ba50ab7_23f1eadd-118d-4f58-ac1f-6f7c4440235d" source="transition_artificial_start_silent_5afbe4f8-b481-4600-a39f-63fdd17ac2ed" target="place_new_8f0f6a32-cc65-425b-bc39-47715ba50ab7"/>
+      <arc id="arc_place_new_8f0f6a32-cc65-425b-bc39-47715ba50ab7_transition_split_transition_silent_7dba1b48-7b10-49a3-9e71-d00be0ba0c66_260043a5-6104-49c6-b783-d3cfc2e2e67b" source="place_new_8f0f6a32-cc65-425b-bc39-47715ba50ab7" target="transition_split_transition_silent_7dba1b48-7b10-49a3-9e71-d00be0ba0c66"/>
+      <arc id="arc_transition_split_transition_silent_7dba1b48-7b10-49a3-9e71-d00be0ba0c66_place_branch_split_place_0d738b2d-6e9d-4a5f-a852-976cb6e40495_cb5ad129-ce19-494e-b796-5cea121ae7d3" source="transition_split_transition_silent_7dba1b48-7b10-49a3-9e71-d00be0ba0c66" target="place_branch_split_place_0d738b2d-6e9d-4a5f-a852-976cb6e40495"/>
+      <arc id="arc_place_branch_split_place_0d738b2d-6e9d-4a5f-a852-976cb6e40495_transition_artificial_start_silent_7217e2a3-bc63-4a18-ae6a-4f578ef56732_0df25c0f-57fc-4023-9449-0bf48770a886" source="place_branch_split_place_0d738b2d-6e9d-4a5f-a852-976cb6e40495" target="transition_artificial_start_silent_7217e2a3-bc63-4a18-ae6a-4f578ef56732"/>
+      <arc id="arc_transition_artificial_start_silent_7217e2a3-bc63-4a18-ae6a-4f578ef56732_place_new_d7f74239-59eb-4d51-a30c-53bc30a75f73_3bea053f-e467-43d1-a03c-9096ea2fccd5" source="transition_artificial_start_silent_7217e2a3-bc63-4a18-ae6a-4f578ef56732" target="place_new_d7f74239-59eb-4d51-a30c-53bc30a75f73"/>
+      <arc id="arc_place_new_d7f74239-59eb-4d51-a30c-53bc30a75f73_transition_A_a1_32dc3162-575d-4f05-a7bb-269cacc801de_cdc7a472-d687-4648-99f4-c5196a9f91c8" source="place_new_d7f74239-59eb-4d51-a30c-53bc30a75f73" target="a1_calling"/>
+      <arc id="arc_transition_A_a1_32dc3162-575d-4f05-a7bb-269cacc801de_place_new_calling_3ee20533-94bd-4e86-887a-021ae2c373b1_b7221113-54b6-46a6-b520-2b82612f8a69" source="a1_calling" target="place_new_calling_3ee20533-94bd-4e86-887a-021ae2c373b1"/>
+      <arc id="arc_transition_A_a1_533baa06-4e51-4e97-aaaa-735835d53c15_place_new_1c6f84c9-1bad-4096-a497-b0ff306a3be4_d198bd31-d757-4e67-878e-b1effd969d9e" source="a1_done" target="place_new_1c6f84c9-1bad-4096-a497-b0ff306a3be4"/>
+      <arc id="arc_place_new_calling_3ee20533-94bd-4e86-887a-021ae2c373b1_transition_A_a1_30f559c8-7aaf-40df-9566-068bccd38f01_d6191d34-0e95-4dde-8351-966fa92c52f3" source="place_new_calling_3ee20533-94bd-4e86-887a-021ae2c373b1" target="a1_receiving"/>
+      <arc id="arc_transition_A_a1_30f559c8-7aaf-40df-9566-068bccd38f01_place_new_receiving_a2a5bb96-f669-4e16-ab3f-1eae2238f8d0_6a1ab520-42c0-476c-bf08-d65b45863cbd" source="a1_receiving" target="place_new_receiving_a2a5bb96-f669-4e16-ab3f-1eae2238f8d0"/>
+      <arc id="arc_place_new_receiving_a2a5bb96-f669-4e16-ab3f-1eae2238f8d0_transition_redo_receiving_silent_82fb940c-e336-4cae-bca2-06a8da609bf7_63ba68db-13de-411e-bd1f-bc6ba40b068c" source="place_new_receiving_a2a5bb96-f669-4e16-ab3f-1eae2238f8d0" target="transition_redo_receiving_silent_82fb940c-e336-4cae-bca2-06a8da609bf7"/>
+      <arc id="arc_transition_redo_receiving_silent_82fb940c-e336-4cae-bca2-06a8da609bf7_place_new_calling_3ee20533-94bd-4e86-887a-021ae2c373b1_a6434dae-2bda-4985-979d-312ad9c59565" source="transition_redo_receiving_silent_82fb940c-e336-4cae-bca2-06a8da609bf7" target="place_new_calling_3ee20533-94bd-4e86-887a-021ae2c373b1"/>
+      <arc id="arc_place_new_receiving_a2a5bb96-f669-4e16-ab3f-1eae2238f8d0_transition_A_a1_533baa06-4e51-4e97-aaaa-735835d53c15_10257740-5c60-4745-a132-68ada7aa09fd" source="place_new_receiving_a2a5bb96-f669-4e16-ab3f-1eae2238f8d0" target="a1_done"/>
+      <arc id="arc_place_new_1c6f84c9-1bad-4096-a497-b0ff306a3be4_transition_B_a13_1b78b984-a470-4686-aa8b-f8cd79bdb814_6aca0c2b-a200-4049-b25a-ddb448e832fc" source="place_new_1c6f84c9-1bad-4096-a497-b0ff306a3be4" target="a13_calling"/>
+      <arc id="arc_transition_B_a13_1b78b984-a470-4686-aa8b-f8cd79bdb814_place_new_calling_966d3708-40b7-47cf-9482-012cee6d480f_15f55e0d-d401-44b6-a3e9-3a99b71673f2" source="a13_calling" target="place_new_calling_966d3708-40b7-47cf-9482-012cee6d480f"/>
+      <arc id="arc_transition_B_a13_a3054931-6070-4c5d-938a-592af58699ac_place_new_2578d431-8233-4f68-a4d1-efe8c822f35e_d6de02a5-bcff-47a8-8d3f-8f76a1f1f147" source="a13_done" target="place_new_2578d431-8233-4f68-a4d1-efe8c822f35e"/>
+      <arc id="arc_place_new_calling_966d3708-40b7-47cf-9482-012cee6d480f_transition_B_a13_76de2510-f300-4415-bf87-564222a3580c_0c45f9ba-9bc3-4580-be0f-e40cb76fe333" source="place_new_calling_966d3708-40b7-47cf-9482-012cee6d480f" target="a13_receiving"/>
+      <arc id="arc_transition_B_a13_76de2510-f300-4415-bf87-564222a3580c_place_new_receiving_8b53f179-5c60-479b-bd3e-bfb6bc825686_154e73ef-2667-43d9-8868-582b2cdf35b7" source="a13_receiving" target="place_new_receiving_8b53f179-5c60-479b-bd3e-bfb6bc825686"/>
+      <arc id="arc_place_new_receiving_8b53f179-5c60-479b-bd3e-bfb6bc825686_transition_redo_receiving_silent_5b36cf31-ff25-4ad7-8351-a2ee5244e5e2_98fd7eb8-e1d4-4f22-9faf-48bab5ee825d" source="place_new_receiving_8b53f179-5c60-479b-bd3e-bfb6bc825686" target="transition_redo_receiving_silent_5b36cf31-ff25-4ad7-8351-a2ee5244e5e2"/>
+      <arc id="arc_transition_redo_receiving_silent_5b36cf31-ff25-4ad7-8351-a2ee5244e5e2_place_new_calling_966d3708-40b7-47cf-9482-012cee6d480f_48b25f67-76bf-430b-9126-f214e7e6a167" source="transition_redo_receiving_silent_5b36cf31-ff25-4ad7-8351-a2ee5244e5e2" target="place_new_calling_966d3708-40b7-47cf-9482-012cee6d480f"/>
+      <arc id="arc_place_new_receiving_8b53f179-5c60-479b-bd3e-bfb6bc825686_transition_B_a13_a3054931-6070-4c5d-938a-592af58699ac_1a0cb8e4-f1f4-437f-ba39-e5da3e2c7b8b" source="place_new_receiving_8b53f179-5c60-479b-bd3e-bfb6bc825686" target="a13_done"/>
+      <arc id="arc_place_new_2578d431-8233-4f68-a4d1-efe8c822f35e_transition_random decision_a8_450b27fa-5ae4-4a7c-bf31-88d67c666e1e_41c37f28-1e0e-44f1-b6e4-9ee8b3410f10" source="place_new_2578d431-8233-4f68-a4d1-efe8c822f35e" target="a8_calling"/>
+      <arc id="arc_transition_random decision_a8_450b27fa-5ae4-4a7c-bf31-88d67c666e1e_place_new_calling_982287bb-1923-41c4-85ad-181d03c9d2e8_e968abf3-dd65-45b3-a289-944b430bd96d" source="a8_calling" target="place_new_calling_982287bb-1923-41c4-85ad-181d03c9d2e8"/>
+      <arc id="arc_transition_random decision_a8_4cbdab4c-f90d-4916-9ba5-6411ab289c6e_place_new_7e788e42-447c-4bc3-af0e-f344fb422140_5b8ecf11-86a8-4874-9a53-e8a86f56a55b" source="a8_done" target="place_new_7e788e42-447c-4bc3-af0e-f344fb422140"/>
+      <arc id="arc_place_new_calling_982287bb-1923-41c4-85ad-181d03c9d2e8_transition_random decision_a8_425b46ca-d8f3-432b-a5e6-0d31503877e7_479a3f3b-892c-4a28-9d0a-d1a420df5a8f" source="place_new_calling_982287bb-1923-41c4-85ad-181d03c9d2e8" target="a8_receiving"/>
+      <arc id="arc_transition_random decision_a8_425b46ca-d8f3-432b-a5e6-0d31503877e7_place_new_receiving_f6e4057e-87c8-47d4-b7a3-46136030c908_65624d08-9120-4e77-b9ee-2d472ca65e5a" source="a8_receiving" target="place_new_receiving_f6e4057e-87c8-47d4-b7a3-46136030c908"/>
+      <arc id="arc_place_new_receiving_f6e4057e-87c8-47d4-b7a3-46136030c908_transition_redo_receiving_silent_ac35d1a8-d328-43a9-8798-de7362f4de31_e4be1116-fd74-4ffb-860a-d8046d60460a" source="place_new_receiving_f6e4057e-87c8-47d4-b7a3-46136030c908" target="transition_redo_receiving_silent_ac35d1a8-d328-43a9-8798-de7362f4de31"/>
+      <arc id="arc_transition_redo_receiving_silent_ac35d1a8-d328-43a9-8798-de7362f4de31_place_new_calling_982287bb-1923-41c4-85ad-181d03c9d2e8_bd7a4f0e-ce3f-4ccc-919d-4885ffb4d466" source="transition_redo_receiving_silent_ac35d1a8-d328-43a9-8798-de7362f4de31" target="place_new_calling_982287bb-1923-41c4-85ad-181d03c9d2e8"/>
+      <arc id="arc_place_new_receiving_f6e4057e-87c8-47d4-b7a3-46136030c908_transition_random decision_a8_4cbdab4c-f90d-4916-9ba5-6411ab289c6e_f2366428-dc12-4ac7-b0db-74b0ee2d5d96" source="place_new_receiving_f6e4057e-87c8-47d4-b7a3-46136030c908" target="a8_done"/>
+      <arc id="arc_place_new_7e788e42-447c-4bc3-af0e-f344fb422140_transition_C_a2_e88744c4-54d5-44f6-aec4-60ca3adc5281_623504b6-a99b-4ec5-818a-52999b084e58" source="place_new_7e788e42-447c-4bc3-af0e-f344fb422140" target="a2_calling"/>
+      <arc id="arc_transition_C_a2_e88744c4-54d5-44f6-aec4-60ca3adc5281_place_new_calling_9469ddbc-04d4-44be-9271-07ce62fbc56b_1076f097-f656-4b3a-a07e-b82e95e1c85b" source="a2_calling" target="place_new_calling_9469ddbc-04d4-44be-9271-07ce62fbc56b"/>
+      <arc id="arc_transition_C_a2_b568b633-e46d-448a-9ee3-d9d72d83c90c_place_new_73aeba1a-6d43-4c83-864f-b0a5c06994ac_4190c45d-2394-43ea-8384-b5cc08b4e45d" source="a2_done" target="place_new_73aeba1a-6d43-4c83-864f-b0a5c06994ac"/>
+      <arc id="arc_place_new_calling_9469ddbc-04d4-44be-9271-07ce62fbc56b_transition_C_a2_a30f8d63-4e0b-40ea-8a3d-54d234565d60_65fdf3c8-68d7-4e04-88a7-290c7f57c505" source="place_new_calling_9469ddbc-04d4-44be-9271-07ce62fbc56b" target="a2_receiving"/>
+      <arc id="arc_transition_C_a2_a30f8d63-4e0b-40ea-8a3d-54d234565d60_place_new_receiving_d4985812-1f07-416f-b8d8-99ce8b0ffe11_e9833a40-1329-49b6-812d-75b362da0bcf" source="a2_receiving" target="place_new_receiving_d4985812-1f07-416f-b8d8-99ce8b0ffe11"/>
+      <arc id="arc_place_new_receiving_d4985812-1f07-416f-b8d8-99ce8b0ffe11_transition_redo_receiving_silent_7729a581-3bae-4611-ba6b-5c270fd4826f_a406b41c-44ad-4f86-b516-d17be38b6e1b" source="place_new_receiving_d4985812-1f07-416f-b8d8-99ce8b0ffe11" target="transition_redo_receiving_silent_7729a581-3bae-4611-ba6b-5c270fd4826f"/>
+      <arc id="arc_transition_redo_receiving_silent_7729a581-3bae-4611-ba6b-5c270fd4826f_place_new_calling_9469ddbc-04d4-44be-9271-07ce62fbc56b_06e92f1e-6cbf-4d8a-8c62-74c32346dcc4" source="transition_redo_receiving_silent_7729a581-3bae-4611-ba6b-5c270fd4826f" target="place_new_calling_9469ddbc-04d4-44be-9271-07ce62fbc56b"/>
+      <arc id="arc_place_new_receiving_d4985812-1f07-416f-b8d8-99ce8b0ffe11_transition_C_a2_b568b633-e46d-448a-9ee3-d9d72d83c90c_e59834f6-1cac-45b9-b0be-b8f2cf258195" source="place_new_receiving_d4985812-1f07-416f-b8d8-99ce8b0ffe11" target="a2_done"/>
+      <arc id="arc_place_new_73aeba1a-6d43-4c83-864f-b0a5c06994ac_transition_D_a3_8b9f28dd-9ccf-449d-bc2b-34fe93aada79_d562a4e2-475d-4409-b62c-ad6ef317f280" source="place_new_73aeba1a-6d43-4c83-864f-b0a5c06994ac" target="a3_calling"/>
+      <arc id="arc_transition_D_a3_8b9f28dd-9ccf-449d-bc2b-34fe93aada79_place_new_calling_8ea091f6-8c64-4add-938f-53b7efa06e57_7e3a5207-414e-47dd-bfaf-102ee16b4f51" source="a3_calling" target="place_new_calling_8ea091f6-8c64-4add-938f-53b7efa06e57"/>
+      <arc id="arc_transition_D_a3_0d7973f2-4804-4293-985c-9ac7c3c04fef_place_new_96427860-de05-4510-a473-12cc3a7d5b4d_33b7b562-4344-4d76-b489-97ac5929a6fa" source="a3_done" target="place_new_96427860-de05-4510-a473-12cc3a7d5b4d"/>
+      <arc id="arc_place_new_calling_8ea091f6-8c64-4add-938f-53b7efa06e57_transition_D_a3_8b85f401-ac58-4d71-8abf-387837e93957_15fa8144-365e-4176-8b31-bcff5374afea" source="place_new_calling_8ea091f6-8c64-4add-938f-53b7efa06e57" target="a3_receiving"/>
+      <arc id="arc_transition_D_a3_8b85f401-ac58-4d71-8abf-387837e93957_place_new_receiving_8d7f1c5e-3b18-4b3d-b98c-c43afbfe8e44_6e01789d-46ca-4f59-b4d3-4259af385134" source="a3_receiving" target="place_new_receiving_8d7f1c5e-3b18-4b3d-b98c-c43afbfe8e44"/>
+      <arc id="arc_place_new_receiving_8d7f1c5e-3b18-4b3d-b98c-c43afbfe8e44_transition_redo_receiving_silent_ce245b82-e7da-4208-8f6f-b3da65fda0de_fb00a132-1a01-41f2-98cb-f46f46d68a5b" source="place_new_receiving_8d7f1c5e-3b18-4b3d-b98c-c43afbfe8e44" target="transition_redo_receiving_silent_ce245b82-e7da-4208-8f6f-b3da65fda0de"/>
+      <arc id="arc_transition_redo_receiving_silent_ce245b82-e7da-4208-8f6f-b3da65fda0de_place_new_calling_8ea091f6-8c64-4add-938f-53b7efa06e57_c6bc4393-9d5c-4f70-8413-e0b7420f87c8" source="transition_redo_receiving_silent_ce245b82-e7da-4208-8f6f-b3da65fda0de" target="place_new_calling_8ea091f6-8c64-4add-938f-53b7efa06e57"/>
+      <arc id="arc_place_new_receiving_8d7f1c5e-3b18-4b3d-b98c-c43afbfe8e44_transition_D_a3_0d7973f2-4804-4293-985c-9ac7c3c04fef_636ca2f2-08f8-465a-8858-72e26f28ff0f" source="place_new_receiving_8d7f1c5e-3b18-4b3d-b98c-c43afbfe8e44" target="a3_done"/>
+      <arc id="arc_place_new_96427860-de05-4510-a473-12cc3a7d5b4d_transition_E_a4_9eeba5e5-f99f-4b0f-8528-e74808a52233_967d4cf3-8596-416d-8366-356ebd7afea3" source="place_new_96427860-de05-4510-a473-12cc3a7d5b4d" target="a4_calling"/>
+      <arc id="arc_transition_E_a4_9eeba5e5-f99f-4b0f-8528-e74808a52233_place_new_calling_4410e59c-5e10-4eeb-abb6-60bb00dc205f_56a86271-3f09-44c3-a282-c48993caa924" source="a4_calling" target="place_new_calling_4410e59c-5e10-4eeb-abb6-60bb00dc205f"/>
+      <arc id="arc_transition_E_a4_0d654053-a2d6-4160-a5bf-8c04ab2593fa_place_new_cbcde6a2-5342-4ddd-889f-917b6ba8a832_7598728d-bb30-4b3f-b489-f8782c2a858e" source="a4_done" target="place_new_cbcde6a2-5342-4ddd-889f-917b6ba8a832"/>
+      <arc id="arc_place_new_calling_4410e59c-5e10-4eeb-abb6-60bb00dc205f_transition_E_a4_d0415f50-e3e3-4270-b559-7d9ff904287d_aa4b87e7-87b6-41ce-b2d9-270e2b5951fe" source="place_new_calling_4410e59c-5e10-4eeb-abb6-60bb00dc205f" target="a4_receiving"/>
+      <arc id="arc_transition_E_a4_d0415f50-e3e3-4270-b559-7d9ff904287d_place_new_receiving_d6d3b493-7ca9-4f72-a898-689f17980ad4_c2a139c7-d43f-4277-8c30-af60e624a0fc" source="a4_receiving" target="place_new_receiving_d6d3b493-7ca9-4f72-a898-689f17980ad4"/>
+      <arc id="arc_place_new_receiving_d6d3b493-7ca9-4f72-a898-689f17980ad4_transition_redo_receiving_silent_c94e8447-07d2-416b-8bbf-1bedd2978130_06ae98c9-c67a-4591-a320-31521450af14" source="place_new_receiving_d6d3b493-7ca9-4f72-a898-689f17980ad4" target="transition_redo_receiving_silent_c94e8447-07d2-416b-8bbf-1bedd2978130"/>
+      <arc id="arc_transition_redo_receiving_silent_c94e8447-07d2-416b-8bbf-1bedd2978130_place_new_calling_4410e59c-5e10-4eeb-abb6-60bb00dc205f_333cbfa9-5ca5-4637-bfd6-2d386406952f" source="transition_redo_receiving_silent_c94e8447-07d2-416b-8bbf-1bedd2978130" target="place_new_calling_4410e59c-5e10-4eeb-abb6-60bb00dc205f"/>
+      <arc id="arc_place_new_receiving_d6d3b493-7ca9-4f72-a898-689f17980ad4_transition_E_a4_0d654053-a2d6-4160-a5bf-8c04ab2593fa_c4b297e1-0db1-4653-a679-0386b50f436d" source="place_new_receiving_d6d3b493-7ca9-4f72-a898-689f17980ad4" target="a4_done"/>
+      <arc id="arc_place_new_cbcde6a2-5342-4ddd-889f-917b6ba8a832_transition_F_a5_4ea0b2e3-79df-448a-8570-f5dc28395600_53153ed7-e89f-4c06-b90c-603e41b9dd43" source="place_new_cbcde6a2-5342-4ddd-889f-917b6ba8a832" target="a5_calling"/>
+      <arc id="arc_transition_F_a5_4ea0b2e3-79df-448a-8570-f5dc28395600_place_new_calling_710e2ee2-71b9-4bc4-a2ff-b3c4b44dcf27_61f14d01-2bc7-4b86-a719-bba2ab350f9f" source="a5_calling" target="place_new_calling_710e2ee2-71b9-4bc4-a2ff-b3c4b44dcf27"/>
+      <arc id="arc_transition_F_a5_2a7fbe86-66b9-4328-8eca-2e934671bd7e_place_new_b498fe78-09e4-4da4-b56b-710f70937245_bfe62f37-2a25-4d44-8a5f-db04b5d236dd" source="a5_done" target="place_new_b498fe78-09e4-4da4-b56b-710f70937245"/>
+      <arc id="arc_place_new_calling_710e2ee2-71b9-4bc4-a2ff-b3c4b44dcf27_transition_F_a5_fe9ce994-c0ca-49d2-ba8e-dbe30e4dbf6d_60f439d7-9021-402a-bccc-e5ac263e656a" source="place_new_calling_710e2ee2-71b9-4bc4-a2ff-b3c4b44dcf27" target="a5_receiving"/>
+      <arc id="arc_transition_F_a5_fe9ce994-c0ca-49d2-ba8e-dbe30e4dbf6d_place_new_receiving_9ae7bbda-f403-4da1-a996-d4f34fc8ca0f_c6691d7c-5014-401e-b2e6-9aa0d6ec5727" source="a5_receiving" target="place_new_receiving_9ae7bbda-f403-4da1-a996-d4f34fc8ca0f"/>
+      <arc id="arc_place_new_receiving_9ae7bbda-f403-4da1-a996-d4f34fc8ca0f_transition_redo_receiving_silent_d2b24f92-f605-4bf6-b0ae-cdf8e037cae5_afbb6af0-e8e5-4331-ac6e-d1248fb88caf" source="place_new_receiving_9ae7bbda-f403-4da1-a996-d4f34fc8ca0f" target="transition_redo_receiving_silent_d2b24f92-f605-4bf6-b0ae-cdf8e037cae5"/>
+      <arc id="arc_transition_redo_receiving_silent_d2b24f92-f605-4bf6-b0ae-cdf8e037cae5_place_new_calling_710e2ee2-71b9-4bc4-a2ff-b3c4b44dcf27_4e6ab304-2aa8-4cef-8478-1686e912c6d8" source="transition_redo_receiving_silent_d2b24f92-f605-4bf6-b0ae-cdf8e037cae5" target="place_new_calling_710e2ee2-71b9-4bc4-a2ff-b3c4b44dcf27"/>
+      <arc id="arc_place_new_receiving_9ae7bbda-f403-4da1-a996-d4f34fc8ca0f_transition_F_a5_2a7fbe86-66b9-4328-8eca-2e934671bd7e_8f6b01d3-aa26-4b42-86c2-10254c4b5bc3" source="place_new_receiving_9ae7bbda-f403-4da1-a996-d4f34fc8ca0f" target="a5_done"/>
+      <arc id="arc_place_new_b498fe78-09e4-4da4-b56b-710f70937245_transition_artificial_start_silent_f9359cc4-ba74-417c-b334-42e0477add7b_697f9b4e-4b8a-4cef-89f0-885039b9acce" source="place_new_b498fe78-09e4-4da4-b56b-710f70937245" target="transition_artificial_start_silent_f9359cc4-ba74-417c-b334-42e0477add7b"/>
+      <arc id="arc_transition_artificial_start_silent_f9359cc4-ba74-417c-b334-42e0477add7b_place_new_f8feb9dd-4cba-47b7-b9da-ab9f13ccc954_7f583e70-ab49-42ae-b4f6-17d427054969" source="transition_artificial_start_silent_f9359cc4-ba74-417c-b334-42e0477add7b" target="place_new_f8feb9dd-4cba-47b7-b9da-ab9f13ccc954"/>
+      <arc id="arc_place_new_f8feb9dd-4cba-47b7-b9da-ab9f13ccc954_transition_G_a14_56120f6d-a7df-430f-9371-ffeb9ab0ffba_6093bafa-0de8-452c-b407-355281a1f8f6" source="place_new_f8feb9dd-4cba-47b7-b9da-ab9f13ccc954" target="a14_calling"/>
+      <arc id="arc_transition_G_a14_56120f6d-a7df-430f-9371-ffeb9ab0ffba_place_new_calling_8d7733d0-2c62-4bf6-b1e4-020090e6a627_3cc05255-b6b0-4fce-bae5-87e53b72ab72" source="a14_calling" target="place_new_calling_8d7733d0-2c62-4bf6-b1e4-020090e6a627"/>
+      <arc id="arc_transition_G_a14_b9fe0a90-7489-4d60-af39-0fe13319204e_place_new_c2b953c5-0fca-4563-8f0f-4171c1cd88bb_5f85720e-272e-4ff6-ab0a-86443b328151" source="a14_done" target="place_new_c2b953c5-0fca-4563-8f0f-4171c1cd88bb"/>
+      <arc id="arc_place_new_calling_8d7733d0-2c62-4bf6-b1e4-020090e6a627_transition_G_a14_faecbc8b-98a3-4b87-83ff-8f23570c3127_5e0df38c-bf97-4fc3-b236-a05526eea051" source="place_new_calling_8d7733d0-2c62-4bf6-b1e4-020090e6a627" target="a14_receiving"/>
+      <arc id="arc_transition_G_a14_faecbc8b-98a3-4b87-83ff-8f23570c3127_place_new_receiving_39f03749-63ac-44d3-b118-b2bfe06309af_88ae2ad9-15e6-4c7a-baa6-1beedac0e1bb" source="a14_receiving" target="place_new_receiving_39f03749-63ac-44d3-b118-b2bfe06309af"/>
+      <arc id="arc_place_new_receiving_39f03749-63ac-44d3-b118-b2bfe06309af_transition_redo_receiving_silent_e8129152-5837-4487-a73b-662506dce055_3f75e4a8-5ae7-46e4-be75-1055b2e9cd8f" source="place_new_receiving_39f03749-63ac-44d3-b118-b2bfe06309af" target="transition_redo_receiving_silent_e8129152-5837-4487-a73b-662506dce055"/>
+      <arc id="arc_transition_redo_receiving_silent_e8129152-5837-4487-a73b-662506dce055_place_new_calling_8d7733d0-2c62-4bf6-b1e4-020090e6a627_1ceb5e63-6110-413d-85ee-7914c5a1f28e" source="transition_redo_receiving_silent_e8129152-5837-4487-a73b-662506dce055" target="place_new_calling_8d7733d0-2c62-4bf6-b1e4-020090e6a627"/>
+      <arc id="arc_place_new_receiving_39f03749-63ac-44d3-b118-b2bfe06309af_transition_G_a14_b9fe0a90-7489-4d60-af39-0fe13319204e_3db1f319-d54c-4f27-8813-d4b85ff464cd" source="place_new_receiving_39f03749-63ac-44d3-b118-b2bfe06309af" target="a14_done"/>
+      <arc id="arc_place_new_c2b953c5-0fca-4563-8f0f-4171c1cd88bb_transition_artificial_end_silent_265fd45b-0350-4c4f-901d-6207bd0945ef_f8b71c55-fd9f-48cc-941e-09fff7baaa1e" source="place_new_c2b953c5-0fca-4563-8f0f-4171c1cd88bb" target="transition_artificial_end_silent_265fd45b-0350-4c4f-901d-6207bd0945ef"/>
+      <arc id="arc_transition_artificial_end_silent_265fd45b-0350-4c4f-901d-6207bd0945ef_place_merge_place_0a5050c7-447d-4ca6-992b-72385e18dd17_cbeb714d-57ea-47bc-820e-2d2f874ee4f1" source="transition_artificial_end_silent_265fd45b-0350-4c4f-901d-6207bd0945ef" target="place_merge_place_0a5050c7-447d-4ca6-992b-72385e18dd17"/>
+      <arc id="arc_place_new_b498fe78-09e4-4da4-b56b-710f70937245_transition_artificial_start_silent_f3271338-8e79-4aa4-a3aa-976549d40d08_4f73151a-559d-46bb-83d5-f5d6ea36cab0" source="place_new_b498fe78-09e4-4da4-b56b-710f70937245" target="transition_artificial_start_silent_f3271338-8e79-4aa4-a3aa-976549d40d08"/>
+      <arc id="arc_transition_artificial_start_silent_f3271338-8e79-4aa4-a3aa-976549d40d08_place_new_067aeafe-4eba-4383-b745-056bb444a2fe_f043e9c1-671e-4e28-aeb0-fd9562e6298a" source="transition_artificial_start_silent_f3271338-8e79-4aa4-a3aa-976549d40d08" target="place_new_067aeafe-4eba-4383-b745-056bb444a2fe"/>
+      <arc id="arc_place_new_067aeafe-4eba-4383-b745-056bb444a2fe_transition_H_a7_8e954a4e-d731-414e-8ddd-59b8baa52b1a_0cbc28f6-2be6-4b82-bc45-dfda432c9dad" source="place_new_067aeafe-4eba-4383-b745-056bb444a2fe" target="a7_calling"/>
+      <arc id="arc_transition_H_a7_8e954a4e-d731-414e-8ddd-59b8baa52b1a_place_new_calling_4701b08f-4958-44cd-ab1a-d98609ac3baa_fe04806f-7753-4013-b6a5-2a8fddf90dc0" source="a7_calling" target="place_new_calling_4701b08f-4958-44cd-ab1a-d98609ac3baa"/>
+      <arc id="arc_transition_H_a7_97bad519-97d5-4a8f-b0ab-0d585ccbd304_place_new_6e4c08ba-d94d-4303-8e8c-f0fa62faaaa9_f7d9bc7e-42e1-404f-a620-9e5608d63097" source="a7_done" target="place_new_6e4c08ba-d94d-4303-8e8c-f0fa62faaaa9"/>
+      <arc id="arc_place_new_calling_4701b08f-4958-44cd-ab1a-d98609ac3baa_transition_H_a7_5ef8a5f9-c09a-4b4f-86b9-9729454089b3_674a2c68-3a59-4247-87ee-0cf096787b84" source="place_new_calling_4701b08f-4958-44cd-ab1a-d98609ac3baa" target="a7_receiving"/>
+      <arc id="arc_transition_H_a7_5ef8a5f9-c09a-4b4f-86b9-9729454089b3_place_new_receiving_079b5d51-a9c0-4601-a3b1-4ae8e803a941_9b85897b-8d66-465d-bba0-e0bbf8430ec2" source="a7_receiving" target="place_new_receiving_079b5d51-a9c0-4601-a3b1-4ae8e803a941"/>
+      <arc id="arc_place_new_receiving_079b5d51-a9c0-4601-a3b1-4ae8e803a941_transition_redo_receiving_silent_23c0c792-1d63-462d-8feb-1c5ac6a617a6_a46eb513-9ca7-4442-9203-7d057ae1572f" source="place_new_receiving_079b5d51-a9c0-4601-a3b1-4ae8e803a941" target="transition_redo_receiving_silent_23c0c792-1d63-462d-8feb-1c5ac6a617a6"/>
+      <arc id="arc_transition_redo_receiving_silent_23c0c792-1d63-462d-8feb-1c5ac6a617a6_place_new_calling_4701b08f-4958-44cd-ab1a-d98609ac3baa_eb2de2bb-cdee-4b0e-b99e-cdf52ac0f7dc" source="transition_redo_receiving_silent_23c0c792-1d63-462d-8feb-1c5ac6a617a6" target="place_new_calling_4701b08f-4958-44cd-ab1a-d98609ac3baa"/>
+      <arc id="arc_place_new_receiving_079b5d51-a9c0-4601-a3b1-4ae8e803a941_transition_H_a7_97bad519-97d5-4a8f-b0ab-0d585ccbd304_2e9a85ed-c19c-4633-bbbf-af30c7b9e5c1" source="place_new_receiving_079b5d51-a9c0-4601-a3b1-4ae8e803a941" target="a7_done"/>
+      <arc id="arc_place_new_6e4c08ba-d94d-4303-8e8c-f0fa62faaaa9_transition_artificial_end_silent_5ea8021e-7916-45e4-9654-50c81ad8271e_e581ffc9-fd44-4491-88bc-6f9e826e3ecc" source="place_new_6e4c08ba-d94d-4303-8e8c-f0fa62faaaa9" target="transition_artificial_end_silent_5ea8021e-7916-45e4-9654-50c81ad8271e"/>
+      <arc id="arc_transition_artificial_end_silent_5ea8021e-7916-45e4-9654-50c81ad8271e_place_merge_place_0a5050c7-447d-4ca6-992b-72385e18dd17_34f1b31a-8368-4c67-8dc8-0cab89b9d79a" source="transition_artificial_end_silent_5ea8021e-7916-45e4-9654-50c81ad8271e" target="place_merge_place_0a5050c7-447d-4ca6-992b-72385e18dd17"/>
+      <arc id="arc_place_new_b498fe78-09e4-4da4-b56b-710f70937245_transition_artificial_start_silent_3fea72e9-6168-4756-95ea-4a5b5da53f76_9d509f71-f0e6-4531-bb57-b1c52d10c59f" source="place_new_b498fe78-09e4-4da4-b56b-710f70937245" target="transition_artificial_start_silent_3fea72e9-6168-4756-95ea-4a5b5da53f76"/>
+      <arc id="arc_transition_artificial_start_silent_3fea72e9-6168-4756-95ea-4a5b5da53f76_place_new_0a384cb1-95d7-4ecf-bad0-a31f1c34e6be_c31d240f-3e5a-40b0-acc3-cf392dbbf0d3" source="transition_artificial_start_silent_3fea72e9-6168-4756-95ea-4a5b5da53f76" target="place_new_0a384cb1-95d7-4ecf-bad0-a31f1c34e6be"/>
+      <arc id="arc_place_new_0a384cb1-95d7-4ecf-bad0-a31f1c34e6be_transition_I_a11_e517c503-50b3-4259-adf3-9500b0ba320b_8303099d-ac48-4214-98f0-0881800882c7" source="place_new_0a384cb1-95d7-4ecf-bad0-a31f1c34e6be" target="a11_calling"/>
+      <arc id="arc_transition_I_a11_e517c503-50b3-4259-adf3-9500b0ba320b_place_new_calling_15943d7d-3d3d-48a9-bf0f-6e6dc436af3f_d6dbe7d4-922b-4d5b-b200-cbb76672d469" source="a11_calling" target="place_new_calling_15943d7d-3d3d-48a9-bf0f-6e6dc436af3f"/>
+      <arc id="arc_transition_I_a11_90685658-bd06-4ca0-b528-551df0a382d1_place_new_d3160473-b496-4373-a851-529baa3c6722_b79ce03d-1e63-472c-b930-cd3e9ddf6c2b" source="a11_done" target="place_new_d3160473-b496-4373-a851-529baa3c6722"/>
+      <arc id="arc_place_new_calling_15943d7d-3d3d-48a9-bf0f-6e6dc436af3f_transition_I_a11_7155450f-fc89-4d82-9d76-d19f8e885947_14c9ac53-93e1-4ff7-aad0-5ce00f4fc089" source="place_new_calling_15943d7d-3d3d-48a9-bf0f-6e6dc436af3f" target="a11_receiving"/>
+      <arc id="arc_transition_I_a11_7155450f-fc89-4d82-9d76-d19f8e885947_place_new_receiving_f777178f-a1a0-4585-aec5-6150f599d0aa_3fb0a39c-81bd-43e9-94d8-59ed2e4f3140" source="a11_receiving" target="place_new_receiving_f777178f-a1a0-4585-aec5-6150f599d0aa"/>
+      <arc id="arc_place_new_receiving_f777178f-a1a0-4585-aec5-6150f599d0aa_transition_redo_receiving_silent_6242725d-0557-45bd-a096-b6b0a31e571a_f030ef79-fa29-4346-870a-66bc5b0b34fa" source="place_new_receiving_f777178f-a1a0-4585-aec5-6150f599d0aa" target="transition_redo_receiving_silent_6242725d-0557-45bd-a096-b6b0a31e571a"/>
+      <arc id="arc_transition_redo_receiving_silent_6242725d-0557-45bd-a096-b6b0a31e571a_place_new_calling_15943d7d-3d3d-48a9-bf0f-6e6dc436af3f_0600369f-073a-4edd-95fd-2f03ab3d0f72" source="transition_redo_receiving_silent_6242725d-0557-45bd-a096-b6b0a31e571a" target="place_new_calling_15943d7d-3d3d-48a9-bf0f-6e6dc436af3f"/>
+      <arc id="arc_place_new_receiving_f777178f-a1a0-4585-aec5-6150f599d0aa_transition_I_a11_90685658-bd06-4ca0-b528-551df0a382d1_81e0ab3c-862a-46e5-bb84-a5fa566ad3a3" source="place_new_receiving_f777178f-a1a0-4585-aec5-6150f599d0aa" target="a11_done"/>
+      <arc id="arc_place_new_d3160473-b496-4373-a851-529baa3c6722_transition_artificial_end_silent_581e90b7-379d-45c0-8192-333453b519f2_057b0821-f0bc-4c46-a1b0-09a64957e201" source="place_new_d3160473-b496-4373-a851-529baa3c6722" target="transition_artificial_end_silent_581e90b7-379d-45c0-8192-333453b519f2"/>
+      <arc id="arc_transition_artificial_end_silent_581e90b7-379d-45c0-8192-333453b519f2_place_merge_place_0a5050c7-447d-4ca6-992b-72385e18dd17_28425489-ac31-4258-8364-e848a26ac1bc" source="transition_artificial_end_silent_581e90b7-379d-45c0-8192-333453b519f2" target="place_merge_place_0a5050c7-447d-4ca6-992b-72385e18dd17"/>
+      <arc id="arc_place_merge_place_0a5050c7-447d-4ca6-992b-72385e18dd17_transition_artificial_end_silent_2fb2e9b8-24bf-4d9b-bbd9-9b29ba286dee_c89f9bc0-3d20-4be0-8dc2-a38eba1b84a3" source="place_merge_place_0a5050c7-447d-4ca6-992b-72385e18dd17" target="transition_artificial_end_silent_2fb2e9b8-24bf-4d9b-bbd9-9b29ba286dee"/>
+      <arc id="arc_transition_artificial_end_silent_2fb2e9b8-24bf-4d9b-bbd9-9b29ba286dee_place_branch_merge_place_de807ee5-f2aa-4f91-aa77-648900e4c1d8_f0b2ffbc-984c-43e9-89ba-db3795fdc70c" source="transition_artificial_end_silent_2fb2e9b8-24bf-4d9b-bbd9-9b29ba286dee" target="place_branch_merge_place_de807ee5-f2aa-4f91-aa77-648900e4c1d8"/>
+      <arc id="arc_place_branch_merge_place_de807ee5-f2aa-4f91-aa77-648900e4c1d8_transition_merge_transition_silent_677c629b-f341-4c20-adbd-95d1ddf40a7d_78020d68-8cf4-448d-a38b-658b78c5921c" source="place_branch_merge_place_de807ee5-f2aa-4f91-aa77-648900e4c1d8" target="transition_merge_transition_silent_677c629b-f341-4c20-adbd-95d1ddf40a7d"/>
+      <arc id="arc_transition_split_transition_silent_7dba1b48-7b10-49a3-9e71-d00be0ba0c66_place_branch_split_place_d532daa1-8853-4894-bb6f-962cbd567acd_02d57a9c-0e98-4650-8107-867e1f14e407" source="transition_split_transition_silent_7dba1b48-7b10-49a3-9e71-d00be0ba0c66" target="place_branch_split_place_d532daa1-8853-4894-bb6f-962cbd567acd"/>
+      <arc id="arc_place_branch_split_place_d532daa1-8853-4894-bb6f-962cbd567acd_transition_artificial_start_silent_11935e89-cde9-480f-8e8a-5f900b78e5ac_d46a1651-2a2a-4bad-bccf-32bb0532fb9d" source="place_branch_split_place_d532daa1-8853-4894-bb6f-962cbd567acd" target="transition_artificial_start_silent_11935e89-cde9-480f-8e8a-5f900b78e5ac"/>
+      <arc id="arc_transition_artificial_start_silent_11935e89-cde9-480f-8e8a-5f900b78e5ac_place_new_5e035145-c193-4c8c-81a3-69346170cf74_f53ae4b3-fe4c-413a-b2a3-0d095adaf007" source="transition_artificial_start_silent_11935e89-cde9-480f-8e8a-5f900b78e5ac" target="place_new_5e035145-c193-4c8c-81a3-69346170cf74"/>
+      <arc id="arc_place_new_5e035145-c193-4c8c-81a3-69346170cf74_transition_record_a6_fb90649d-f528-4799-90c7-fa350de3c172_66cfe227-29c1-4184-ae45-67348d1e6f71" source="place_new_5e035145-c193-4c8c-81a3-69346170cf74" target="a6_calling"/>
+      <arc id="arc_transition_record_a6_fb90649d-f528-4799-90c7-fa350de3c172_place_new_calling_05c84c82-dbb1-4047-b93d-edc3fa05bb1b_ae643916-607c-4cd0-bf6b-8ae268b9f5e4" source="a6_calling" target="place_new_calling_05c84c82-dbb1-4047-b93d-edc3fa05bb1b"/>
+      <arc id="arc_transition_record_a6_c14f4250-5cdc-4039-b092-b1dc99d97321_place_new_0119516d-1064-48c9-849d-faae046490b6_f351a7e7-8179-4155-b940-3293d8ba90b8" source="a6_done" target="place_new_0119516d-1064-48c9-849d-faae046490b6"/>
+      <arc id="arc_place_pairs_end_ad3d92b6-185f-4aea-a97d-26abf92020d4_transition_record_a6_c14f4250-5cdc-4039-b092-b1dc99d97321_181c8556-80cd-4b74-9afe-99372fcc5012" source="place_pairs_end_ad3d92b6-185f-4aea-a97d-26abf92020d4" target="a6_done"/>
+      <arc id="arc_place_new_calling_05c84c82-dbb1-4047-b93d-edc3fa05bb1b_transition_record_a6_1_1672a295-73a3-4703-b0f6-949cca5b5505_bc416e63-adde-42ba-8258-dc803e52a59c" source="place_new_calling_05c84c82-dbb1-4047-b93d-edc3fa05bb1b" target="a6_receiving^1"/>
+      <arc id="arc_transition_record_a6_1_1672a295-73a3-4703-b0f6-949cca5b5505_place_new_receiving_c3d6ad77-185f-4505-81ca-a7457905a8ac_ecb9cac2-7180-4df2-a22a-0a79f3d63c18" source="a6_receiving^1" target="place_new_receiving_c3d6ad77-185f-4505-81ca-a7457905a8ac"/>
+      <arc id="arc_place_new_receiving_c3d6ad77-185f-4505-81ca-a7457905a8ac_transition_record_a6_1_c6153b76-6be3-48d5-83a1-918ad59a46f3_cbec5e2d-5b66-4372-8f57-c4f16bbbdfd4" source="place_new_receiving_c3d6ad77-185f-4505-81ca-a7457905a8ac" target="a6_sensor_stable^1"/>
+      <arc id="arc_transition_record_a6_1_c6153b76-6be3-48d5-83a1-918ad59a46f3_place_new_data_cc4972e5-c84d-42f8-8cbb-3bfeb86937da_8a692d74-bee3-489e-9864-12bcdddbb994" source="a6_sensor_stable^1" target="place_new_data_cc4972e5-c84d-42f8-8cbb-3bfeb86937da"/>
+      <arc id="arc_place_new_data_cc4972e5-c84d-42f8-8cbb-3bfeb86937da_transition_leave_pairs_silent_4d6f621c-70f3-40cf-8ace-8a2398d4752d_fcff41f8-8d80-4d6a-bda5-e047ad6a817f" source="place_new_data_cc4972e5-c84d-42f8-8cbb-3bfeb86937da" target="transition_leave_pairs_silent_4d6f621c-70f3-40cf-8ace-8a2398d4752d"/>
+      <arc id="arc_transition_leave_pairs_silent_4d6f621c-70f3-40cf-8ace-8a2398d4752d_place_pairs_end_ad3d92b6-185f-4aea-a97d-26abf92020d4_184f1a26-cc2e-4351-b2ce-185a37c4b746" source="transition_leave_pairs_silent_4d6f621c-70f3-40cf-8ace-8a2398d4752d" target="place_pairs_end_ad3d92b6-185f-4aea-a97d-26abf92020d4"/>
+      <arc id="arc_place_new_data_cc4972e5-c84d-42f8-8cbb-3bfeb86937da_transition_next_pair_silent_9e0acdca-3197-4e65-be7c-52e066e2d22b_edfae76c-5e6a-4ad9-b7df-89b9afcbce71" source="place_new_data_cc4972e5-c84d-42f8-8cbb-3bfeb86937da" target="transition_next_pair_silent_9e0acdca-3197-4e65-be7c-52e066e2d22b"/>
+      <arc id="arc_transition_next_pair_silent_9e0acdca-3197-4e65-be7c-52e066e2d22b_place_new_pair_c1a4a584-98d8-417b-a5a1-73f4263400e0_1df7c9fd-8deb-4cd7-b129-4509c0ef981a" source="transition_next_pair_silent_9e0acdca-3197-4e65-be7c-52e066e2d22b" target="place_new_pair_c1a4a584-98d8-417b-a5a1-73f4263400e0"/>
+      <arc id="arc_place_new_pair_c1a4a584-98d8-417b-a5a1-73f4263400e0_transition_record_a6_2_ca94971b-65d6-480d-96aa-2da0daa3c2cf_1f29134d-529a-4c50-87a2-67ca18c6bc4c" source="place_new_pair_c1a4a584-98d8-417b-a5a1-73f4263400e0" target="a6_receiving^2"/>
+      <arc id="arc_transition_record_a6_2_ca94971b-65d6-480d-96aa-2da0daa3c2cf_place_new_receiving_961e4333-cd6b-489d-9409-f709d1e45afb_60211d2a-7393-49f8-8dfd-c7b871ab2a49" source="a6_receiving^2" target="place_new_receiving_961e4333-cd6b-489d-9409-f709d1e45afb"/>
+      <arc id="arc_place_new_receiving_961e4333-cd6b-489d-9409-f709d1e45afb_transition_record_a6_2_883a3474-f2b3-474e-a4bf-790103d7f6fa_a15fc728-499d-46f3-9feb-48b6468e3c50" source="place_new_receiving_961e4333-cd6b-489d-9409-f709d1e45afb" target="a6_sensor_increase^2"/>
+      <arc id="arc_transition_record_a6_2_883a3474-f2b3-474e-a4bf-790103d7f6fa_place_new_data_3154fb05-203d-45b2-9c43-a84a30278569_03069dee-6be3-4f82-8682-f3c242fb85e0" source="a6_sensor_increase^2" target="place_new_data_3154fb05-203d-45b2-9c43-a84a30278569"/>
+      <arc id="arc_place_new_data_3154fb05-203d-45b2-9c43-a84a30278569_transition_leave_pairs_silent_2e829467-5710-42e7-a9bf-0a0298ca6e7c_65196617-d67f-4d82-826c-ed8b2f310c7c" source="place_new_data_3154fb05-203d-45b2-9c43-a84a30278569" target="transition_leave_pairs_silent_2e829467-5710-42e7-a9bf-0a0298ca6e7c"/>
+      <arc id="arc_transition_leave_pairs_silent_2e829467-5710-42e7-a9bf-0a0298ca6e7c_place_pairs_end_ad3d92b6-185f-4aea-a97d-26abf92020d4_73219cd0-ff91-467e-beb5-094c19474232" source="transition_leave_pairs_silent_2e829467-5710-42e7-a9bf-0a0298ca6e7c" target="place_pairs_end_ad3d92b6-185f-4aea-a97d-26abf92020d4"/>
+      <arc id="arc_place_new_data_3154fb05-203d-45b2-9c43-a84a30278569_transition_next_pair_silent_7cd5b910-d48f-420d-92d6-fddf9fc4d37c_aad109e4-c911-4773-b87f-1017158f4b15" source="place_new_data_3154fb05-203d-45b2-9c43-a84a30278569" target="transition_next_pair_silent_7cd5b910-d48f-420d-92d6-fddf9fc4d37c"/>
+      <arc id="arc_transition_next_pair_silent_7cd5b910-d48f-420d-92d6-fddf9fc4d37c_place_new_pair_c6ff6dc2-f094-4860-8f11-a6d021026133_a7773e49-693a-40d9-ba5b-6629c1577e2c" source="transition_next_pair_silent_7cd5b910-d48f-420d-92d6-fddf9fc4d37c" target="place_new_pair_c6ff6dc2-f094-4860-8f11-a6d021026133"/>
+      <arc id="arc_place_new_pair_c6ff6dc2-f094-4860-8f11-a6d021026133_transition_record_a6_3_90f8027e-ef51-42e2-a7e8-a2c4cad7638c_98f717dd-4aa3-4518-b6c0-1ebd371ae43c" source="place_new_pair_c6ff6dc2-f094-4860-8f11-a6d021026133" target="a6_receiving^3"/>
+      <arc id="arc_transition_record_a6_3_90f8027e-ef51-42e2-a7e8-a2c4cad7638c_place_new_receiving_8f372ccf-0e2e-404d-b784-4f3f73e58475_66253d48-10cf-41f6-86fa-50cfbbcb114b" source="a6_receiving^3" target="place_new_receiving_8f372ccf-0e2e-404d-b784-4f3f73e58475"/>
+      <arc id="arc_place_new_receiving_8f372ccf-0e2e-404d-b784-4f3f73e58475_transition_record_a6_3_c1204afe-2950-4f5e-8032-4ab92b4df5fb_ecf1f4a9-b1a0-42ff-ace3-3a20d25c51ab" source="place_new_receiving_8f372ccf-0e2e-404d-b784-4f3f73e58475" target="a6_sensor_decrease^3"/>
+      <arc id="arc_transition_record_a6_3_c1204afe-2950-4f5e-8032-4ab92b4df5fb_place_new_data_60afafc5-24fb-482c-87bd-3e2c2ae058b5_61e40a19-c566-4814-9c6e-12622c125817" source="a6_sensor_decrease^3" target="place_new_data_60afafc5-24fb-482c-87bd-3e2c2ae058b5"/>
+      <arc id="arc_place_new_data_60afafc5-24fb-482c-87bd-3e2c2ae058b5_transition_leave_pairs_silent_fa5d0354-401c-48c2-890a-b940e99e8332_ec2e7b3b-f0cd-4262-a160-06f058ee9575" source="place_new_data_60afafc5-24fb-482c-87bd-3e2c2ae058b5" target="transition_leave_pairs_silent_fa5d0354-401c-48c2-890a-b940e99e8332"/>
+      <arc id="arc_transition_leave_pairs_silent_fa5d0354-401c-48c2-890a-b940e99e8332_place_pairs_end_ad3d92b6-185f-4aea-a97d-26abf92020d4_99721df9-ffec-4dd5-84bb-6cb551b57086" source="transition_leave_pairs_silent_fa5d0354-401c-48c2-890a-b940e99e8332" target="place_pairs_end_ad3d92b6-185f-4aea-a97d-26abf92020d4"/>
+      <arc id="arc_place_new_0119516d-1064-48c9-849d-faae046490b6_transition_artificial_end_silent_9061df56-4ed2-42bf-872e-240a25e54907_62afd578-c6e1-41ae-9afb-b0e01e6d80a6" source="place_new_0119516d-1064-48c9-849d-faae046490b6" target="transition_artificial_end_silent_9061df56-4ed2-42bf-872e-240a25e54907"/>
+      <arc id="arc_transition_artificial_end_silent_9061df56-4ed2-42bf-872e-240a25e54907_place_branch_merge_place_f161b7e4-ccaf-4993-8aae-82a263bab3a5_afdbf4a9-9724-4053-bb38-4f57cf58e0ed" source="transition_artificial_end_silent_9061df56-4ed2-42bf-872e-240a25e54907" target="place_branch_merge_place_f161b7e4-ccaf-4993-8aae-82a263bab3a5"/>
+      <arc id="arc_place_branch_merge_place_f161b7e4-ccaf-4993-8aae-82a263bab3a5_transition_merge_transition_silent_677c629b-f341-4c20-adbd-95d1ddf40a7d_91b8ebb4-573a-4595-bfdb-7388cc434e92" source="place_branch_merge_place_f161b7e4-ccaf-4993-8aae-82a263bab3a5" target="transition_merge_transition_silent_677c629b-f341-4c20-adbd-95d1ddf40a7d"/>
+      <arc id="arc_transition_merge_transition_silent_677c629b-f341-4c20-adbd-95d1ddf40a7d_place_merge_place_fd4f26cd-128c-4b14-a156-0e850e2ba886_fdecb717-9f78-462b-a430-c537627499c2" source="transition_merge_transition_silent_677c629b-f341-4c20-adbd-95d1ddf40a7d" target="place_merge_place_fd4f26cd-128c-4b14-a156-0e850e2ba886"/>
+      <arc id="arc_place_merge_place_fd4f26cd-128c-4b14-a156-0e850e2ba886_transition_artificial_end_silent_fc10c642-0ec6-4af2-8d89-20d5d495235e_19963b4c-835c-45c5-b905-33350a9c2557" source="place_merge_place_fd4f26cd-128c-4b14-a156-0e850e2ba886" target="transition_artificial_end_silent_fc10c642-0ec6-4af2-8d89-20d5d495235e"/>
+      <arc id="arc_transition_artificial_end_silent_fc10c642-0ec6-4af2-8d89-20d5d495235e_place_end_place_79f96f7e-d10f-47a7-9029-622309289c6e_11f0d3c6-c9d1-425e-b964-623f46294f14" source="transition_artificial_end_silent_fc10c642-0ec6-4af2-8d89-20d5d495235e" target="place_end_place_79f96f7e-d10f-47a7-9029-622309289c6e"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="place_end_place_79f96f7e-d10f-47a7-9029-622309289c6e">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

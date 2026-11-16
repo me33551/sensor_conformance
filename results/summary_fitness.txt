@@ -1,0 +1,160 @@
+== cff_short.json
+  all
+    A  51  min 0.7433  median 0.8874  max 0.9169
+    B  74  min 0.7994  median 0.9987  max 0.9994
+    C  25  min 0.6974  median 0.7209  max 0.7323
+    AUC B/AC 0.882 [0.827, 0.930]   B/A 0.824 [0.742, 0.895]   B/C 1.000 [1.000, 1.000]
+  without extra
+    A  35  min 0.8729  median 0.8959  max 0.9169
+    B  55  min 0.9983  median 0.9989  max 0.9994
+    C  19  min 0.7102  median 0.7209  max 0.7323
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+  with extra
+    A  16  min 0.7433  median 0.7638  max 0.7884
+    B  19  min 0.7994  median 0.8090  max 0.8177
+    C   6  min 0.6974  median 0.7179  max 0.7284
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+== balanced_short.json
+  all
+    A  51  min 0.8618  median 0.9065  max 0.9287
+    B  74  min 0.9624  median 0.9987  max 0.9994
+    C  25  min 0.8033  median 0.8451  max 0.8656
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+  without extra
+    A  35  min 0.8999  median 0.9135  max 0.9287
+    B  55  min 0.9983  median 0.9989  max 0.9994
+    C  19  min 0.8346  median 0.8480  max 0.8656
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+  with extra
+    A  16  min 0.8618  median 0.8785  max 0.8992
+    B  19  min 0.9624  median 0.9629  max 0.9634
+    C   6  min 0.8033  median 0.8238  max 0.8303
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+== sacf_short.json
+  all
+    A  51  min 0.9259  median 0.9630  max 0.9643
+    B  74  min 0.9630  median 1.0000  max 1.0000
+    C  25  min 0.9259  median 0.9630  max 0.9630
+    AUC B/AC 0.969 [0.946, 0.988]   B/A 0.965 [0.940, 0.987]   B/C 0.975 [0.954, 0.992]
+  without extra
+    A  35  min 0.9259  median 0.9630  max 0.9630
+    B  55  min 0.9630  median 1.0000  max 1.0000
+    C  19  min 0.9259  median 0.9630  max 0.9630
+    AUC B/AC 0.952 [0.915, 0.985]   B/A 0.949 [0.909, 0.984]   B/C 0.956 [0.920, 0.987]
+  with extra
+    A  16  min 0.9286  median 0.9286  max 0.9643
+    B  19  min 0.9643  median 0.9643  max 0.9643
+    C   6  min 0.9286  median 0.9286  max 0.9286
+    AUC B/AC 0.955 [0.886, 1.000]   B/A 0.938 [0.844, 1.000]   B/C 1.000 [1.000, 1.000]
+== cfo_short.json
+  all
+    A  51  min 1.0000  median 1.0000  max 1.0000
+    B  74  min 1.0000  median 1.0000  max 1.0000
+    C  25  min 1.0000  median 1.0000  max 1.0000
+    AUC B/AC 0.500 [0.500, 0.500]   B/A 0.500 [0.500, 0.500]   B/C 0.500 [0.500, 0.500]
+  without extra
+    A  35  min 1.0000  median 1.0000  max 1.0000
+    B  55  min 1.0000  median 1.0000  max 1.0000
+    C  19  min 1.0000  median 1.0000  max 1.0000
+    AUC B/AC 0.500 [0.500, 0.500]   B/A 0.500 [0.500, 0.500]   B/C 0.500 [0.500, 0.500]
+  with extra
+    A  16  min 1.0000  median 1.0000  max 1.0000
+    B  19  min 1.0000  median 1.0000  max 1.0000
+    C   6  min 1.0000  median 1.0000  max 1.0000
+    AUC B/AC 0.500 [0.500, 0.500]   B/A 0.500 [0.500, 0.500]   B/C 0.500 [0.500, 0.500]
+== cff_full.json
+  all
+    A  51  min 0.7665  median 0.8982  max 0.9248
+    B  74  min 0.8188  median 0.9988  max 0.9995
+    C  25  min 0.7232  median 0.7459  max 0.7566
+    AUC B/AC 0.882 [0.827, 0.930]   B/A 0.824 [0.742, 0.895]   B/C 1.000 [1.000, 1.000]
+  without extra
+    A  35  min 0.8849  median 0.9059  max 0.9248
+    B  55  min 0.9984  median 0.9990  max 0.9995
+    C  19  min 0.7359  median 0.7459  max 0.7566
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+  with extra
+    A  16  min 0.7665  median 0.7854  max 0.8082
+    B  19  min 0.8188  median 0.8274  max 0.8353
+    C   6  min 0.7232  median 0.7424  max 0.7521
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+== balanced_full.json
+  all
+    A  51  min 0.8743  median 0.9154  max 0.9356
+    B  74  min 0.9660  median 0.9988  max 0.9995
+    C  25  min 0.8200  median 0.8589  max 0.8778
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+  without extra
+    A  35  min 0.9093  median 0.9217  max 0.9356
+    B  55  min 0.9984  median 0.9990  max 0.9995
+    C  19  min 0.8492  median 0.8616  max 0.8778
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+  with extra
+    A  16  min 0.8743  median 0.8897  max 0.9087
+    B  19  min 0.9660  median 0.9665  max 0.9669
+    C   6  min 0.8200  median 0.8391  max 0.8452
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+== sacf_full.json
+  all
+    A  51  min 0.9333  median 0.9667  max 0.9677
+    B  74  min 0.9667  median 1.0000  max 1.0000
+    C  25  min 0.9333  median 0.9667  max 0.9667
+    AUC B/AC 0.969 [0.946, 0.988]   B/A 0.965 [0.940, 0.987]   B/C 0.975 [0.954, 0.992]
+  without extra
+    A  35  min 0.9333  median 0.9667  max 0.9667
+    B  55  min 0.9667  median 1.0000  max 1.0000
+    C  19  min 0.9333  median 0.9667  max 0.9667
+    AUC B/AC 0.952 [0.915, 0.985]   B/A 0.949 [0.909, 0.984]   B/C 0.956 [0.920, 0.987]
+  with extra
+    A  16  min 0.9355  median 0.9355  max 0.9677
+    B  19  min 0.9677  median 0.9677  max 0.9677
+    C   6  min 0.9355  median 0.9355  max 0.9355
+    AUC B/AC 0.955 [0.886, 1.000]   B/A 0.938 [0.844, 1.000]   B/C 1.000 [1.000, 1.000]
+== cfo_full.json
+  all
+    A  51  min 1.0000  median 1.0000  max 1.0000
+    B  74  min 1.0000  median 1.0000  max 1.0000
+    C  25  min 1.0000  median 1.0000  max 1.0000
+    AUC B/AC 0.500 [0.500, 0.500]   B/A 0.500 [0.500, 0.500]   B/C 0.500 [0.500, 0.500]
+  without extra
+    A  35  min 1.0000  median 1.0000  max 1.0000
+    B  55  min 1.0000  median 1.0000  max 1.0000
+    C  19  min 1.0000  median 1.0000  max 1.0000
+    AUC B/AC 0.500 [0.500, 0.500]   B/A 0.500 [0.500, 0.500]   B/C 0.500 [0.500, 0.500]
+  with extra
+    A  16  min 1.0000  median 1.0000  max 1.0000
+    B  19  min 1.0000  median 1.0000  max 1.0000
+    C   6  min 1.0000  median 1.0000  max 1.0000
+    AUC B/AC 0.500 [0.500, 0.500]   B/A 0.500 [0.500, 0.500]   B/C 0.500 [0.500, 0.500]
+== sacf_desired_full.json
+  all
+    A  51  min 0.8333  median 0.8667  max 0.8710
+    B  74  min 0.9667  median 1.0000  max 1.0000
+    C  25  min 0.8333  median 0.8667  max 0.8667
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+  without extra
+    A  35  min 0.8333  median 0.8667  max 0.8667
+    B  55  min 0.9667  median 1.0000  max 1.0000
+    C  19  min 0.8333  median 0.8667  max 0.8667
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+  with extra
+    A  16  min 0.8387  median 0.8387  max 0.8710
+    B  19  min 0.9677  median 0.9677  max 0.9677
+    C   6  min 0.8387  median 0.8387  max 0.8387
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+== cfo_desired_full.json
+  all
+    A  51  min 0.8929  median 0.8929  max 0.8947
+    B  74  min 1.0000  median 1.0000  max 1.0000
+    C  25  min 0.8929  median 0.8929  max 0.8947
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+  without extra
+    A  35  min 0.8929  median 0.8929  max 0.8929
+    B  55  min 1.0000  median 1.0000  max 1.0000
+    C  19  min 0.8929  median 0.8929  max 0.8929
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]
+  with extra
+    A  16  min 0.8947  median 0.8947  max 0.8947
+    B  19  min 1.0000  median 1.0000  max 1.0000
+    C   6  min 0.8947  median 0.8947  max 0.8947
+    AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]

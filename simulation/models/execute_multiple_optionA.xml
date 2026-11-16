@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<testset xmlns="http://cpee.org/ns/properties/2.0">
+  <executionhandler>ruby</executionhandler>
+  <dataelements>
+    <counter>0</counter>
+    <number_of_instances>150</number_of_instances>
+  </dataelements>
+  <documents/>
+  <endpoints>
+    <timeout>https-post://cpee.org/services/timeout.php</timeout>
+    <subprocess>https-post://cpee.org/flow/start/url/</subprocess>
+  </endpoints>
+  <attributes>
+    <info>execute_multiple_optionA</info>
+    <guarded>none</guarded>
+    <modeltype>CPEE</modeltype>
+    <theme>extended</theme>
+    <guarded_id/>
+    <creator>Christine Ashcreek</creator>
+    <author>Christine Ashcreek</author>
+    <model_uuid>7c3e9a42-1b5d-4e8f-a6c0-2d9b4f1e7a58</model_uuid>
+    <model_version/>
+    <design_dir>Staff.dir/Ehrendorfer.dir/conformance.dir/synthetic_adapted.dir/</design_dir>
+    <design_stage>development</design_stage>
+    <filter>me</filter>
+  </attributes>
+  <description>
+    <description xmlns="http://cpee.org/ns/description/1.0">
+      <loop mode="pre_test" condition="data.counter &lt; data.number_of_instances">
+        <call id="a1" endpoint="subprocess">
+          <parameters>
+            <label>start new single process</label>
+            <arguments>
+              <behavior>fork_running</behavior>
+              <url>https://cpee.org/hub/server/Staff.dir/Ehrendorfer.dir/conformance.dir/synthetic_adapted.dir/single_optionA.xml</url>
+              <init/>
+              <endpoints/>
+              <attributes/>
+              <customization/>
+            </arguments>
+          </parameters>
+          <code>
+            <finalize output="result">data.counter += 1</finalize>
+          </code>
+        </call>
+        <manipulate id="a2" label="wait 1 sec">
+          <code>sleep 1</code>
+        </manipulate>
+      </loop>
+    </description>
+  </description>
+  <transformation>
+    <description type="copy"/>
+    <dataelements type="none"/>
+    <endpoints type="none"/>
+  </transformation>
+</testset>

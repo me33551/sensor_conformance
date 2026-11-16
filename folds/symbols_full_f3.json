@@ -1,0 +1,48 @@
+{
+ "eps": {
+  "a6": {
+   "sensor": 0.6068004384399401
+  }
+ },
+ "desired": {
+  "a6": [
+   {
+    "sensor": "stable"
+   },
+   {
+    "sensor": "increase"
+   },
+   {
+    "sensor": "decrease"
+   }
+  ]
+ },
+ "counts": {
+  "a6": [
+   {
+    "sensor": {
+     "decrease": 0,
+     "increase": 0,
+     "peak": 5,
+     "stable": 39
+    }
+   },
+   {
+    "sensor": {
+     "decrease": 0,
+     "increase": 44,
+     "peak": 0,
+     "stable": 0
+    }
+   },
+   {
+    "sensor": {
+     "decrease": 44,
+     "increase": 0,
+     "peak": 0,
+     "stable": 0
+    }
+   }
+  ]
+ }
+}

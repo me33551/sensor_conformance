@@ -1,0 +1,31 @@
+<description datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://riddl.org/ns/description/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <message name="record_params">
+    <parameter name="stream" type="string"/>
+    <parameter name="interval" type="float"/>
+    <parameter name="start" type="float"/>
+    <parameter name="seed" type="integer"/>
+    <parameter name="phases" type="string"/>
+  </message>
+
+  <message name="decide_params">
+    <parameter name="options" type="string"/>
+    <parameter name="outcomes" type="string"/>
+    <parameter name="at" type="integer"/>
+    <parameter name="seed" type="integer"/>
+  </message>
+
+  <message name="json">
+    <parameter name="return" mimetype="application/json"/>
+  </message>
+
+  <resource>
+    <resource relative="record">
+      <get in="record_params"/>
+    </resource>
+    <resource relative="decide">
+      <get in="decide_params" out="json"/>
+    </resource>
+  </resource>
+
+</description>

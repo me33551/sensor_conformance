@@ -1,0 +1,947 @@
+---
+log:
+  namespaces:
+    stream: https://cpee.org/datastream/
+    ssn: http://www.w3.org/ns/ssn/
+    sosa: http://www.w3.org/ns/sosa/
+  xes:
+    creator: cpee.org
+    features: nested-attributes
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    id: http://www.xes-standard.org/identity.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+    stream: https://cpee.org/datastream/datastream.xesext
+  global:
+    trace:
+      concept:name: __NOTSPECIFIED__
+      cpee:name: __NOTSPECIFIED__
+    event:
+      concept:instance: -1
+      concept:name: __NOTSPECIFIED__
+      concept:endpoint: __NOTSPECIFIED__
+      id:id: __NOTSPECIFIED__
+      cpee:uuid: __NOTSPECIFIED__
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  trace:
+    concept:name: 116603
+    cpee:name: single_optionA
+    cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+    cpee:parent_instance: 116519
+    cpee:parent_instance_uuid: bfa6a3be-a3aa-42ae-b8cb-3dcbd7375a2d
+    cpee:parent_instance_model: execute_multiple_optionA
+    cpee:parent_instance_task_id: a1
+    cpee:parent_instance_task_label: start new single process
+---
+event:
+  concept:instance: 116603
+  id:id: ex-ante
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: state/change
+  cpee:state: ready
+  time:timestamp: '2026-11-15T02:24:55.963028+01:00'
+---
+event:
+  concept:instance: 116603
+  id:id: ex-ante
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  time:timestamp: '2026-11-15T02:24:55.976579+01:00'
+---
+event:
+  concept:instance: 116603
+  id:id: ex-ante
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: description/change
+  cpee:description: |
+    <?xml version="1.0"?>
+    <description xmlns="http://cpee.org/ns/description/1.0">
+      <manipulate id="a20" label="init simulation">
+        <code># all random numbers of the instance come from its seed, so that the instance can be regenerated
+    data.seed = Random.new_seed % 2147483647
+    r = Random.new(data.seed)
+    # repeated measurement at the beginning (extra iteration of "record") in 30% of the instances
+    data.extra = r.rand() &lt; 0.3
+    warmup = { 'name' =&gt; 'warmup', 'behavior' =&gt; 'steady', 'level' =&gt; 5, 'noise' =&gt; 0.3, 'points' =&gt; 10 }
+    ramp = { 'name' =&gt; 'ramp', 'behavior' =&gt; 'ramp', 'to' =&gt; 12, 'noise' =&gt; 0.3, 'points' =&gt; 10 }
+    outcome = { 'name' =&gt; 'outcome', 'behavior' =&gt; 'steady', 'noise' =&gt; 0.3, 'points' =&gt; 10 }
+    data.phases = ((data.extra ? [warmup, warmup] : [warmup]) + [ramp, outcome]).to_json
+    # the decision replaces the outcome phase: a stays at the level of the ramp, b (desired) decreases, c increases
+    data.outcomes = {
+      'a' =&gt; [outcome],
+      'b' =&gt; [outcome.merge('behavior' =&gt; 'ramp', 'to' =&gt; 3)],
+      'c' =&gt; [outcome.merge('behavior' =&gt; 'ramp', 'to' =&gt; 18)]
+    }.to_json
+    data.at = data.extra ? 3 : 2</code>
+      </manipulate>
+      <parallel wait="-1" cancel="last">
+        <parallel_branch>
+          <call id="a1" endpoint="timeout">
+            <parameters>
+              <label>A</label>
+              <arguments>
+                <timeout>4</timeout>
+              </arguments>
+            </parameters>
+          </call>
+          <call id="a13" endpoint="timeout">
+            <parameters>
+              <label>B</label>
+              <arguments>
+                <timeout>6</timeout>
+              </arguments>
+            </parameters>
+          </call>
+          <call id="a8" endpoint="decide">
+            <parameters>
+              <label>random decision</label>
+              <arguments>
+                <options>{"a":2,"b":3,"c":1}</options>
+                <outcomes>!data.outcomes</outcomes>
+                <at>!data.at</at>
+                <seed>!data.seed + 1</seed>
+              </arguments>
+            </parameters>
+            <code>
+              <finalize output="result">data.decision = result['decision']</finalize>
+            </code>
+          </call>
+          <call id="a2" endpoint="timeout">
+            <parameters>
+              <label>C</label>
+              <arguments>
+                <timeout>30</timeout>
+              </arguments>
+            </parameters>
+          </call>
+          <call id="a3" endpoint="timeout">
+            <parameters>
+              <label>D</label>
+              <arguments>
+                <timeout>2</timeout>
+              </arguments>
+            </parameters>
+          </call>
+          <call id="a4" endpoint="timeout">
+            <parameters>
+              <label>E</label>
+              <arguments>
+                <timeout>2</timeout>
+              </arguments>
+            </parameters>
+          </call>
+          <call id="a5" endpoint="timeout">
+            <parameters>
+              <label>F</label>
+              <arguments>
+                <timeout>2</timeout>
+              </arguments>
+            </parameters>
+          </call>
+          <choose mode="exclusive">
+            <alternative condition="data.decision == 'a'">
+              <call id="a14" endpoint="timeout">
+                <parameters>
+                  <label>G</label>
+                  <arguments>
+                    <timeout>1</timeout>
+                  </arguments>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="data.decision == 'b'">
+              <call id="a7" endpoint="timeout">
+                <parameters>
+                  <label>H</label>
+                  <arguments>
+                    <timeout>1</timeout>
+                  </arguments>
+                </parameters>
+              </call>
+            </alternative>
+            <otherwise>
+              <call id="a11" endpoint="timeout">
+                <parameters>
+                  <label>I</label>
+                  <arguments>
+                    <timeout>1</timeout>
+                  </arguments>
+                </parameters>
+              </call>
+            </otherwise>
+          </choose>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a6" endpoint="record">
+            <parameters>
+              <label>record</label>
+              <arguments>
+                <stream>sensor</stream>
+                <interval>1</interval>
+                <start>5</start>
+                <seed>!data.seed</seed>
+                <phases>!data.phases</phases>
+              </arguments>
+            </parameters>
+            <annotations>
+              <_context_data_analysis>
+                <probes>
+                  <probe>
+                    <id>sensor</id>
+                    <source>simulation</source>
+                    <extractor_type>extrinsic</extractor_type>
+                    <extractor_code>if(result.is_a?(Hash) &amp;&amp; result['points'].is_a?(Array)) then
+      s = Stream.new('sensor')
+      result['points'].each do |p|
+        sp = StreamPoint.new('sensor')
+        sp.value = p['value']
+        sp.timestamp = p['timestamp']
+        s &lt;&lt; sp
+      end
+      s
+    end</extractor_code>
+                    <extractor_url/>
+                    <extractor_params/>
+                    <visualizer_url/>
+                    <visualizer_params/>
+                  </probe>
+                </probes>
+                <ips/>
+              </_context_data_analysis>
+            </annotations>
+          </call>
+        </parallel_branch>
+      </parallel>
+    </description>
+  cpee:change_uuid: f1f7904d410f2d7c2d3105f54a28b5e99ba0af99
+  time:timestamp: '2026-11-15T02:24:55.990601+01:00'
+---
+event:
+  concept:instance: 116603
+  id:id: ex-ante
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: state/change
+  cpee:state: running
+  time:timestamp: '2026-11-15T02:24:57.728479+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: init simulation
+  id:id: a20
+  cpee:activity: a20
+  cpee:activity_uuid: 8d2324ff1058af386bc58550321e3946
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+  - name: seed
+    value: 1967542432
+  - name: extra
+    value: true
+  - name: phases
+    value: '[{"name":"warmup","behavior":"steady","level":5,"noise":0.3,"points":10},{"name":"warmup","behavior":"steady","level":5,"noise":0.3,"points":10},{"name":"ramp","behavior":"ramp","to":12,"noise":0.3,"points":10},{"name":"outcome","behavior":"steady","noise":0.3,"points":10}]'
+  - name: outcomes
+    value: '{"a":[{"name":"outcome","behavior":"steady","noise":0.3,"points":10}],"b":[{"name":"outcome","behavior":"ramp","noise":0.3,"points":10,"to":3}],"c":[{"name":"outcome","behavior":"ramp","noise":0.3,"points":10,"to":18}]}'
+  - name: at
+    value: 3
+  time:timestamp: '2026-11-15T02:24:58.339127+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: init simulation
+  id:id: a20
+  cpee:activity: a20
+  cpee:activity_uuid: 8d2324ff1058af386bc58550321e3946
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2026-11-15T02:24:58.339932+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: A
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: de6c30afa04477c92f9398ab93feacb5
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+  - name: timeout
+    value: '4'
+  time:timestamp: '2026-11-15T02:24:58.348643+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: record
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/record
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 16f4ce2ab5e5ca33419ae3e0d28978e0
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+  - name: stream
+    value: sensor
+  - name: interval
+    value: '1'
+  - name: start
+    value: '5'
+  - name: seed
+    value: 1967542432
+  - name: phases
+    value: '[{"name":"warmup","behavior":"steady","level":5,"noise":0.3,"points":10},{"name":"warmup","behavior":"steady","level":5,"noise":0.3,"points":10},{"name":"ramp","behavior":"ramp","to":12,"noise":0.3,"points":10},{"name":"outcome","behavior":"steady","noise":0.3,"points":10}]'
+  time:timestamp: '2026-11-15T02:24:58.415936+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: A
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: de6c30afa04477c92f9398ab93feacb5
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2026-11-15T02:25:02.412994+01:00'
+  data:
+  - name: result
+    mimetype: application/json
+    data: "{}"
+---
+event:
+  concept:instance: 116603
+  concept:name: A
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: de6c30afa04477c92f9398ab93feacb5
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2026-11-15T02:25:02.415265+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: B
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a13
+  cpee:activity: a13
+  cpee:activity_uuid: 192f0a14bc3b132476d24449fdc289a5
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+  - name: timeout
+    value: '6'
+  time:timestamp: '2026-11-15T02:25:02.426921+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: B
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a13
+  cpee:activity: a13
+  cpee:activity_uuid: 192f0a14bc3b132476d24449fdc289a5
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2026-11-15T02:25:08.440060+01:00'
+  data:
+  - name: result
+    mimetype: application/json
+    data: "{}"
+---
+event:
+  concept:instance: 116603
+  concept:name: B
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a13
+  cpee:activity: a13
+  cpee:activity_uuid: 192f0a14bc3b132476d24449fdc289a5
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2026-11-15T02:25:08.447519+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: random decision
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/decide
+  id:id: a8
+  cpee:activity: a8
+  cpee:activity_uuid: 056fb9b033fbf64099a51ce1c4187b6e
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+  - name: options
+    value: '{"a":2,"b":3,"c":1}'
+  - name: outcomes
+    value: '{"a":[{"name":"outcome","behavior":"steady","noise":0.3,"points":10}],"b":[{"name":"outcome","behavior":"ramp","noise":0.3,"points":10,"to":3}],"c":[{"name":"outcome","behavior":"ramp","noise":0.3,"points":10,"to":18}]}'
+  - name: at
+    value: 3
+  - name: seed
+    value: 1967542433
+  time:timestamp: '2026-11-15T02:25:08.513994+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: record
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/record
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 16f4ce2ab5e5ca33419ae3e0d28978e0
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2026-11-15T02:25:08.692494+01:00'
+  data:
+  - name: result
+    mimetype: application/json
+    data: '{"stream":"sensor","phase":"warmup","points":[{"value":4.879261240877023,"timestamp":"2026-11-15T02:24:59.501+01:00"},{"value":5.1812911884814685,"timestamp":"2026-11-15T02:25:00.501+01:00"},{"value":4.7480376998178935,"timestamp":"2026-11-15T02:25:01.501+01:00"},{"value":5.270390925942344,"timestamp":"2026-11-15T02:25:02.501+01:00"},{"value":4.870033411052383,"timestamp":"2026-11-15T02:25:03.501+01:00"},{"value":4.984250018598413,"timestamp":"2026-11-15T02:25:04.501+01:00"},{"value":4.670540146439592,"timestamp":"2026-11-15T02:25:05.501+01:00"},{"value":5.058100043091615,"timestamp":"2026-11-15T02:25:06.501+01:00"},{"value":5.1026759253881915,"timestamp":"2026-11-15T02:25:07.501+01:00"},{"value":4.687701072980254,"timestamp":"2026-11-15T02:25:08.501+01:00"}]}'
+---
+event:
+  concept:instance: 116603
+  concept:name: random decision
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/decide
+  id:id: a8
+  cpee:activity: a8
+  cpee:activity_uuid: 056fb9b033fbf64099a51ce1c4187b6e
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2026-11-15T02:25:08.693655+01:00'
+  data:
+  - name: return
+    mimetype: application/json
+    data: '{"decision":"b"}'
+---
+event:
+  concept:instance: 116603
+  concept:name: record
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/record
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 16f4ce2ab5e5ca33419ae3e0d28978e0
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: stream/data
+  time:timestamp: '2026-11-15T02:25:08.696517+01:00'
+  stream:datastream:
+  - stream:name: sensor
+  - stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.879261240877023
+      stream:timestamp: '2026-11-15T02:24:59.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 5.1812911884814685
+      stream:timestamp: '2026-11-15T02:25:00.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.7480376998178935
+      stream:timestamp: '2026-11-15T02:25:01.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 5.270390925942344
+      stream:timestamp: '2026-11-15T02:25:02.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.870033411052383
+      stream:timestamp: '2026-11-15T02:25:03.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.984250018598413
+      stream:timestamp: '2026-11-15T02:25:04.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.670540146439592
+      stream:timestamp: '2026-11-15T02:25:05.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 5.058100043091615
+      stream:timestamp: '2026-11-15T02:25:06.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 5.1026759253881915
+      stream:timestamp: '2026-11-15T02:25:07.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.687701072980254
+      stream:timestamp: '2026-11-15T02:25:08.501+01:00'
+      stream:source: simulation
+---
+event:
+  concept:instance: 116603
+  concept:name: random decision
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/decide
+  id:id: a8
+  cpee:activity: a8
+  cpee:activity_uuid: 056fb9b033fbf64099a51ce1c4187b6e
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+  - name: decision
+    value: b
+  time:timestamp: '2026-11-15T02:25:09.749881+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: random decision
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/decide
+  id:id: a8
+  cpee:activity: a8
+  cpee:activity_uuid: 056fb9b033fbf64099a51ce1c4187b6e
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2026-11-15T02:25:09.779961+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: C
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: b2c01bcf5fe178abcf174395cde6017d
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+  - name: timeout
+    value: '30'
+  time:timestamp: '2026-11-15T02:25:09.803696+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: record
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/record
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 16f4ce2ab5e5ca33419ae3e0d28978e0
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2026-11-15T02:25:18.747220+01:00'
+  data:
+  - name: result
+    mimetype: application/json
+    data: '{"stream":"sensor","phase":"warmup","points":[{"value":5.210734676560375,"timestamp":"2026-11-15T02:25:09.501+01:00"},{"value":4.943231530095291,"timestamp":"2026-11-15T02:25:10.501+01:00"},{"value":5.445082675601281,"timestamp":"2026-11-15T02:25:11.501+01:00"},{"value":4.597122916709997,"timestamp":"2026-11-15T02:25:12.501+01:00"},{"value":4.429382874826679,"timestamp":"2026-11-15T02:25:13.501+01:00"},{"value":4.840586197132706,"timestamp":"2026-11-15T02:25:14.501+01:00"},{"value":5.4403625615330276,"timestamp":"2026-11-15T02:25:15.501+01:00"},{"value":4.721753611634553,"timestamp":"2026-11-15T02:25:16.501+01:00"},{"value":5.531243974921416,"timestamp":"2026-11-15T02:25:17.501+01:00"},{"value":4.50444915081269,"timestamp":"2026-11-15T02:25:18.501+01:00"}]}'
+---
+event:
+  concept:instance: 116603
+  concept:name: record
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/record
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 16f4ce2ab5e5ca33419ae3e0d28978e0
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: stream/data
+  time:timestamp: '2026-11-15T02:25:18.748998+01:00'
+  stream:datastream:
+  - stream:name: sensor
+  - stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 5.210734676560375
+      stream:timestamp: '2026-11-15T02:25:09.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.943231530095291
+      stream:timestamp: '2026-11-15T02:25:10.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 5.445082675601281
+      stream:timestamp: '2026-11-15T02:25:11.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.597122916709997
+      stream:timestamp: '2026-11-15T02:25:12.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.429382874826679
+      stream:timestamp: '2026-11-15T02:25:13.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.840586197132706
+      stream:timestamp: '2026-11-15T02:25:14.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 5.4403625615330276
+      stream:timestamp: '2026-11-15T02:25:15.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.721753611634553
+      stream:timestamp: '2026-11-15T02:25:16.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 5.531243974921416
+      stream:timestamp: '2026-11-15T02:25:17.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.50444915081269
+      stream:timestamp: '2026-11-15T02:25:18.501+01:00'
+      stream:source: simulation
+---
+event:
+  concept:instance: 116603
+  concept:name: record
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/record
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 16f4ce2ab5e5ca33419ae3e0d28978e0
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2026-11-15T02:25:28.600526+01:00'
+  data:
+  - name: result
+    mimetype: application/json
+    data: '{"stream":"sensor","phase":"ramp","points":[{"value":5.214626100510111,"timestamp":"2026-11-15T02:25:19.501+01:00"},{"value":5.934568213399115,"timestamp":"2026-11-15T02:25:20.501+01:00"},{"value":6.744438684870289,"timestamp":"2026-11-15T02:25:21.501+01:00"},{"value":7.853164247268708,"timestamp":"2026-11-15T02:25:22.501+01:00"},{"value":8.019245727200826,"timestamp":"2026-11-15T02:25:23.501+01:00"},{"value":8.821466567827205,"timestamp":"2026-11-15T02:25:24.501+01:00"},{"value":9.45206051893707,"timestamp":"2026-11-15T02:25:25.501+01:00"},{"value":10.563425376205052,"timestamp":"2026-11-15T02:25:26.501+01:00"},{"value":11.671586287191477,"timestamp":"2026-11-15T02:25:27.501+01:00"},{"value":11.47398303010729,"timestamp":"2026-11-15T02:25:28.501+01:00"}]}'
+---
+event:
+  concept:instance: 116603
+  concept:name: record
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/record
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 16f4ce2ab5e5ca33419ae3e0d28978e0
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: stream/data
+  time:timestamp: '2026-11-15T02:25:28.603504+01:00'
+  stream:datastream:
+  - stream:name: sensor
+  - stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 5.214626100510111
+      stream:timestamp: '2026-11-15T02:25:19.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 5.934568213399115
+      stream:timestamp: '2026-11-15T02:25:20.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 6.744438684870289
+      stream:timestamp: '2026-11-15T02:25:21.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 7.853164247268708
+      stream:timestamp: '2026-11-15T02:25:22.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 8.019245727200826
+      stream:timestamp: '2026-11-15T02:25:23.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 8.821466567827205
+      stream:timestamp: '2026-11-15T02:25:24.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 9.45206051893707
+      stream:timestamp: '2026-11-15T02:25:25.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 10.563425376205052
+      stream:timestamp: '2026-11-15T02:25:26.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 11.671586287191477
+      stream:timestamp: '2026-11-15T02:25:27.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 11.47398303010729
+      stream:timestamp: '2026-11-15T02:25:28.501+01:00'
+      stream:source: simulation
+---
+event:
+  concept:instance: 116603
+  concept:name: record
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/record
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 16f4ce2ab5e5ca33419ae3e0d28978e0
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2026-11-15T02:25:38.541721+01:00'
+  data:
+  - name: result
+    mimetype: application/json
+    data: '{"stream":"sensor","phase":"outcome","points":[{"value":10.610278854123568,"timestamp":"2026-11-15T02:25:29.501+01:00"},{"value":9.679393642335947,"timestamp":"2026-11-15T02:25:30.501+01:00"},{"value":9.21803073217513,"timestamp":"2026-11-15T02:25:31.501+01:00"},{"value":8.03272515417492,"timestamp":"2026-11-15T02:25:32.501+01:00"},{"value":7.121162411349668,"timestamp":"2026-11-15T02:25:33.501+01:00"},{"value":6.50546517359695,"timestamp":"2026-11-15T02:25:34.501+01:00"},{"value":5.3722519964417,"timestamp":"2026-11-15T02:25:35.501+01:00"},{"value":4.836269177957651,"timestamp":"2026-11-15T02:25:36.501+01:00"},{"value":4.123777496441237,"timestamp":"2026-11-15T02:25:37.501+01:00"},{"value":3.1446770825575854,"timestamp":"2026-11-15T02:25:38.501+01:00"}]}'
+---
+event:
+  concept:instance: 116603
+  concept:name: record
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/record
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 16f4ce2ab5e5ca33419ae3e0d28978e0
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: stream/data
+  time:timestamp: '2026-11-15T02:25:38.545885+01:00'
+  stream:datastream:
+  - stream:name: sensor
+  - stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 10.610278854123568
+      stream:timestamp: '2026-11-15T02:25:29.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 9.679393642335947
+      stream:timestamp: '2026-11-15T02:25:30.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 9.21803073217513
+      stream:timestamp: '2026-11-15T02:25:31.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 8.03272515417492
+      stream:timestamp: '2026-11-15T02:25:32.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 7.121162411349668
+      stream:timestamp: '2026-11-15T02:25:33.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 6.50546517359695
+      stream:timestamp: '2026-11-15T02:25:34.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 5.3722519964417
+      stream:timestamp: '2026-11-15T02:25:35.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.836269177957651
+      stream:timestamp: '2026-11-15T02:25:36.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 4.123777496441237
+      stream:timestamp: '2026-11-15T02:25:37.501+01:00'
+      stream:source: simulation
+  - stream:point:
+      stream:id: sensor
+      stream:value: 3.1446770825575854
+      stream:timestamp: '2026-11-15T02:25:38.501+01:00'
+      stream:source: simulation
+---
+event:
+  concept:instance: 116603
+  concept:name: record
+  concept:endpoint: https-get://lehre.bpm.in.tum.de/ports/4570/record
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 16f4ce2ab5e5ca33419ae3e0d28978e0
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2026-11-15T02:25:38.574079+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: C
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: b2c01bcf5fe178abcf174395cde6017d
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2026-11-15T02:25:39.871497+01:00'
+  data:
+  - name: result
+    mimetype: application/json
+    data: "{}"
+---
+event:
+  concept:instance: 116603
+  concept:name: C
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: b2c01bcf5fe178abcf174395cde6017d
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2026-11-15T02:25:39.897688+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: D
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 9b3379ea91bbff7f73a62d4ab8f3065b
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+  - name: timeout
+    value: '2'
+  time:timestamp: '2026-11-15T02:25:39.922095+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: D
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 9b3379ea91bbff7f73a62d4ab8f3065b
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2026-11-15T02:25:42.070292+01:00'
+  data:
+  - name: result
+    mimetype: application/json
+    data: "{}"
+---
+event:
+  concept:instance: 116603
+  concept:name: D
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 9b3379ea91bbff7f73a62d4ab8f3065b
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2026-11-15T02:25:42.100232+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: E
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: e1d8c340f13752c5f07e952b2756530a
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+  - name: timeout
+    value: '2'
+  time:timestamp: '2026-11-15T02:25:42.130779+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: E
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: e1d8c340f13752c5f07e952b2756530a
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2026-11-15T02:25:44.155964+01:00'
+  data:
+  - name: result
+    mimetype: application/json
+    data: "{}"
+---
+event:
+  concept:instance: 116603
+  concept:name: E
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: e1d8c340f13752c5f07e952b2756530a
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2026-11-15T02:25:44.169359+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: F
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a5
+  cpee:activity: a5
+  cpee:activity_uuid: cc2a6a12fcbe9a1e086f3a7caad8724a
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+  - name: timeout
+    value: '2'
+  time:timestamp: '2026-11-15T02:25:44.169945+01:00'
+---
+event:
+  concept:instance: 116603
+  concept:name: F
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a5
+  cpee:activity: a5
+  cpee:activity_uuid: cc2a6a12fcbe9a1e086f3a7caad8724a
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2026-11-15T02:25:46.890125+01:00'
+  data:
+  - name: result
+    mimetype: application/json
+    data: "{}"
+---
+event:
+  concept:instance: 116603
+  concept:name: F
+  concept:endpoint: https-post://cpee.org/services/timeout.php
+  id:id: a5
+  cpee:activity: a5
+  cpee:activity_uuid: cc2a6a12fcbe9a1e086f3a7caad8724a
+  cpee:instance: 9169c130-b8f3-45ef-919c-3804a642748e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2026-11-15T02:25:46.891502+01:00'

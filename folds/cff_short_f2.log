@@ -1,0 +1,165 @@
+
+[93m============================================================[0m
+
+  Welcome to [96mPM4Py[0m — Community Version
+  Open-Source License (AGPL v3)
+
+  📚 Docs & Examples:
+     https://processintelligence.solutions/pm4py
+
+  ⚖️  [93mLicense: AGPL v3 — Commercial use requires open-sourcing your application.[0m
+     Business use without open-sourcing? A commercial license is available:
+     https://processintelligence.solutions/pm4py#licensing
+
+[93m============================================================[0m
+
+78be416e-6802-44f5-8e9c-65d5e9591ea7 b: cost 3.364 (control flow 0.000, sensor 3.364) fitness 0.9988 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+ed97985b-d0fc-4858-bde2-ec2bf128cf5e b: cost 3.056 (control flow 0.000, sensor 3.056) fitness 0.9989 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+826936a2-3b72-45c5-a560-8ab32d1b8a96 a: cost 244.897 (control flow 0.000, sensor 244.897) fitness 0.9141 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+94026bb8-5196-4d18-a4a9-1b6b8770f5cc b: cost 2.577 (control flow 0.000, sensor 2.577) fitness 0.9990 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+c4658409-6678-42a3-9a56-85febf10b8c4 b: cost 3.330 (control flow 0.000, sensor 3.330) fitness 0.9988 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+b9beb803-6212-4d41-a43a-787d01cb081f a: cost 313.922 (control flow 0.000, sensor 313.922) fitness 0.8879 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+da01d630-14f7-4b95-8bc5-c9dd3bf62c97 b: cost 2.979 (control flow 0.000, sensor 2.979) fitness 0.9989 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+e69fa480-f6be-4a4f-918a-9e21b4fe4c50 a: cost 676.632 (control flow 0.000, sensor 676.632) fitness 0.7705 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+acaba842-0953-4a33-9011-816a99f6a5a3 b: cost 2.922 (control flow 0.000, sensor 2.922) fitness 0.9989 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+3e6f93f5-392b-4fc6-98bf-621e90ddd576 c: cost 827.176 (control flow 0.000, sensor 827.176) fitness 0.7316 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+7e012742-4503-4ad8-aca1-e26dfab9d9d8 a: cost 288.647 (control flow 0.000, sensor 288.647) fitness 0.8993 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+25dd2cc0-f719-4a92-89ff-606e97f4a9a7 a: cost 622.563 (control flow 0.000, sensor 622.563) fitness 0.7848 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+f1bfd0dc-f94e-4ee3-873e-8736116d6a3f b: cost 523.194 (control flow 0.000, sensor 523.194) fitness 0.8135 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+93631127-fae8-452e-b43e-8726e6c932cd a: cost 681.145 (control flow 0.000, sensor 681.145) fitness 0.7701 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+3d592450-0f30-490a-84c7-db9cd3d06310 a: cost 241.800 (control flow 0.000, sensor 241.800) fitness 0.9147 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+5408664a-24ab-4ed4-ba2e-2e9504ac1e44 c: cost 838.566 (control flow 0.000, sensor 838.566) fitness 0.7310 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+c74f76ea-f92c-432e-9d29-130f1e432df7 a: cost 612.967 (control flow 0.000, sensor 612.967) fitness 0.7892 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+0f3c08ba-0108-4027-a848-62a6e390ae14 b: cost 3.307 (control flow 0.000, sensor 3.307) fitness 0.9988 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+0383b8f4-9c74-4d4c-9920-b086ed7b6a03 a: cost 354.939 (control flow 0.000, sensor 354.939) fitness 0.8765 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+9691cef7-e745-40c1-889c-92c4e577661d b: cost 520.378 (control flow 0.000, sensor 520.378) fitness 0.8143 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+fff5da2e-c62b-4909-82f9-0bf4cb971358 b: cost 2.890 (control flow 0.000, sensor 2.890) fitness 0.9989 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+fac79e1d-19d7-492a-811f-0d65f83399a3 b: cost 4.045 (control flow 0.000, sensor 4.045) fitness 0.9985 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+1ec2cf82-09df-40de-8886-1b0387369b4b b: cost 2.385 (control flow 0.000, sensor 2.385) fitness 0.9991 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+debd56f0-87de-4a5d-95fe-2c892c59697d a: cost 317.233 (control flow 0.000, sensor 317.233) fitness 0.8889 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+146b87b6-3a84-457f-841b-c789e5cfd1d5 b: cost 3.142 (control flow 0.000, sensor 3.142) fitness 0.9988 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+2bf2a957-f078-46a6-bdc5-9e3f0cb148e1 a: cost 734.106 (control flow 0.000, sensor 734.106) fitness 0.7542 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+56941ac9-7e2b-43c0-a529-16431a2d81b4 a: cost 308.194 (control flow 0.000, sensor 308.194) fitness 0.8912 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+666ec398-621d-44b7-87ea-5e0f130adb5a b: cost 3.037 (control flow 0.000, sensor 3.037) fitness 0.9989 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+67013440-d0e5-4898-a543-994ba41e83a7 a: cost 305.154 (control flow 0.000, sensor 305.154) fitness 0.8940 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+ddd8e3f8-82bf-437b-a372-d3dca990722d b: cost 2.615 (control flow 0.000, sensor 2.615) fitness 0.9990 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+252b61e0-e2ac-4b4b-94e2-d62b84ed9256 b: cost 512.303 (control flow 0.000, sensor 512.303) fitness 0.8174 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+0912b5b9-89e5-4cb8-b32e-e6eb63179a00 b: cost 2.877 (control flow 0.000, sensor 2.877) fitness 0.9989 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+81505e8a-65fd-4cb8-9bf6-5b0426d8c699 c: cost 844.159 (control flow 0.000, sensor 844.159) fitness 0.7260 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+128d594e-f77e-4563-8643-27f7183cfdd7 b: cost 2.500 (control flow 0.000, sensor 2.500) fitness 0.9991 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+729775ba-5373-4121-8d29-356923e9ded5 a: cost 714.919 (control flow 0.000, sensor 714.919) fitness 0.7586 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+7eb9e747-9bbc-4250-94b6-58a8f96f0559 a: cost 340.890 (control flow 0.000, sensor 340.890) fitness 0.8821 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+1ff2db90-6ad4-4c21-908e-91fafb588e4b c: cost 828.541 (control flow 0.000, sensor 828.541) fitness 0.7278 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+6051cb98-1ec7-427b-9dd3-9dd3c5b3b860 b: cost 2.764 (control flow 0.000, sensor 2.764) fitness 0.9990 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+221cdaf7-a16c-4ecd-94ad-e778d0744a43 c: cost 870.473 (control flow 0.000, sensor 870.473) fitness 0.7238 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+ab6402e7-0207-4d28-802b-115c66ce8c47 b: cost 4.190 (control flow 0.000, sensor 4.190) fitness 0.9985 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+38568ece-c9bc-4a63-9598-6e895263bcee b: cost 543.134 (control flow 0.000, sensor 543.134) fitness 0.8063 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+a8156f61-1e8f-4820-9232-9915c2cb20f9 a: cost 252.296 (control flow 0.000, sensor 252.296) fitness 0.9106 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+0c1ffaa2-bd2c-455c-a94a-a518d191dc79 c: cost 855.814 (control flow 0.000, sensor 855.814) fitness 0.7258 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+d8f1b248-9477-4550-bd27-3cdae4752532 c: cost 862.812 (control flow 0.000, sensor 862.812) fitness 0.7249 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+ec4973f7-07d1-4668-9d8b-f1f728a571e6 b: cost 2.272 (control flow 0.000, sensor 2.272) fitness 0.9992 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+79509f10-fe58-4ef9-a0c2-5397e38279de b: cost 3.506 (control flow 0.000, sensor 3.506) fitness 0.9987 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+c548c99f-1185-45b9-804d-b04dae8cf970 b: cost 557.357 (control flow 0.000, sensor 557.357) fitness 0.8012 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+be66228d-91c3-467f-9148-c166801f764d b: cost 3.365 (control flow 0.000, sensor 3.365) fitness 0.9988 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+1297a226-7f32-4fe2-bd4c-2331822436ac a: cost 280.724 (control flow 0.000, sensor 280.724) fitness 0.9017 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+898d8353-a4ad-45e0-99ab-69ccf2fc670e b: cost 2.357 (control flow 0.000, sensor 2.357) fitness 0.9991 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+8dfea4e1-abb9-4443-b3ee-4f8e9720ba95 b: cost 2.931 (control flow 0.000, sensor 2.931) fitness 0.9989 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+e8011368-3589-4931-be95-81999b2b2b10 b: cost 4.379 (control flow 0.000, sensor 4.379) fitness 0.9984 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+6930764c-690c-48ae-a672-767a0bd474c3 a: cost 288.911 (control flow 0.000, sensor 288.911) fitness 0.8995 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+105d0dd4-07c3-4e31-b237-cbad7c2b9642 a: cost 301.401 (control flow 0.000, sensor 301.401) fitness 0.8942 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+6dfd6440-7e24-4cdc-93c7-fb16d77284db b: cost 3.407 (control flow 0.000, sensor 3.407) fitness 0.9987 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+f1457b42-3049-4e3b-980f-9edfe16e8143 b: cost 548.864 (control flow 0.000, sensor 548.864) fitness 0.8043 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+ce1bbfa6-8cb2-4ff9-8db2-2b7693f15d77 c: cost 779.762 (control flow 0.000, sensor 779.762) fitness 0.7407 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+d896d79e-62c4-4c90-b267-cd610a93d8e5 a: cost 647.997 (control flow 0.000, sensor 647.997) fitness 0.7786 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+d80e5b8f-459b-4b38-9022-e479171a5645 a: cost 699.611 (control flow 0.000, sensor 699.611) fitness 0.7660 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+137b0942-fb6b-457c-830f-efffed95ce64 b: cost 1.673 (control flow 0.000, sensor 1.673) fitness 0.9994 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+f1a3242d-9c6f-4ace-b7cf-49f961bb7612 b: cost 1.423 (control flow 0.000, sensor 1.423) fitness 0.9995 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+bce7b4d0-43b8-4a68-b405-8d62496aa569 b: cost 1.714 (control flow 0.000, sensor 1.714) fitness 0.9994 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+9bc8071d-0695-4ba9-b7b7-511d1fd551cc b: cost 541.964 (control flow 0.000, sensor 541.964) fitness 0.8067 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+0a356f06-405a-4594-ab4c-35ae0a5ef486 b: cost 3.760 (control flow 0.000, sensor 3.760) fitness 0.9986 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+f09dd7fa-5edb-4ebb-9997-af36c35393b3 b: cost 4.182 (control flow 0.000, sensor 4.182) fitness 0.9985 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+58b27abe-90e2-4f69-a1cb-984028c919d0 a: cost 229.329 (control flow 0.000, sensor 229.329) fitness 0.9194 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+5eeb5d73-1a24-451e-ac7d-f9428ce4450c a: cost 724.290 (control flow 0.000, sensor 724.290) fitness 0.7582 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+b758ce34-6100-456f-b3b9-e3e709472bb1 a: cost 703.065 (control flow 0.000, sensor 703.065) fitness 0.7628 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+c64c3b71-0522-4915-9ce4-8779e96faf5e b: cost 3.588 (control flow 0.000, sensor 3.588) fitness 0.9987 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+d719ab83-c112-4bbe-9687-77052eabc309 a: cost 287.090 (control flow 0.000, sensor 287.090) fitness 0.8989 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+3d0b895b-5139-40b8-bf12-02231a44b814 c: cost 833.715 (control flow 0.000, sensor 833.715) fitness 0.7310 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+f5bd9a08-3512-40fc-93f8-1fc88e40b4c2 b: cost 2.854 (control flow 0.000, sensor 2.854) fitness 0.9989 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+d4296824-f681-4506-b6df-44ad5cb79ab1 a: cost 310.611 (control flow 0.000, sensor 310.611) fitness 0.8906 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+23a6d63b-2e52-4edb-9947-a6bec0e6b048 b: cost 3.387 (control flow 0.000, sensor 3.387) fitness 0.9987 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+de8c75d9-c2d9-4a39-acfb-bff951b16520 a: cost 285.600 (control flow 0.000, sensor 285.600) fitness 0.9000 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+952c1190-79de-4627-bf26-14203bc35644 b: cost 528.393 (control flow 0.000, sensor 528.393) fitness 0.8116 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+9caa5275-2bb8-4b69-90d6-3c8ad17745f6 c: cost 826.320 (control flow 0.000, sensor 826.320) fitness 0.7305 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+570c68c0-db31-4385-bfd9-115e68fdf715 b: cost 4.826 (control flow 0.000, sensor 4.826) fitness 0.9982 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+1ea87da9-d2ab-4123-a99a-07e1cf6f323b c: cost 912.653 (control flow 0.000, sensor 912.653) fitness 0.7121 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+7c285b9e-cee7-4b6b-b464-e13b0ba9689e c: cost 832.989 (control flow 0.000, sensor 832.989) fitness 0.7287 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+c51ba12e-f8f0-45b9-b461-369531f00ba3 b: cost 558.303 (control flow 0.000, sensor 558.303) fitness 0.8009 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+adbca633-0be9-485c-ba8d-6c632d2f1e75 a: cost 298.264 (control flow 0.000, sensor 298.264) fitness 0.8955 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+aca58449-6b3c-4223-8182-ebaee8dd4e43 b: cost 553.602 (control flow 0.000, sensor 553.602) fitness 0.8026 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+9169c130-b8f3-45ef-919c-3804a642748e b: cost 525.069 (control flow 0.000, sensor 525.069) fitness 0.8127 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+68cfc95d-61da-4730-9158-027f003a4d45 c: cost 800.186 (control flow 0.000, sensor 800.186) fitness 0.7379 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+222430fc-5fba-40fd-974a-7908c41a4b55 b: cost 3.407 (control flow 0.000, sensor 3.407) fitness 0.9987 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+860fde6f-470c-4f0d-b754-ddc50b84e603 b: cost 2.758 (control flow 0.000, sensor 2.758) fitness 0.9990 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+6c1eff86-e5c8-46d4-b309-c7b9242b910c c: cost 855.193 (control flow 0.000, sensor 855.193) fitness 0.7286 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+a12ef327-1c78-46dd-8be8-c32b803680d1 a: cost 233.225 (control flow 0.000, sensor 233.225) fitness 0.9177 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+86a6da9e-e4fd-4f7e-85f4-b204e1b7e504 a: cost 321.811 (control flow 0.000, sensor 321.811) fitness 0.8879 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+2858f955-98ec-439d-83ed-c6b85152e8cb b: cost 558.278 (control flow 0.000, sensor 558.278) fitness 0.8008 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+4ba7d8f9-9bf9-4c0e-8eb5-c55ff486e88f a: cost 324.602 (control flow 0.000, sensor 324.602) fitness 0.8872 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+6787acf0-7ebe-47ed-97e8-bdc9b7c99f67 b: cost 507.471 (control flow 0.000, sensor 507.471) fitness 0.8190 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+ce59beff-c8a4-451a-8b2e-b6fe5f686e5f b: cost 3.461 (control flow 0.000, sensor 3.461) fitness 0.9987 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+99e85593-d731-4b52-9902-1a09fad6e1d2 a: cost 236.254 (control flow 0.000, sensor 236.254) fitness 0.9163 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+47257d45-964d-4f24-9135-afaf1a82406f b: cost 2.714 (control flow 0.000, sensor 2.714) fitness 0.9990 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+ab2f5892-bf68-4430-80d9-46622a0227b3 b: cost 2.361 (control flow 0.000, sensor 2.361) fitness 0.9991 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+1b20fd5c-1d74-4f0e-b497-e2c4aa392422 a: cost 280.706 (control flow 0.000, sensor 280.706) fitness 0.9013 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+9241969c-0769-4cbe-bceb-06588d21d791 a: cost 677.655 (control flow 0.000, sensor 677.655) fitness 0.7696 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+fb97c412-4733-455e-9951-2cc8b7c91341 b: cost 518.412 (control flow 0.000, sensor 518.412) fitness 0.8151 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+33cef2bd-464a-4ad4-9d61-784245404ac4 b: cost 523.661 (control flow 0.000, sensor 523.661) fitness 0.8132 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+ce08486b-0362-40ea-81aa-fbe5b5c2c130 b: cost 3.721 (control flow 0.000, sensor 3.721) fitness 0.9986 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+e8a36d45-ace8-449f-9669-b3a8f0065f68 b: cost 3.592 (control flow 0.000, sensor 3.592) fitness 0.9987 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+0083ab5e-8dad-4922-bd14-c8fefd0def01 b: cost 2.565 (control flow 0.000, sensor 2.565) fitness 0.9991 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+78cebcdd-ec92-413f-ba3a-b6086620913d b: cost 530.815 (control flow 0.000, sensor 530.815) fitness 0.8106 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+938421cc-991b-4280-bbfa-55f80c7d6d73 b: cost 2.282 (control flow 0.000, sensor 2.282) fitness 0.9992 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+10492538-9de9-4e76-b438-1da2d1499192 b: cost 532.197 (control flow 0.000, sensor 532.197) fitness 0.8103 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+0956a960-6cd2-4191-b4e2-d63a1ea6eebb a: cost 334.098 (control flow 0.000, sensor 334.098) fitness 0.8841 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+8d019ae2-0af3-4cf2-9a40-922a836c48ff a: cost 324.462 (control flow 0.000, sensor 324.462) fitness 0.8872 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+a2946c70-c75f-45b6-90bd-51c8b67b0216 a: cost 716.734 (control flow 0.000, sensor 716.734) fitness 0.7571 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+c379e90f-0c09-4ad4-aebb-0caf4815d154 a: cost 263.340 (control flow 0.000, sensor 263.340) fitness 0.9075 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+0ceab67c-2964-416f-8cab-35e5c65b5cca b: cost 3.064 (control flow 0.000, sensor 3.064) fitness 0.9989 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+1d56b106-8a75-458b-86a7-e084a228522b b: cost 2.659 (control flow 0.000, sensor 2.659) fitness 0.9990 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+0a220488-c236-4393-9d21-ffc366e935e3 c: cost 978.186 (control flow 0.000, sensor 978.186) fitness 0.6983 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+9ce9436f-a55e-4bbc-a931-2c0c9ce7def7 c: cost 839.079 (control flow 0.000, sensor 839.079) fitness 0.7290 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+41fc80af-8158-4ca8-8899-60a77c457704 a: cost 774.547 (control flow 0.000, sensor 774.547) fitness 0.7436 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+00492491-b39a-4d74-9e07-a21a5bee6d18 a: cost 296.228 (control flow 0.000, sensor 296.228) fitness 0.8956 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+c9ece045-6eda-456c-af72-d51b8013507c c: cost 805.835 (control flow 0.000, sensor 805.835) fitness 0.7356 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+e599c3af-9f06-4273-8255-7af80692930f a: cost 305.638 (control flow 0.000, sensor 305.638) fitness 0.8930 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+f747b272-400b-4d1b-ba38-b6341848845c a: cost 270.475 (control flow 0.000, sensor 270.475) fitness 0.9040 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+45579734-b1f3-42d9-9203-a1e07dfca95a c: cost 852.289 (control flow 0.000, sensor 852.289) fitness 0.7213 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+1eb8102d-760d-4157-893f-a0777263ec9b b: cost 2.120 (control flow 0.000, sensor 2.120) fitness 0.9992 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+f9e8f0e2-8b38-40af-8c2c-1d7874f3142d a: cost 675.723 (control flow 0.000, sensor 675.723) fitness 0.7697 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+b347b81a-cf2f-44e8-ab67-5c2057d80a5f b: cost 2.745 (control flow 0.000, sensor 2.745) fitness 0.9990 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+25cc2eec-7f75-4e76-b3d1-be17fe5efccd a: cost 705.522 (control flow 0.000, sensor 705.522) fitness 0.7628 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+dc2498e3-f066-4f06-b363-3ffa2cde4bd3 b: cost 1.872 (control flow 0.000, sensor 1.872) fitness 0.9993 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+fbf591c4-6ede-48c0-8f05-3d78a1bc3b6c b: cost 2.789 (control flow 0.000, sensor 2.789) fitness 0.9990 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+dc1579b3-176b-4953-bc88-56bd612c7349 b: cost 543.040 (control flow 0.000, sensor 543.040) fitness 0.8063 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+90cf0b5f-b134-47bf-ab30-8d60eb7a8b07 c: cost 849.247 (control flow 0.000, sensor 849.247) fitness 0.7244 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+03fbabb9-55b3-4eb4-91f6-7f6a9c15c289 a: cost 319.364 (control flow 0.000, sensor 319.364) fitness 0.8890 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+59089f69-e886-4091-9c06-b1974f0b8fc3 c: cost 976.336 (control flow 0.000, sensor 976.336) fitness 0.6972 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+f6c43388-b48f-447e-87eb-bbe116664680 b: cost 2.327 (control flow 0.000, sensor 2.327) fitness 0.9991 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+8d4da8d9-f389-44ff-bfbf-d029e1714a93 a: cost 278.646 (control flow 0.000, sensor 278.646) fitness 0.9029 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+c78edbb3-c886-489a-8e45-a651551736bf a: cost 296.705 (control flow 0.000, sensor 296.705) fitness 0.8956 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+5e63d117-3bb7-4fe9-aa22-f4f12f1c253a b: cost 537.956 (control flow 0.000, sensor 537.956) fitness 0.8081 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+9762d1a0-e39f-4475-9893-422778b0e555 a: cost 251.159 (control flow 0.000, sensor 251.159) fitness 0.9112 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+42faf403-8a02-4272-b9d0-96e97b48b2c9 c: cost 829.959 (control flow 0.000, sensor 829.959) fitness 0.7281 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+abe7043c-048b-46f2-9352-600d13ba430f c: cost 865.191 (control flow 0.000, sensor 865.191) fitness 0.7192 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+e537de08-8da3-4084-bbd9-f9e5fd23b74d c: cost 828.872 (control flow 0.000, sensor 828.872) fitness 0.7295 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+414c1d53-b700-4de0-93af-70be4ca3ded6 b: cost 3.502 (control flow 0.000, sensor 3.502) fitness 0.9987 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+f3b02f43-bbbc-4c46-aed9-404a9bafdb7f a: cost 250.167 (control flow 0.000, sensor 250.167) fitness 0.9119 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+aebb247d-4fe3-4bda-92f6-275d8feda6d5 a: cost 711.534 (control flow 0.000, sensor 711.534) fitness 0.7598 moves {'log': 0, 'model': 0, 'model_invisible': 11, 'sync': 31}
+8a2d1eeb-ffad-43a1-b0bf-b1b8da5c3a73 a: cost 279.744 (control flow 0.000, sensor 279.744) fitness 0.9011 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+b47dbff8-18e7-42ae-9ce7-be55eb147f1d b: cost 1.918 (control flow 0.000, sensor 1.918) fitness 0.9993 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+de498e18-86bc-4215-b98d-c9114f72089d c: cost 833.698 (control flow 0.000, sensor 833.698) fitness 0.7299 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+dd1923b4-2a45-4d19-bf8a-a1932628faac c: cost 814.781 (control flow 0.000, sensor 814.781) fitness 0.7328 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+54af4f9f-05d5-40e2-b6c4-729dd074139e b: cost 1.989 (control flow 0.000, sensor 1.989) fitness 0.9993 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+d53f9a54-3a61-4cfc-b10b-b3b02c6d6e0f b: cost 2.544 (control flow 0.000, sensor 2.544) fitness 0.9991 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+436160dc-f5b3-4726-b6dd-b83a45b89dac b: cost 3.937 (control flow 0.000, sensor 3.937) fitness 0.9985 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}
+457f35cc-db2e-4703-b296-81482a8c758b b: cost 2.906 (control flow 0.000, sensor 2.906) fitness 0.9989 moves {'log': 0, 'model': 0, 'model_invisible': 10, 'sync': 29}

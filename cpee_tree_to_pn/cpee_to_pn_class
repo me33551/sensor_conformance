@@ -1,0 +1,343 @@
+#!/bin/ruby
+
+# Translates a CPEE-Tree into a Petri Net (Sect. "Preparation of Process Model", step 1 of the paper).
+#
+# Each call becomes "[aid]_calling", a loop of "[aid]_receiving" (each directly followed by "[aid]_data"
+# if the activity records sensor data), and "[aid]_done". Gateways become places and invisible
+# transitions. Script tasks (manipulate) are ignored.
+#
+# Options:
+#   --desired FILE   desired sensor data (sensor_streams/*.json, output of calculate_dba.rb, step 2):
+#                    every activity with desired sensor data records sensor data, i.e., gets a data transition
+#   --unroll         unroll the receiving/data loop of every activity that records sensor data into K pairs,
+#                    K being the number of occurrences in the desired sensor data (Balanced approach)
+#   --symbols FILE   desired symbols (output of pm4py_conformance/calculate_desired_symbols.py) for Sensor Data
+#                    as Control Flow: like --desired --unroll, but the data transition t^k is replaced by one
+#                    transition per sensor labeled "[aid]_[sensor]_[desired symbol of occurrence k]"
+#   --keep EIDS      comma-separated eids of alternatives to keep; all other alternatives of a decision that
+#                    contains one of them are removed (e.g., the desired model: --keep e2)
+#   --name NAME      base name of the generated files (default: basename of the model)
+#
+# e.g., ./cpee_to_pn_class ../simulation/models/single_optionA.xml --desired ../calculate_process_model_sensor_streams/sensor_streams/syntheticB_f1.json --unroll --name full_balanced_f1
+
+require 'xml/smart'
+require 'securerandom'
+require 'json'
+require 'optparse'
+require 'fileutils'
+
+class Place
+  attr_accessor :tokens
+
+  def initialize(name,tokens)
+    @uuid = SecureRandom.uuid()
+    @name = name
+    @tokens = tokens
+  end
+
+  def to_s()
+    return "place_#{@name}_#{@uuid}"
+  end
+end
+
+class Transition
+  attr_reader :id,:silent
+
+  def silent?() = self.silent()
+
+  # copy: number of the unrolled copy (t^k), nil if not unrolled
+  def initialize(label,silent=false,id=nil,lifecycle=nil,copy=nil)
+    @uuid = SecureRandom.uuid()
+    @label= label
+    @silent = silent
+    @id = id
+    @lifecycle = lifecycle
+    @copy = copy
+  end
+
+  # label of the visible transition, i.e., "[aid]_[lifecycle]" (shared by all unrolled copies)
+  def label_pm4py()
+    return "#{@id}#{@lifecycle.nil?() ? '' : "_#{@lifecycle}"}"
+  end
+
+  # unique id of the transition in the PNML for PM4Py, unrolled copies are numbered "[aid]_[lifecycle]^k"
+  def id_pm4py()
+    return @id.nil?() ? self.to_s() : "#{self.label_pm4py()}#{@copy.nil?() ? '' : "^#{@copy}"}"
+  end
+
+  def to_s()
+    return "transition_#{@label}_#{@id.nil?() ? "" : "#{@id}_"}#{@silent ? "silent_" : ""}#{@copy.nil?() ? "" : "#{@copy}_"}#{@uuid}"
+  end
+end
+
+class Arc
+  attr_reader :source,:target
+
+  def initialize(source,target)
+    @id = SecureRandom.uuid()
+    @source = source
+    @target = target
+  end
+
+  def to_s()
+    return "arc_#{@source.to_s()}_#{@target.to_s()}_#{@id}"
+  end
+end
+
+class Petrinet
+  # sensors: activity id => K (number of occurrences of its data transition in the desired executions)
+  # symbols: activity id => list (per occurrence k) of {sensor => desired symbol}, nil if not SaCF
+  def initialize(sensors={},unroll=false,keep=[],symbols=nil)
+    @places = []
+    @transitions = []
+    @arcs = []
+    @sensors = sensors
+    @unroll = unroll || !symbols.nil?()
+    @keep = keep
+    @symbols = symbols
+  end
+
+  def add_place(name,tokens=0)
+    @places.push(Place.new(name,tokens))
+    return @places.last()
+  end
+
+  def add_transition(label,silent=false,id=nil,lifecycle=nil,copy=nil)
+    @transitions.push(Transition.new(label,silent,id,lifecycle,copy))
+    return @transitions.last()
+  end
+
+  def add_arc(source,target)
+    @arcs.push(Arc.new(source,target))
+    return
+  end
+
+  def parse_xml(root_node)
+    start_place = self.add_place('start_place',1)
+    end_place = self.add_place('end_place')
+    parse_block(root_node.children(),start_place,end_place)
+    return {:starts => [start_place], :ends => [end_place]}
+  end
+
+  def parse_block(node_list,block_start=nil,block_end=nil)
+    previous = block_start
+    if(block_end.nil?().!()) then
+      silent = self.add_transition('artificial_start',true)
+      self.add_arc(previous,silent)
+      new_place = add_place('new')
+      self.add_arc(silent,new_place)
+      previous = new_place
+    end
+    node_list.each() { |node|
+      type = node.qname().name()
+      case type
+      when 'call'
+        previous = handle_call(node,previous)
+      when 'parallel'
+        previous = handle_parallel(node,previous)
+      when 'choose'
+        previous = handle_choose(node,previous)
+      when 'loop'
+        previous = handle_loop(node,previous)
+      when 'manipulate'
+        # script tasks are not part of the Petri Net
+      else
+        pp "something else - #{node.qname().name()}"
+      end
+    }
+    if(block_end.nil?().!()) then
+      silent = self.add_transition('artificial_end',true)
+      self.add_arc(previous,silent)
+      self.add_arc(silent,block_end)
+      previous = block_end
+    end
+    return previous
+  end
+
+  def handle_call(call,previous)
+    label = call.find('.//description:label/text()').first().text()
+    id = call.find('./@id').first().text()
+    new_place = self.add_place('new')
+
+    activity_calling = self.add_transition(label,false,id,'calling')
+    self.add_arc(previous,activity_calling)
+    new_place_calling = self.add_place('new_calling')
+    self.add_arc(activity_calling,new_place_calling)
+    activity_done = self.add_transition(label,false,id,'done')
+    self.add_arc(activity_done,new_place)
+
+    if(!@sensors.key?(id)) then
+      # calling -> p0 -> receiving -> p1 -> (tau -> p0 | done)
+      activity_receiving = self.add_transition(label,false,id,'receiving')
+      self.add_arc(new_place_calling,activity_receiving)
+      new_place_receiving = self.add_place('new_receiving')
+      self.add_arc(activity_receiving,new_place_receiving)
+      redo_receiving = self.add_transition('redo_receiving',true)
+      self.add_arc(new_place_receiving,redo_receiving)
+      self.add_arc(redo_receiving,new_place_calling)
+      self.add_arc(new_place_receiving,activity_done)
+    elsif(!@unroll) then
+      # calling -> p0 -> receiving -> p1 -> data -> p2 -> (tau -> p0 | done)
+      activity_receiving = self.add_transition(label,false,id,'receiving')
+      self.add_arc(new_place_calling,activity_receiving)
+      new_place_receiving = self.add_place('new_receiving')
+      self.add_arc(activity_receiving,new_place_receiving)
+      activity_data = self.add_transition(label,false,id,'data')
+      self.add_arc(new_place_receiving,activity_data)
+      new_place_data = self.add_place('new_data')
+      self.add_arc(activity_data,new_place_data)
+      redo_receiving = self.add_transition('redo_receiving',true)
+      self.add_arc(new_place_data,redo_receiving)
+      self.add_arc(redo_receiving,new_place_calling)
+      self.add_arc(new_place_data,activity_done)
+    else
+      # calling -> p0 -> receiving^1 -> data^1 -> q1 -> (tau -> receiving^2 -> data^2 -> q2 -> ... | tau -> done)
+      previous_pair = new_place_calling
+      pairs_end = self.add_place('pairs_end')
+      self.add_arc(pairs_end,activity_done)
+      1.upto(@sensors[id]) { |k|
+        activity_receiving = self.add_transition(label,false,id,'receiving',k)
+        self.add_arc(previous_pair,activity_receiving)
+        new_place_receiving = self.add_place('new_receiving')
+        self.add_arc(activity_receiving,new_place_receiving)
+        if(@symbols.nil?()) then
+          activity_data = self.add_transition(label,false,id,'data',k)
+          self.add_arc(new_place_receiving,activity_data)
+          new_place_data = self.add_place('new_data')
+          self.add_arc(activity_data,new_place_data)
+        else
+          # SaCF: one transition per sensor (sorted by sensor) labeled with the desired symbol of occurrence k
+          new_place_data = new_place_receiving
+          @symbols[id][k-1].sort().each() { |sensor,symbol|
+            activity_symbol = self.add_transition(label,false,id,"#{sensor}_#{symbol}",k)
+            self.add_arc(new_place_data,activity_symbol)
+            new_place_data = self.add_place('new_data')
+            self.add_arc(activity_symbol,new_place_data)
+          }
+        end
+        leave_pairs = self.add_transition('leave_pairs',true)
+        self.add_arc(new_place_data,leave_pairs)
+        self.add_arc(leave_pairs,pairs_end)
+        if(k < @sensors[id]) then
+          next_pair = self.add_transition('next_pair',true)
+          self.add_arc(new_place_data,next_pair)
+          previous_pair = self.add_place('new_pair')
+          self.add_arc(next_pair,previous_pair)
+        end
+      }
+    end
+    return new_place
+  end
+
+  def handle_parallel(parallel,previous)
+    split_transition = self.add_transition('split_transition',true)
+    self.add_arc(previous,split_transition)
+    merge_transition = self.add_transition('merge_transition',true)
+    merge_place = self.add_place('merge_place')
+    parallel.find('./description:parallel_branch').each() { |branch|
+      branch_split_place = self.add_place('branch_split_place')
+      branch_merge_place = self.add_place('branch_merge_place')
+      self.add_arc(split_transition,branch_split_place)
+      last_branch_place = self.parse_block(branch.children(),branch_split_place,branch_merge_place)
+      self.add_arc(last_branch_place,merge_transition)
+    }
+    self.add_arc(merge_transition,merge_place)
+    return merge_place
+  end
+
+  def handle_choose(xor,previous)
+    merge_place = self.add_place('merge_place')
+    branches = xor.find('./description:alternative | ./description:otherwise').to_a()
+    if(branches.any?() { |branch| @keep.include?(branch.attributes['eid']) }) then
+      branches = branches.select() { |branch| @keep.include?(branch.attributes['eid']) }
+    end
+    branches.each() { |branch|
+      self.parse_block(branch.children(),previous,merge_place)
+    }
+    return merge_place
+  end
+
+  def handle_loop(loop,previous)
+    loop_start = previous
+    if(loop.attributes()['mode'] == 'pre_test') then
+      self.parse_block(loop.children(),loop_start,loop_start)
+    elsif(loop.attributes()['mode'] == 'post_test')
+      loop_end = self.add_place('loop_end')
+      self.parse_block(loop.children(),loop_start,loop_end)
+      silent = self.add_transition('artificial_loop',true)
+      self.add_arc(loop_end,silent)
+      self.add_arc(silent,loop_start)
+      return loop_end
+    else
+      pp "unknown loop type"
+    end
+    return previous
+  end
+
+  def to_pm4py_pnml(ends=[])
+    pnml = XML::Smart.string('<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml"><net id="generated" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel"><page id="g0"></page></net></pnml>')
+    pnml.register_namespace(:pnml,'http://www.pnml.org/version-2009/grammar/pnml')
+    page = pnml.find('/pnml:pnml/pnml:net[@id="generated"]/pnml:page[@id="g0"]').first()
+    @places.each() { |place|
+      node = XML::Smart.string("<place id='#{place.to_s()}'><name><text>#{place.to_s()}</text></name><initialMarking><text>#{place.tokens}</text></initialMarking><capacity><text>1</text></capacity></place>")
+      page.add(node.root())
+    }
+    @transitions.each() { |transition|
+      # the name is the label PM4Py aligns with the event labels "[aid]_[lifecycle]"
+      name = transition.silent?() ? transition.to_s() : transition.label_pm4py()
+      node = XML::Smart.string("<transition id='#{transition.id_pm4py()}'><name><text>#{name}</text></name>#{transition.silent?() ? "<toolspecific tool='ProM' activity='$invisible$'></toolspecific>" : ""}</transition>")
+      page.add(node.root())
+    }
+    @arcs.each() { |arc|
+      source = arc.source().is_a?(Transition) ? arc.source().id_pm4py() : arc.source().to_s()
+      target = arc.target().is_a?(Transition) ? arc.target().id_pm4py() : arc.target().to_s()
+      node = XML::Smart.string("<arc id='#{arc.to_s()}' source='#{source}' target='#{target}'></arc>")
+      page.add(node.root())
+    }
+    if ends.empty?().!() then
+      fm = XML::Smart.string("<finalmarkings></finalmarkings>")
+      ends.each() { |e|
+        node = XML::Smart.string("<marking><place idref='#{e.to_s()}'><text>1</text></place></marking>")
+        fm.root().add(node.root())
+      }
+      pnml.find('/pnml:pnml/pnml:net[@id="generated"]').first().add(fm.root())
+    end
+    return pnml
+  end
+end
+
+options = {:desired => nil, :unroll => false, :keep => [], :name => nil, :symbols => nil}
+OptionParser.new() { |opts|
+  opts.on('--desired FILE') { |v| options[:desired] = v }
+  opts.on('--symbols FILE') { |v| options[:symbols] = v }
+  opts.on('--unroll') { options[:unroll] = true }
+  opts.on('--keep EIDS') { |v| options[:keep] = v.split(',') }
+  opts.on('--name NAME') { |v| options[:name] = v }
+}.parse!()
+
+# AN and K from the desired sensor data: every activity with desired sensor data records sensor data
+sensors = {}
+if(options[:desired]) then
+  JSON.parse(File.read(options[:desired])).each() { |activity_id,occurrences|
+    sensors[activity_id] = occurrences.length() if occurrences.length() > 0
+  }
+end
+
+symbols = nil
+if(options[:symbols]) then
+  symbols = JSON.parse(File.read(options[:symbols]))['desired']
+  symbols.each() { |activity_id,occurrences|
+    sensors[activity_id] = occurrences.length() if occurrences.length() > 0
+  }
+end
+
+petri_net = Petrinet.new(sensors,options[:unroll],options[:keep],symbols)
+doc = XML::Smart.open(ARGV[0])
+doc.register_namespace(:properties,'http://cpee.org/ns/properties/2.0')
+doc.register_namespace(:description,'http://cpee.org/ns/description/1.0')
+description = doc.find('//description:description').first()
+markings = petri_net.parse_xml(description)
+name = options[:name] || File.basename(ARGV[0],'.xml')
+FileUtils.mkdir_p(File.join(__dir__,'generated'))
+File.write(File.join(__dir__,'generated',"#{name}.pnml"),petri_net.to_pm4py_pnml(markings[:ends]).to_s())
+puts "#{name}: sensors #{sensors}, unroll #{options[:unroll] || !symbols.nil?()}, symbols #{!symbols.nil?()}, keep #{options[:keep]}"

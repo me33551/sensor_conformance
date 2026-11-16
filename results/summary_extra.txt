@@ -1,0 +1,60 @@
+== cff_short.json
+  without extra  n 35/55/19  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 0.0% C 100.0%
+  with extra     n 16/19/6  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 100.0% C 100.0%
+  A: mean cost   297.25 ->   693.84   d cost   396.59   d cf     0.00   d sensor   396.59
+  B: mean cost     3.27 ->   538.53   d cost   535.25   d cf     0.00   d sensor   535.25
+  C: mean cost   855.92 ->   907.80   d cost    51.89   d cf     0.00   d sensor    51.89
+== balanced_short.json
+  without extra  n 35/55/19  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 0.0% C 100.0%
+  with extra     n 16/19/6  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 100.0% C 100.0%
+  A: mean cost   248.68 ->   355.44   d cost   106.76   d cf   104.00   d sensor     2.76
+  B: mean cost     3.27 ->   103.94   d cost   100.67   d cf   100.00   d sensor     0.67
+  C: mean cost   466.59 ->   574.24   d cost   107.65   d cf   100.00   d sensor     7.65
+== sacf_short.json
+  without extra  n 35/55/19  AUC B/AC 0.952 [0.915, 0.985]   B/A 0.949 [0.909, 0.984]   B/C 0.956 [0.920, 0.987]  flagged A 20.0% B 0.0% C 26.3%
+  with extra     n 16/19/6  AUC B/AC 0.955 [0.886, 1.000]   B/A 0.938 [0.844, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 87.5% B 0.0% C 100.0%
+  A: mean cost   120.00 ->   187.50   d cost    67.50   d cf    67.50   d sensor     0.00
+  B: mean cost    12.73 ->   100.00   d cost    87.27   d cf    87.27   d sensor     0.00
+  C: mean cost   126.32 ->   200.00   d cost    73.68   d cf    73.68   d sensor     0.00
+== cfo_short.json
+  without extra  n 35/55/19  AUC B/AC 0.500 [0.500, 0.500]   B/A 0.500 [0.500, 0.500]   B/C 0.500 [0.500, 0.500]  flagged A 0.0% B 0.0% C 0.0%
+  with extra     n 16/19/6  AUC B/AC 0.500 [0.500, 0.500]   B/A 0.500 [0.500, 0.500]   B/C 0.500 [0.500, 0.500]  flagged A 0.0% B 0.0% C 0.0%
+  A: mean cost     0.00 ->     0.00   d cost     0.00   d cf     0.00   d sensor     0.00
+  B: mean cost     0.00 ->     0.00   d cost     0.00   d cf     0.00   d sensor     0.00
+  C: mean cost     0.00 ->     0.00   d cost     0.00   d cf     0.00   d sensor     0.00
+== cff_full.json
+  without extra  n 35/55/19  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 0.0% C 100.0%
+  with extra     n 16/19/6  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 100.0% C 100.0%
+  A: mean cost   297.25 ->   693.84   d cost   396.59   d cf     0.00   d sensor   396.59
+  B: mean cost     3.27 ->   538.53   d cost   535.25   d cf     0.00   d sensor   535.25
+  C: mean cost   855.92 ->   907.80   d cost    51.89   d cf     0.00   d sensor    51.89
+== balanced_full.json
+  without extra  n 35/55/19  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 0.0% C 100.0%
+  with extra     n 16/19/6  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 100.0% C 100.0%
+  A: mean cost   248.68 ->   355.44   d cost   106.76   d cf   104.00   d sensor     2.76
+  B: mean cost     3.27 ->   103.94   d cost   100.67   d cf   100.00   d sensor     0.67
+  C: mean cost   466.59 ->   574.24   d cost   107.65   d cf   100.00   d sensor     7.65
+== sacf_full.json
+  without extra  n 35/55/19  AUC B/AC 0.952 [0.915, 0.985]   B/A 0.949 [0.909, 0.984]   B/C 0.956 [0.920, 0.987]  flagged A 20.0% B 0.0% C 26.3%
+  with extra     n 16/19/6  AUC B/AC 0.955 [0.886, 1.000]   B/A 0.938 [0.844, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 87.5% B 0.0% C 100.0%
+  A: mean cost   120.00 ->   187.50   d cost    67.50   d cf    67.50   d sensor     0.00
+  B: mean cost    12.73 ->   100.00   d cost    87.27   d cf    87.27   d sensor     0.00
+  C: mean cost   126.32 ->   200.00   d cost    73.68   d cf    73.68   d sensor     0.00
+== cfo_full.json
+  without extra  n 35/55/19  AUC B/AC 0.500 [0.500, 0.500]   B/A 0.500 [0.500, 0.500]   B/C 0.500 [0.500, 0.500]  flagged A 0.0% B 0.0% C 0.0%
+  with extra     n 16/19/6  AUC B/AC 0.500 [0.500, 0.500]   B/A 0.500 [0.500, 0.500]   B/C 0.500 [0.500, 0.500]  flagged A 0.0% B 0.0% C 0.0%
+  A: mean cost     0.00 ->     0.00   d cost     0.00   d cf     0.00   d sensor     0.00
+  B: mean cost     0.00 ->     0.00   d cost     0.00   d cf     0.00   d sensor     0.00
+  C: mean cost     0.00 ->     0.00   d cost     0.00   d cf     0.00   d sensor     0.00
+== sacf_desired_full.json
+  without extra  n 35/55/19  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 0.0% C 100.0%
+  with extra     n 16/19/6  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 0.0% C 100.0%
+  A: mean cost   420.00 ->   487.50   d cost    67.50   d cf    67.50   d sensor     0.00
+  B: mean cost    12.73 ->   100.00   d cost    87.27   d cf    87.27   d sensor     0.00
+  C: mean cost   426.32 ->   500.00   d cost    73.68   d cf    73.68   d sensor     0.00
+== cfo_desired_full.json
+  without extra  n 35/55/19  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 0.0% C 100.0%
+  with extra     n 16/19/6  AUC B/AC 1.000 [1.000, 1.000]   B/A 1.000 [1.000, 1.000]   B/C 1.000 [1.000, 1.000]  flagged A 100.0% B 0.0% C 100.0%
+  A: mean cost   300.00 ->   300.00   d cost     0.00   d cf     0.00   d sensor     0.00
+  B: mean cost     0.00 ->     0.00   d cost     0.00   d cf     0.00   d sensor     0.00
+  C: mean cost   300.00 ->   300.00   d cost     0.00   d cf     0.00   d sensor     0.00

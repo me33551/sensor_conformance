@@ -1,0 +1,126 @@
+== 1. data: crop after F done, categories
+/home/mangler/Papers/sensor_conformance/impl_syntheticB/calculate_process_model_sensor_streams/classes/classes_syntheticB: a 51 (16 extra), b 74 (19 extra), c 25 (6 extra)
+== 2. cross-validation folds over the desired executions without extra iteration
+fold 1: 11 held out, 44 training
+fold 2: 11 held out, 44 training
+fold 3: 11 held out, 44 training
+fold 4: 11 held out, 44 training
+fold 5: 11 held out, 44 training
+== 3. fold 1: desired sensor data and normal deviation
+== 4. fold 1: desired symbols (Sensor Data as Control Flow)
+== 5. fold 1: Petri Nets
+short_cff_f1: sensors {"a6" => 3}, unroll false, symbols false, keep []
+short_balanced_f1: sensors {"a6" => 3}, unroll true, symbols false, keep []
+short_sacf_f1: sensors {"a6" => 3}, unroll true, symbols true, keep []
+full_cff_f1: sensors {"a6" => 3}, unroll false, symbols false, keep []
+full_balanced_f1: sensors {"a6" => 3}, unroll true, symbols false, keep []
+full_sacf_f1: sensors {"a6" => 3}, unroll true, symbols true, keep []
+desired_sacf_f1: sensors {"a6" => 3}, unroll true, symbols true, keep ["e2"]
+== 6. fold 1: conformance checking
+cff_short_f1: 150 traces, no alignment found: 0
+balanced_short_f1: 150 traces, no alignment found: 0
+sacf_short_f1: 150 traces, no alignment found: 0
+cff_full_f1: 150 traces, no alignment found: 0
+balanced_full_f1: 150 traces, no alignment found: 0
+sacf_full_f1: 150 traces, no alignment found: 0
+sacf_desired_full_f1: 150 traces, no alignment found: 0
+== 3. fold 2: desired sensor data and normal deviation
+== 4. fold 2: desired symbols (Sensor Data as Control Flow)
+== 5. fold 2: Petri Nets
+short_cff_f2: sensors {"a6" => 3}, unroll false, symbols false, keep []
+short_balanced_f2: sensors {"a6" => 3}, unroll true, symbols false, keep []
+short_sacf_f2: sensors {"a6" => 3}, unroll true, symbols true, keep []
+full_cff_f2: sensors {"a6" => 3}, unroll false, symbols false, keep []
+full_balanced_f2: sensors {"a6" => 3}, unroll true, symbols false, keep []
+full_sacf_f2: sensors {"a6" => 3}, unroll true, symbols true, keep []
+desired_sacf_f2: sensors {"a6" => 3}, unroll true, symbols true, keep ["e2"]
+== 6. fold 2: conformance checking
+cff_short_f2: 150 traces, no alignment found: 0
+balanced_short_f2: 150 traces, no alignment found: 0
+sacf_short_f2: 150 traces, no alignment found: 0
+cff_full_f2: 150 traces, no alignment found: 0
+balanced_full_f2: 150 traces, no alignment found: 0
+sacf_full_f2: 150 traces, no alignment found: 0
+sacf_desired_full_f2: 150 traces, no alignment found: 0
+== 3. fold 3: desired sensor data and normal deviation
+== 4. fold 3: desired symbols (Sensor Data as Control Flow)
+== 5. fold 3: Petri Nets
+short_cff_f3: sensors {"a6" => 3}, unroll false, symbols false, keep []
+short_balanced_f3: sensors {"a6" => 3}, unroll true, symbols false, keep []
+short_sacf_f3: sensors {"a6" => 3}, unroll true, symbols true, keep []
+full_cff_f3: sensors {"a6" => 3}, unroll false, symbols false, keep []
+full_balanced_f3: sensors {"a6" => 3}, unroll true, symbols false, keep []
+full_sacf_f3: sensors {"a6" => 3}, unroll true, symbols true, keep []
+desired_sacf_f3: sensors {"a6" => 3}, unroll true, symbols true, keep ["e2"]
+== 6. fold 3: conformance checking
+cff_short_f3: 150 traces, no alignment found: 0
+balanced_short_f3: 150 traces, no alignment found: 0
+sacf_short_f3: 150 traces, no alignment found: 0
+cff_full_f3: 150 traces, no alignment found: 0
+balanced_full_f3: 150 traces, no alignment found: 0
+sacf_full_f3: 150 traces, no alignment found: 0
+sacf_desired_full_f3: 150 traces, no alignment found: 0
+== 3. fold 4: desired sensor data and normal deviation
+== 4. fold 4: desired symbols (Sensor Data as Control Flow)
+== 5. fold 4: Petri Nets
+short_cff_f4: sensors {"a6" => 3}, unroll false, symbols false, keep []
+short_balanced_f4: sensors {"a6" => 3}, unroll true, symbols false, keep []
+short_sacf_f4: sensors {"a6" => 3}, unroll true, symbols true, keep []
+full_cff_f4: sensors {"a6" => 3}, unroll false, symbols false, keep []
+full_balanced_f4: sensors {"a6" => 3}, unroll true, symbols false, keep []
+full_sacf_f4: sensors {"a6" => 3}, unroll true, symbols true, keep []
+desired_sacf_f4: sensors {"a6" => 3}, unroll true, symbols true, keep ["e2"]
+== 6. fold 4: conformance checking
+cff_short_f4: 150 traces, no alignment found: 0
+balanced_short_f4: 150 traces, no alignment found: 0
+sacf_short_f4: 150 traces, no alignment found: 0
+cff_full_f4: 150 traces, no alignment found: 0
+balanced_full_f4: 150 traces, no alignment found: 0
+sacf_full_f4: 150 traces, no alignment found: 0
+sacf_desired_full_f4: 150 traces, no alignment found: 0
+== 3. fold 5: desired sensor data and normal deviation
+== 4. fold 5: desired symbols (Sensor Data as Control Flow)
+== 5. fold 5: Petri Nets
+short_cff_f5: sensors {"a6" => 3}, unroll false, symbols false, keep []
+short_balanced_f5: sensors {"a6" => 3}, unroll true, symbols false, keep []
+short_sacf_f5: sensors {"a6" => 3}, unroll true, symbols true, keep []
+full_cff_f5: sensors {"a6" => 3}, unroll false, symbols false, keep []
+full_balanced_f5: sensors {"a6" => 3}, unroll true, symbols false, keep []
+full_sacf_f5: sensors {"a6" => 3}, unroll true, symbols true, keep []
+desired_sacf_f5: sensors {"a6" => 3}, unroll true, symbols true, keep ["e2"]
+== 6. fold 5: conformance checking
+cff_short_f5: 150 traces, no alignment found: 0
+balanced_short_f5: 150 traces, no alignment found: 0
+sacf_short_f5: 150 traces, no alignment found: 0
+cff_full_f5: 150 traces, no alignment found: 0
+balanced_full_f5: 150 traces, no alignment found: 0
+sacf_full_f5: 150 traces, no alignment found: 0
+sacf_desired_full_f5: 150 traces, no alignment found: 0
+== 7. merge folds
+/home/mangler/Papers/sensor_conformance/impl_syntheticB/results/cff_short.json: 150 traces, 55 held-out b
+/home/mangler/Papers/sensor_conformance/impl_syntheticB/results/balanced_short.json: 150 traces, 55 held-out b
+/home/mangler/Papers/sensor_conformance/impl_syntheticB/results/sacf_short.json: 150 traces, 55 held-out b
+/home/mangler/Papers/sensor_conformance/impl_syntheticB/results/cff_full.json: 150 traces, 55 held-out b
+/home/mangler/Papers/sensor_conformance/impl_syntheticB/results/balanced_full.json: 150 traces, 55 held-out b
+/home/mangler/Papers/sensor_conformance/impl_syntheticB/results/sacf_full.json: 150 traces, 55 held-out b
+/home/mangler/Papers/sensor_conformance/impl_syntheticB/results/sacf_desired_full.json: 150 traces, 55 held-out b
+== 8. Control Flow Only (nothing fitted, no folds)
+short_cfo: sensors {}, unroll false, symbols false, keep []
+full_cfo: sensors {}, unroll false, symbols false, keep []
+desired_cfo: sensors {}, unroll false, symbols false, keep ["e2"]
+cfo_short: 150 traces, no alignment found: 0
+cfo_full: 150 traces, no alignment found: 0
+cfo_desired_full: 150 traces, no alignment found: 0
+== 9. summaries
+/home/mangler/Papers/sensor_conformance/impl_syntheticB/results/summary.txt, /home/mangler/Papers/sensor_conformance/impl_syntheticB/results/summary_extra.txt
+== 10. boxplots into /home/mangler/Papers/sensor_conformance/impl_syntheticB/results
+cff_short.json -> results_control_flow_first_syntheticB_short_xml.{svg,pdf}
+balanced_short.json -> results_balanced_syntheticB_short_xml.{svg,pdf}
+cfo_short.json -> results_control_flow_only_syntheticB_short_xml.{svg,pdf}
+sacf_short.json -> results_sensor_data_as_control_flow_syntheticB_short_xml.{svg,pdf}
+cff_full.json -> results_control_flow_first_syntheticB_xml.{svg,pdf}
+balanced_full.json -> results_balanced_syntheticB_xml.{svg,pdf}
+cfo_full.json -> results_control_flow_only_syntheticB_xml.{svg,pdf}
+cfo_desired_full.json -> results_control_flow_only_syntheticB_desired_xml.{svg,pdf}
+sacf_full.json -> results_sensor_data_as_control_flow_syntheticB_xml.{svg,pdf}
+sacf_desired_full.json -> results_sensor_data_as_control_flow_syntheticB_desired_xml.{svg,pdf}
