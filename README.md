@@ -2,12 +2,74 @@
 
 Synthetic dataset and evaluation for sensor-based conformance.
 
+##Preparation
+
+After cloning the repository perform the following steps:
+
+Make sure [Python](https://www.python.org/) is installed (for the experiments Python 3.14 was used).
+
+Create a virtual environment for Python:
+```bash
+ python -m venv venv
+```
+OR
+```bash
+ python3.14 -m venv venv
+```
+
+Activate the virtual environment:
+```bash
+  source venv/bin/activate 
+```
+
+Install the necessary Python packages:
+```bash
+  pip install -r requirements.txt
+```
+
+Make sure [Ruby](https://www.ruby-lang.org/en/) is installed and install the necessary Ruby gems:
+```bash
+  gem install cpee-logging-xes-yaml --user
+```
+
+Make sure [Julia](https://julialang.org/) is installed with the following packages:
+- Distances
+- DynamicAxisWarping
+- JSON
+
+This can be done by issuing the following commands:
+```bash
+  julia
+```
+```bash
+  import Pkg
+```
+```bash
+  Pkg.add("[package_name]")
+```
+
+Either run the experiments directly with the data used for the paper (see [Pipeline](#pipeline)) or create the dataset yourself (see [Simulation](#simulation)/[Data](#data)). When creating data yourself the results might slightly differ from the ones reported in the paper because the simulation uses randomness for the creation of data streams.
+
+
 ## Simulation (`simulation/`)
 
-The simulation (i.e., creation of the dataset) can be run with:
-
+First delete both synthetic datasets which are already in the `data_sets` folder (from the `data_sets` directory):
 ```bash
- ./run.sh
+ rm -r syntheticB
+```
+AND
+```bash
+ rm -r syntheticB_short
+```
+
+
+The simulation (i.e., creation of the dataset) can be run with (from the simulation directory):
+```bash
+ ./run.sh syntheticB
+```
+AND
+```bash
+ ./run.sh syntheticB_short
 ```
 
 - `server.rb`, `description.xml`: riddl service (port 4570, `ruby server.rb -v start`, runs on
@@ -29,13 +91,15 @@ The simulation (i.e., creation of the dataset) can be run with:
 
 ## Data (`data_sets/syntheticB`)
 
-Logs of the 150 instances (cpee.org/logs/<uuid>.xes.yaml, sorted with sort``, converted with `to-xes-xml` of
+Initially holds logs of the 150 instances (cpee.org/logs/<uuid>.xes.yaml, sorted with sort``, converted with `to-xes-xml` of
 cpee-logging-xes-yaml), `index.txt`. Categories a 51 (16 with extra iteration), b 74 (19), c 25 (6); every
 "stream/data" event of "record" holds one window of 10 points.
 
+If the steps in [Simulation](#simulation) are carried out then it contains the newly created datasets.
+
 ## Pipeline
 
-The evaluation can be run with:
+The evaluation can be run with (from the parent directory):
 
 ```bash
  ./eval.sh
