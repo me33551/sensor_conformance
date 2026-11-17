@@ -24,8 +24,10 @@ ENGINE=https://cpee.org/flow/engine
 LOGS=https://cpee.org/logs
 HUB=https://cpee.org/hub/server/Staff.dir/Ehrendorfer.dir/conformance.dir/synthetic_adapted.dir
 SERVICE=https://lehre.bpm.in.tum.de/ports/4570
-TOOL="${XES_TOOL:-$HOME/Projects/cpee-logging-xes-yaml/tools/cpee-logging-xes-yaml}"
+TOOL=cpee-logging-xes-yaml
 POLL=10
+
+echo $TOOL
 
 NUMBER=150
 while getopts "n:" opt; do
@@ -38,7 +40,7 @@ shift $((OPTIND - 1))
 if [ $# -ne 1 ]; then echo "usage: $0 [-n NUMBER] DATASET" >&2; exit 1; fi
 OUT="$IMPL/data_sets/$1"
 if [ -e "$OUT" ]; then echo "$OUT already exists" >&2; exit 1; fi
-[ -x "$TOOL" ] || { echo "cpee-logging-xes-yaml not found: $TOOL (set XES_TOOL)" >&2; exit 1; }
+[ -x $(which $TOOL) ] || { echo "cpee-logging-xes-yaml not found: $TOOL (set XES_TOOL)" >&2; exit 1; }
 
 log() { echo "[$(date +%H:%M:%S)] $*"; }
 state() { curl -s -m 20 "$ENGINE/$1/properties/state/"; }
