@@ -125,9 +125,7 @@ The evaluation can be run with (from the parent directory):
    all instances and with/without extra iteration); `plot.py` → boxplots in `results/`.
 6. Temporary files (DTW input files, `pairs.json`) are removed.
 
-`venv` contains the dependencies of PM4Py; the used PM4Py itself is in `pm4py_src`.
-
-The results used for the evaluation can be found in `results`.
+Afterwards, the results used for the evaluation can be found in `results`.
 
 # Generative AI Usage:
 Generative AI was used for code restructuring and code debugging.
