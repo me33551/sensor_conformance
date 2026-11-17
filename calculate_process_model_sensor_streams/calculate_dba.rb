@@ -3,6 +3,7 @@
 require 'yaml'
 require 'hpath'
 require 'json'
+require 'fileutils'
 
 # e.g., ./calculate_dba.rb synthetic_logs_xml/optionA/ single_optionA
 
@@ -52,6 +53,7 @@ sensor_data_per_instance_per_activity_per_event.each() { |instance_id,sensor_dat
       sensor_data_per_streamevent.each_with_index() { |sensor_data_per_individualstreamevent,index|
         sensor_data_per_individualstreamevent.each() { |stream_id,points|
           write_to_file = points.map() { |point| {:value => point['stream:value'], :timestamp => point['stream:timestamp']} }
+          FileUtils.mkdir_p(File.join(__dir__,'dtw','datastream_files'))
           file_path = File.join(__dir__,'dtw','datastream_files',"#{instance_id}_#{activity_id}_#{event_id}_#{stream_id}_#{index}.json")
           # only the desired executions define occurrences: an occurrence k that no desired execution has (e.g.,
           # the 4th window of an instance with an extra iteration) has no Des
