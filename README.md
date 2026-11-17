@@ -63,7 +63,7 @@ AND
 ```
 
 
-The simulation (i.e., creation of the dataset) can be run with (from the simulation directory):
+The simulation (i.e., creation of the dataset) can be run with (from the `simulation` directory):
 ```bash
  ./run.sh syntheticB
 ```
@@ -91,7 +91,7 @@ AND
 
 ## Data (`data_sets/syntheticB`)
 
-Initially holds logs of the 150 instances (cpee.org/logs/<uuid>.xes.yaml, sorted with sort``, converted with `to-xes-xml` of
+Initially holds logs of the 150 instances (cpee.org/logs/<uuid>.xes.yaml, sorted with `sort`, converted with `to-xes-xml` of
 cpee-logging-xes-yaml), `index.txt`. Categories a 51 (16 with extra iteration), b 74 (19), c 25 (6); every
 "stream/data" event of "record" holds one window of 10 points.
 
