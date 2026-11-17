@@ -89,7 +89,7 @@ AND
   sorts and converts the logs into `data_sets/DATASET`.
 - `run_parent.txt`: CPEE instance and uuid of the parent run that produced the dataset (written by `run.sh`).
 
-## Data (`data_sets/syntheticB`)
+## Data (`data_sets/DATASET`)
 
 Initially holds logs of the 150 instances (cpee.org/logs/<uuid>.xes.yaml, sorted with `sort`, converted with `to-xes-xml` of
 cpee-logging-xes-yaml), `index.txt`. Categories a 51 (16 with extra iteration), b 74 (19), c 25 (6); every
