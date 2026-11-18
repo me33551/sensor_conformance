@@ -2,7 +2,7 @@
 
 Synthetic dataset and evaluation for sensor-based conformance.
 
-##Preparation
+## Preparation
 
 After cloning the repository perform the following steps:
 
