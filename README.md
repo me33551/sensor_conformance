@@ -10,26 +10,26 @@ Make sure [Python](https://www.python.org/) is installed (for the experiments Py
 
 Create a virtual environment for Python:
 ```bash
- python -m venv venv
+python -m venv venv
 ```
 OR
 ```bash
- python3.14 -m venv venv
+python3.14 -m venv venv
 ```
 
 Activate the virtual environment:
 ```bash
-  source venv/bin/activate 
+source venv/bin/activate 
 ```
 
 Install the necessary Python packages:
 ```bash
-  pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Make sure [Ruby](https://www.ruby-lang.org/en/) is installed and install the necessary Ruby gems:
 ```bash
-  gem install cpee-logging-xes-yaml --user
+gem install cpee-logging-xes-yaml --user
 ```
 
 Make sure [Julia](https://julialang.org/) is installed with the following packages:
@@ -39,13 +39,13 @@ Make sure [Julia](https://julialang.org/) is installed with the following packag
 
 This can be done by issuing the following commands:
 ```bash
-  julia
+julia
 ```
 ```bash
-  import Pkg
+import Pkg
 ```
 ```bash
-  Pkg.add("[package_name]")
+Pkg.add("[package_name]")
 ```
 
 Either run the experiments directly with the data used for the paper (see [Pipeline](#pipeline)) or create the dataset yourself (see [Simulation](#simulation)/[Data](#data)). When creating data yourself the results might slightly differ from the ones reported in the paper because the simulation uses randomness for the creation of data streams.
@@ -55,21 +55,21 @@ Either run the experiments directly with the data used for the paper (see [Pipel
 
 First delete both synthetic datasets which are already in the `data_sets` folder (from the `data_sets` directory):
 ```bash
- rm -r syntheticB
+rm -r syntheticB
 ```
 AND
 ```bash
- rm -r syntheticB_short
+rm -r syntheticB_short
 ```
 
 
 The simulation (i.e., creation of the dataset) can be run with (from the `simulation` directory):
 ```bash
- ./run.sh syntheticB
+./run.sh syntheticB
 ```
 AND
 ```bash
- ./run.sh syntheticB_short
+./run.sh syntheticB_short
 ```
 
 - `server.rb`, `description.xml`: riddl service (port 4570, `ruby server.rb -v start`, runs on
@@ -102,7 +102,7 @@ If the steps in [Simulation](#simulation) are carried out then it contains the n
 The evaluation can be run with (from the parent directory):
 
 ```bash
- ./eval.sh
+./eval.sh
 ```
 
 `./eval.sh` does the following (all steps, 5-fold cross-validation):
