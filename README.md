@@ -48,7 +48,7 @@ import Pkg
 Pkg.add("[package_name]")
 ```
 
-Either run the experiments directly with the data used for the paper (see [Pipeline](#pipeline)) or create the dataset yourself (see [Simulation](#simulation)/[Data](#data)). When creating data yourself the results might slightly differ from the ones reported in the paper because the simulation uses randomness for the creation of data streams.
+Either run the experiments directly with the data used for the paper (see [Pipeline](#pipeline)) or create the dataset yourself (see [Simulation](#simulation-simulation)/[Data](#data-data_setsdataset)). When creating data yourself the results might slightly differ from the ones reported in the paper because the simulation uses randomness for the creation of data streams.
 
 
 ## Simulation (`simulation/`)
