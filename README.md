@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 Make sure [Ruby](https://www.ruby-lang.org/en/) is installed and install the necessary Ruby gems:
 ```bash
-gem install cpee-logging-xes-yaml --user
+gem install cpee-logging-xes-yaml hpath --user
 ```
 
 Make sure [Julia](https://julialang.org/) is installed with the following packages:
